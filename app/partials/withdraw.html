@@ -1,0 +1,83 @@
+<section class="page-pay">
+    <div class="page-withdraw">
+        <header class="page-header">
+            <div class="header-wrap has-border-b">
+                <h3>账户提现</h3>
+                <!--<a href="#/myHome" class="nav-left"><i class="icon-back"></i></a>-->
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="mod-withdraw">
+            <!--<div class="balance">
+                可提余额：{{(balance-delaybalance).toFixed(2)}}元
+            </div>
+            <div class="mod-form bt-light-gray bb-light-gray txt-grey" ng-if="delaybalance>0">
+                已冻结递延费：{{delaybalance}}元
+            </div>-->
+            <div class="balance-area">
+                <p class="count-balance txt-s28 txt-yellow txt-center">{{balance | number : 2}}</p>
+                <p class="txt-center txt-grey">总余额（￥）</p>
+                <div class="balance-part">
+                    <div class="can-with txt-s16">
+                        <p>可提余额</p>
+                        <p>{{canWithDraw < 0 ? 0 : canWithDraw | number :2}}</p>
+                    </div>
+                    <div class="should-pay txt-right txt-s16">
+                        <p><span class="icon-info mr10 txt-s18" ng-click="tips('应缴递延费','当前交易日14:50之后，未点卖策略（含停牌股）将自动冻结下一交易日的递延费，收盘前点卖可解冻。');"></span>应缴递延费</p>
+                        <p>{{delaybalance | number : 2}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mod-form mt10 bt-light-gray bb-light-gray">
+                <label>提现金额</label>
+                <input class="inp" ng-model="money" type="text" placeholder="最低100元起提，每日限提3次" style="width: 2.1rem">
+            </div>
+            <div class="tips txt-grey">
+                提现银行卡
+            </div>
+            <div ng-show="selectBankCard!=null" class="bank-card mb10" ng-click="showDialog=true;">
+                <i class="bank-icon icon-bank-{{selectBankCard.bankCode}} mr10"></i>
+                {{selectBankCard.bank}} 尾号{{selectBankCard.cardNumber.substr(-4)}}
+                <i class="mod-arrow-r"></i>
+            </div>
+            <div class="mod-form bt-light-gray bb-light-gray">
+                <a class="tip-r" href="#/forgetTradePass?goURL=/withdraw">忘记密码</a>
+                <label>提现密码</label>
+                <input class="inp" ng-model="password" type="password" placeholder="请输入提现密码" style="width: 1.3rem">
+            </div>
+        </div>
+        <div class="pt30 pl15 pr15">
+            <button class="btn btn-{{btnState}}" ng-click="checkMoney();">确定</button>
+        </div>
+        <div class="mod-prompt pt50 pb20 ">
+            <p class="mb10 txt-center">提现处理时间：</p>
+            <p> 白天：上午11:00 — 下午16:00  (当天17:00前处理)</p>
+            <p> 晚上：下午16:00 — 次日11:00  (次日12:00前处理)</p>
+            <p> 具体到账时间以银行为准，节假日延后处理</p>
+        </div>
+    </div>
+</section>
+<!--选择银行-->
+<div class="db-bg" ng-show="showDialog" style="z-index: 10000;">
+    <div class="mod-db-wrap">
+        <div class="mod-choose-bank-card">
+            <div class="title">选择我的银行卡</div>
+            <ul class="bank-card-list">
+                <li ng-repeat="bankCard in bankCardList" class="clearfix" ng-click="sureChoose($index)">
+                    <span class="fl">
+                        <i class="icon-bank-{{bankCard.bankCode}}"></i>
+                    </span>
+                    <span class="fl">
+                        <p class="pt10">{{bankCard.bank}}</p>
+                        <p class="txt-s12 pt5">**** **** **** {{bankCard.cardNumber.substr(-4)}}</p>
+                    </span>
+                    <i class="mod-ok-r" ng-if="bankCard.id == selectBankCard.id"></i>
+                </li>
+            </ul>
+            <a ng-if="bankCardList.length < 3" class="add-bank-card" href="#/addBankCard?goURL=/withdraw">
+                添加银行卡
+            </a>
+            <div class="footer" ng-click="showDialog=false;">取消</div>
+        </div>
+    </div>
+</div>

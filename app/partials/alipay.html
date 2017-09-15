@@ -1,0 +1,52 @@
+<section class="page-pay">
+    <div class="page-pay-bank">
+        <header class="page-header">
+            <div class="header-wrap has-border-b">
+                <h3>支付宝转账</h3>
+                <!--<a href="#/payType" class="nav-left"><i class="icon-back"></i></a>-->
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="mod-bank">
+            <div class="balance">账户余额：{{balance.balance.toFixed(2)}}元</div>
+            <div class="mod-form-wrap mt15 mb10 bt-light-gray bb-light-gray">
+                <!--<div class="mod-form" ng-if="user.bindingAlipayAccount">
+                    <label style="width: 0.8rem">支付宝实名</label>
+                    <span class="pl10 txt-white" ng-bind="user.name"></span>
+                </div>-->
+                <div class="mod-form">
+                    <label style="width: 0.8rem">支付宝账号</label>
+                    <span ng-if="user.bindingAlipayAccount">
+                        <span class="pl10 txt-white"  ng-bind="user.alipayAccount"></span>
+                        <span class="fr pr30 txt-s14 txt-blue" ng-click="edit()">修改</span>
+                        <i class="mod-arrow-r"></i>
+                    </span>
+                    <input class="inp" type="text" ng-if="!user.bindingAlipayAccount" ng-model="param.account" placeholder="请输入支付宝账号" style="width: 2rem">
+                </div>
+                <div class="mod-form">
+                    <label style="width: 0.8rem">充值金额</label>
+                    <input class="inp" type="text" ng-model="param.money" placeholder="请输入金额" style="width: 2rem">
+                </div>
+            </div>
+        </div>
+        <div class="ali-tip pt10 mb30 pl15 txt-s12 txt-grey">
+            <span class="copy-target">
+                注：<span>为保证资金安全，请准确填写支付宝账号。</span>若未能正常打开支付宝，请复制账号
+                <input class="txt-blue copy" value="mudao888@yztz.cn"/>,手动去支付宝完成转账。
+            </span>
+
+        </div>
+        <div class="pl15 pr15">
+            <a class="btn btn-orange" ng-class="{'btn-disable':(!param.account&&!user.alipayAccount)||!param.money}" ng-click="pay();">下一步</a>
+        </div>
+        <div class="mod-prompt pt50 pb20">
+            <p class="mb10 txt-center">到账时间</p>
+
+            <p> 08:30-17:30<span class="fr">(1小时内到账)</span></p>
+
+            <p>17:30以后<span class="fr">(次日09:30前到账)</span></p>
+
+            <p>如急需到账，请电话<a class="txt-blue" href={{cellPhone.cellPhoneATag}}>联系客服</a>。</p>
+        </div>
+    </div>
+</section>

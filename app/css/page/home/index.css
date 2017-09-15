@@ -1,0 +1,321 @@
+/*
+.page-home .page-index .mod-banner {
+    width: 100%;
+    height: .9rem;
+    position: relative;
+}
+*/
+
+.page-home .page-index .mod-slide {
+    position: relative;
+    width: 100%;
+    height: 1.1rem;
+}
+
+.page-home .page-index .mod-slide .slide-wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-home .page-index .mod-slide .slide-wrap > li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.page-home .page-index .mod-slide .slide-wrap > li a,
+.page-home .page-index .mod-slide .slide-wrap > li img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.page-home .page-index .mod-slide .slide-menu {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0.03rem;
+    font-size: 0;
+}
+
+.page-home .page-index .mod-slide .slide-menu > li {
+    display: inline-block;
+    width: 0.08rem;
+    height: 0.08rem;
+    background: #DBDBDB;
+    border-radius: 100%;
+    margin: 0 0.02rem;
+}
+
+.page-home .page-index .mod-slide .slide-menu > li.curr {
+    background: #FFF;
+}
+
+.mod-index-exp {
+    background: #121C25;
+}
+
+.mod-index-exp ul {
+    width: 100%;
+    display: table;
+    padding: 0.1rem 0;
+}
+
+.mod-index-exp ul li {
+    display: table-cell;
+    width: 33%;
+    text-align: center;
+    font-size: .12rem;
+}
+
+.mod-index-exp li .info {
+    font-size: 0.16rem;
+}
+
+.mod-index-exp li .info .iconfont {
+    font-size: 0.06rem;
+    vertical-align: 0.01rem;
+    margin-right: 0.03rem;
+}
+
+.mod-index-exp .low dd {
+    color: #41FFAD;
+}
+
+.mod-index-exp .high dd {
+    color: #E8003F;
+}
+
+/*
+.mod-index-exp li i {
+    display: inline-block;
+    width: 0.1rem;
+    height: 0.1rem;
+    padding-left: 0.05rem;
+
+}
+
+.mod-index-exp li i.arrow-up {
+    background: url("../../../images/arrow-up-red.png") left center no-repeat;
+    background-size: 0.09rem;
+}
+
+.mod-index-exp li i.arrow-down {
+    background: url("../../../images/arrow-down-green.png") left center no-repeat;
+    background-size: 0.09rem;
+}*/
+
+.mod-index-t {
+    background: #121C25;
+    height: 1.4rem;
+}
+
+.mod-index-t .has-border-b {
+    border-bottom: 0.01rem solid #1C262F;
+}
+
+.mod-index-t a {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    height: 0.7rem;
+    border-right: 0.01rem solid #1C262F;
+    padding: 0.15rem 0 0 0.15rem;
+}
+
+.mod-index-t a:nth-child(2),
+.mod-index-t a:last-child {
+    border-right: none;
+}
+
+.mod-index-t a i {
+    font-size: 0.12rem;
+    padding: 0.01rem 0.04rem;
+    color: #FFFFFF;
+    background: #E8003F;
+    border-radius: 0.02rem;
+    margin-right: 0.05rem;
+}
+
+.mod-index-t a b {
+    font-size: 0.12rem;
+    font-weight: normal;
+    color: #FFD900;
+    border: 0.01rem solid #F5C300;
+    border-radius: 0.02rem;
+    padding: 0 0.05rem;
+}
+
+.mod-index-topic {
+    background: #121C25;
+}
+
+.mod-index-topic .tab-title {
+    border-bottom: 0.01rem solid #1C262F;
+}
+
+.mod-index-topic .tab-title ul {
+    width: 100%;
+    display: table;
+}
+
+.mod-index-topic .tab-title li {
+    display: table-cell;
+    text-align: center;
+    line-height: 0.4rem;
+    padding: 0 0.3rem;
+    border-right: 0.01rem solid #1C262F;
+}
+
+.mod-index-topic .tab-title li:last-child {
+    border: none;
+}
+
+.mod-index-topic .tab-content > div {
+    display: none;
+}
+
+.mod-index-topic .act-clph .title-clph p,
+.mod-index-topic .act-cpdr .title-cpdr p {
+    color: #FFD900;
+    border-bottom: 0.02rem solid #FFD900;
+}
+
+.mod-index-topic .act-clph .con-clph,
+.mod-index-topic .act-cpdr .con-cpdr {
+    display: block;
+}
+
+.mod-index-topic .clph-list,
+.mod-index-topic .cpdr-list {
+    padding: 0 0.1rem;
+}
+
+.mod-index-topic .clph-list li {
+    border-bottom: 0.01rem solid #1C262F;
+    padding: 0.1rem 0;
+}
+
+.mod-index-topic .clph-list li:last-child {
+    border-bottom: none;
+}
+
+.mod-index-topic .clph-list a,
+.mod-index-topic .cpdr-list a {
+    padding: 0.10rem 0;
+    height: 0.6rem;
+    border-bottom: 0.01rem solid #1C262F;
+    display: block;
+    width: 100%;
+}
+
+.mod-index-topic .clph-list a > div,
+.mod-index-topic .cpdr-list a > div {
+    display: inline-block;
+    /*width: 31%;*/
+}
+
+.mod-index-topic .clph-list li > div.stock-name i {
+    border: 0.01rem solid #DB4E54;
+    background: #DB4E54;
+    border-radius: 0.02rem;
+    padding: 0 0.04rem;
+    line-height: 0.13rem;
+}
+
+.mod-index-topic .clph-list li > div.trade-buy a {
+    display: inline-block;
+    border: 0.01rem solid #FFD900;
+    border-radius: 0.02rem;
+    padding: 0 0.03rem;
+    vertical-align: 0.1rem;
+}
+
+.mod-index-topic .clph-list .list-detail span {
+    display: inline-block;
+}
+
+.mod-index-topic .clph-list li:nth-child(1) .list-icon {
+    background: url("../../../images/crown1.png") center center no-repeat;
+    background-size: 0.30rem;
+}
+
+.mod-index-topic .clph-list li:nth-child(2) .list-icon {
+    background: url("../../../images/crown2.png") center center no-repeat;
+    background-size: 0.30rem;
+}
+
+.mod-index-topic .clph-list li:nth-child(3) .list-icon {
+    background: url("../../../images/crown3.png") center center no-repeat;
+    background-size: 0.30rem;
+}
+
+.mod-index-topic .clph-list li:last-child,
+.mod-index-topic .cpdr-list li:last-child {
+    border-bottom: none;
+}
+
+.buy-icon {
+    width: 0.26rem;
+    line-height: 0.26rem;
+    display: block;
+    border-radius: 0.2rem;
+    text-align: center;
+}
+
+.buy-red {
+    background-color: #DB4E54;
+}
+
+.buy-blue {
+    background-color: #4E72DB;
+}
+
+.buy-yellow {
+    background-color: #DB9B4E;
+}
+
+
+.mod-app-download {
+    height: 0.5rem;
+}
+
+.mod-app-download > a {
+    display: block;
+    position: fixed;
+    bottom: 0.5rem;
+    height: 0.5rem;
+    width: 100%;
+    background: rgba(0, 0, 0, .5);
+    z-index: 100;
+}
+
+.mod-app-download > a .fl {
+    margin-left: 0.15rem;
+    padding-top: 0.04rem;
+}
+
+.mod-app-download > a .desc {
+    color: #FFFFFF;
+    font-size: 0.12rem;
+    padding-top: 0.07rem;
+}
+
+.mod-app-download > a .fl > img {
+    width: 0.42rem;
+    height: 0.42rem;
+}
+
+.mod-app-download > a .fr {
+    margin-right: 0.15rem;
+}
+
+.mod-app-download > a .fr .btn {
+    line-height: 0.34rem;
+    width: 0.8rem;
+    margin-top: 0.08rem;
+}

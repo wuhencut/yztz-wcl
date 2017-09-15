@@ -1,0 +1,88 @@
+<section class="page-trade">
+    <div class="page-trade-detail">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>策略详情</h3>
+                <!--<a href="#{{backURL}}" class="nav-left">-->
+                    <!--<i class="icon-back"></i>-->
+                <!--</a>-->
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="mod-strategy">
+            <div class="wrap">
+                <p class="mod-form-title">策略交易号</p>
+                <div class="item">
+                    JQ{{trade.id}}
+                    <a ng-if="schemeId == 0" href="#/agreementInvestor?tradeID={{trade.id}}&schemeId={{schemeId}}" class="txt-blue">合约协议</a>
+                    <a ng-if="schemeId > 0" href="#/agreementTDInvestor?tradeID={{trade.id}}&schemeId={{schemeId}}" class="txt-blue">合约协议</a>
+                    <!--<a href="#/agreementTDInvestor?tradeID={{trade.id}}" class="txt-blue">合约协议</a>-->
+                </div>
+                <p class="mod-form-title">交易合作</p>
+                <div class="item">
+                    <p>
+                        <label>投资人</label>{{trade.investorUsername}}（ID:{{trade.investorUserId}}）
+                    </p>
+                    <p>
+                        <label>点买人</label>{{trade.username}}（ID:{{trade.userId}}）
+                    </p>
+                </div>
+                <p class="mod-form-title">交易明细</p>
+                <div class="item">
+                    <ul class="trade-detail clearfix">
+                        <li>
+                            <label>股票名称</label>{{trade.stockName}}
+                        </li>
+                        <li>
+                            <label>交易本金</label>{{trade.money}}
+                        </li>
+                        <li>
+                            <label>买入价格</label>{{trade.buyPriceDeal.toFixed(2)}}
+                        </li>
+                        <li>
+                            <label>卖出价格</label>{{trade.sellPriceDeal.toFixed(2)}}
+                        </li>
+                        <li>
+                            <label>买入类型</label>即时成交
+                        </li>
+                        <li>
+                            <label>卖出类型</label>即时成交
+                        </li>
+                        <li>
+                            <label>买入时间</label>{{trade.dealTime | date:'yyyy-MM-dd'}}
+                        </li>
+                        <li>
+                            <label>卖出时间</label>{{trade.closeTime | date:'yyyy-MM-dd'}}
+                        </li>
+                        <li ng-if="schemeId > 0">
+                            <label>持仓天数</label>{{trade.holdDays}}个交易日
+                        </li>
+                        <li ng-if="schemeId == 0">
+                            <label>持仓天数</label>{{trade.holdDays}}天
+                        </li>
+                        <li>
+                            <label>交易数量</label>{{trade.volumeDeal}}
+                        </li>
+                    </ul>
+                    <ul class="trade-detail pt10 mt10 clearfix" style="border-top: 0.01rem solid #1C262F;">
+                        <li>
+                            <label>综合费</label>{{trade.serviceCharge.toFixed(2)}}
+                        </li>
+                    </ul>
+                </div>
+                <p class="mod-form-title">点买人盈亏分配</p>
+                <div class="item">
+                    <ul class="trade-detail clearfix">
+                        <!-- T+D，停牌股票的策略详情没有亏损赔付 -->
+                        <li>
+                            <label>策略盈亏</label>
+                            <span ng-if="trade.profitTotal > 0" class="txt-red">+{{trade.profitTotal.toFixed(2)}}</span>
+                            <span ng-if="trade.profitTotal < 0" class="txt-green">{{trade.profitTotal.toFixed(2)}}</span>
+                            <span ng-if="trade.profitTotal == 0" class="txt-white">0</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

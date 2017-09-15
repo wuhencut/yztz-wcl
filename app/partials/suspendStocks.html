@@ -1,0 +1,88 @@
+<section class="page-user">
+    <div class="page-my">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>停牌策略</h3>
+                <!--<a href="#/myHome" class="nav-left"><i class="icon-back"></i></a>-->
+                <back-menu></back-menu>
+                <a ng-click="reFresh()" class="nav-right"><i class="iconfont txt-center txt-white txt-s16">&#x3478;</i></a>
+            </div>
+        </header>
+        <div class="mod-strategy-group mt10">
+            <div class="strategy-stocks pl10 pr10" ng-if="suspendList.length > 0">
+                <a ng-click="toDetail(item)" class="single-stock" ng-repeat="item in suspendList">
+                    <div ng-if="item.schemeId == 0" style="height:0.6rem" class="pt10 pl5 pr5 bb-gray">
+                        <p class="fl">
+                            <span class="txt-s16">{{item.stockName}}</span>
+                            <i ng-if="item.quotePrice == 0 && item.status != 8" class="suspend-tip txt-center">已停牌</i>
+                            <i ng-if="item.status == 8" class="suspend-tip txt-center">已结算</i><br>
+                            <span class="txt-s14 txt-grey">{{item.stockCode}}</span>
+                        </p>
+                        <p class="fr" ng-if="!isHoliDay && isInTradeTime ">
+                            <span ng-if="item.status == 4 && item.quotePrice != 0 && item.dealTime < todayStartTime" ng-click="sale(item)" class="sell fr">卖出</span>
+                            <span ng-if="item.status !=4 && item.status != 8 && item.dealTime < todayStartTime" class="fr txt-yellow">{{tradeState[item.status]}}</span>
+                            <span ng-if="item.quotePrice != 0 && item.dealTime > todayStartTime" class="fr sell-disabled">卖出</span>
+                        </p>
+                        <p class="fr" ng-if="item.status == 8">
+                            <span style="line-height: 0.4rem;" class="fr txt-s20  iconfont">&#xe65e;</span>
+                        </p>
+                        <p ng-if="item.quotePrice != 0 && item.status != 8" class="fr">
+                            <span ng-if="isHoliDay || !isInTradeTime" class="fr txt-gray">非交易时段</span>
+                        </p>
+                        <!-- 9点到9点15分，行情数据接口为501，data为null的情况下-->
+                        <p ng-if="item.quotePrice == 0 && item.lastClosePrice == 0 && item.status != 8" class="fr">
+                            <span ng-if="isHoliDay || !isInTradeTime" class="fr txt-gray">非交易时段</span>
+                        </p>
+                    </div>
+                    <div ng-if="item.schemeId > 0" style="height:0.6rem" class="pt10 pl5 pr5 bb-gray">
+                        <p class="fl">
+                            <span class="txt-s16">{{item.stockName}}</span>
+                            <i ng-if="item.quotePrice == 0 && item.status != 8" class="suspend-tip txt-center">已停牌</i>
+                            <i ng-if="item.status == 8" class="suspend-tip txt-center">已结算</i><br>
+                            <span class="txt-s14 txt-grey">{{item.stockCode}}</span>
+                        </p>
+                        <p class="fr" ng-if="!TDIsHoliDay && isInTradeTime">
+                            <span ng-if="item.status == 4 && item.quotePrice != 0 && item.dealTime < todayStartTime" ng-click="sale(item)" class="sell fr">卖出</span>
+                            <span ng-if="item.status !=4 && item.status != 8 && item.dealTime < todayStartTime" class="fr txt-yellow">{{tradeState[item.status]}}</span>
+                            <span ng-if="item.quotePrice != 0 && item.dealTime > todayStartTime" class="fr sell-disabled">卖出</span>
+                        </p>
+                        <p class="fr" ng-if="item.status == 8">
+                            <span style="line-height: 0.4rem;" class="fr txt-s20  iconfont">&#xe65e;</span>
+                        </p>
+                        <p ng-if="item.quotePrice != 0 && item.status != 8" class="fr">
+                            <span ng-if="TDIsHoliDay || !isInTradeTime" class="fr txt-gray">非交易时段</span>
+                        </p>
+                        <!-- 9点到9点15分，行情数据接口为501，data为null的情况下-->
+                        <p ng-if="item.quotePrice == 0 && item.lastClosePrice == 0 && item.status != 8" class="fr">
+                            <span ng-if="TDIsHoliDay || !isInTradeTime" class="fr txt-gray">非交易时段</span>
+                        </p>
+                    </div>
+                    <ul class="txt-center">
+                        <li class="txt-left">
+                            <p class="txt-s14 txt-grey">当前价格</p>
+                            <p ng-if="item.quotePrice > 0" class="txt-s14">{{item.quotePrice.toFixed(2)}}</p>
+                            <p ng-if="item.quotePrice == 0 && item.lastClosePrice != 0" class="txt-s14">{{item.lastClosePrice.toFixed(2)}}</p>
+                            <p ng-if="item.quotePrice == 0 && item.lastClosePrice == 0" class="txt-s14 txt-white">— —</p>
+                        </li>
+                        <li>
+                            <p class="txt-s14 txt-grey">持仓市值</p>
+                            <p ng-if="item.holdMarketSum > 0" class="txt-s14">{{item.holdMarketSum.toFixed(2)}}</p>
+                            <p ng-if="item.holdMarketSum == 0" class="txt-s14 txt-white">— —</p>
+                        </li>
+                        <li>
+                            <p class="txt-s14 txt-grey">可卖数量</p>
+                            <p ng-if="item.quotePrice == 0 && item.lastClosePrice > 0" class="txt-s14">0</p>
+                            <p ng-if="item.quotePrice != 0" class="txt-s14">{{item.volumeHold}}</p>
+                            <p ng-if="item.quotePrice == 0 && item.lastClosePrice == 0" class="txt-s14 txt-white">— —</p>
+                        </li>
+                        <li class="txt-right">
+                            <p class="txt-s14 txt-grey">持仓数量<i ng-if="item.tradingRecordList.length>0" ng-click="showPartDeal(item);" class="icon-info"></i></p>
+                            <p class="txt-s14">{{item.volumeHold}}</p>
+                        </li>
+                    </ul>
+                </a>
+            </div>
+            <a style="display:block" ng-if="showNoData" class="no-data">暂无数据</a>
+        </div>
+    </div>
+</section>

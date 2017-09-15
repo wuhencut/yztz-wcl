@@ -1,0 +1,180 @@
+<section class="page-user">
+    <div class="page-my">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>我的策略组</h3>
+                <a href="#/myHome" class="nav-left"><i class="icon-back"></i></a>
+            </div>
+        </header>
+        <div class="mod-strategy-group pt20">
+            <p class="txt-center txt-s16 mb15">持仓盈亏(元)</p>
+
+            <p class="txt-s40 txt-red txt-center mb15" ng-if="initData.currentProfit > 0">+
+                {{initData.currentProfit}}</p>
+
+            <p class="txt-s40 txt-white txt-center mb15" ng-if="initData.currentProfit == 0">
+                {{initData.currentProfit}}</p>
+            <p class="txt-s40 txt-white txt-center mb15" ng-if="!initData.currentProfit">
+                — —</p>
+            <p class="txt-s40 txt-green txt-center mb15" ng-if="initData.currentProfit < 0">{{initData.currentProfit}}</p>
+            <p class="txt-center txt-s14 mb20">剩余操盘天数：<span class="txt-red">{{initData.availableDays}}</span>天</p>
+            <table class="strategy-info">
+                <tr>
+                    <td class="br-gray bb-gray"><p class="txt-grey">总点买金额(元)</p>
+                        <p ng-if="initData.money == 0">{{initData.money}}</p>
+                        <p ng-if="initData.money != 0">{{initData.money.toFixed(2)}}</p>
+                    </td>
+                    <td class="br-gray bb-gray"><p class="txt-grey">履约保证金(元)</p>
+
+                        <p>{{initData.lossPrincipal}}</p></td>
+                    <td class="bb-gray"><p class="txt-grey">递延费(元)</p>
+                        <p>{{initData.deferCharge}}</p></td>
+                </tr>
+                <tr>
+                    <td class="br-gray"><p class="txt-grey">总交易综合费(元)</p>
+
+                        <p>{{initData.serviceCharge}}</p></td>
+                    <td class="br-gray"><p class="txt-grey">当前市值(元)</p>
+                        <p>{{initData.marketValue}}</p>
+                    </td>
+                    <td>
+                        <p class="txt-grey">停牌市值(元)</p>
+                        <p>{{initData.suspendedValue}}</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="mod-strategy-operates">
+            <ul>
+                <li><span ng-click="addMoney();">追加点买金</span></li>
+                <li><span ng-click="addPrincipal();">追加保证金</span></li>
+                <li><span ng-click="applyClean();">申请清算</span></li>
+                <li><span ng-click="addDays();">期限续期</span></li>
+            </ul>
+        </div>
+        <div class="mod-menu">
+            <a class="bb-gray" ng-click="currentPosition();">
+                当前持仓<i class="mod-arrow-r"></i>
+            </a>
+            <a class="bb-gray" ng-click="tradeRecode();">
+                交易记录<i class="mod-arrow-r"></i>
+            </a>
+            <a href="#/historyStrategies" class="">
+                历史策略组<i class="mod-arrow-r"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<div class="db-bg" style="z-index:10000;" ng-show="showAddMoney">
+    <div class="operate-dialog">
+        <div class="strategy-dialog txt-black">
+            <p class="dialog-title pl10 txt-black txt-s16">追加总点买金额</p>
+
+            <div class="dialog-content pt20 pb20 pr10">
+                <p class="dialog-tips">
+                    <span class="input-tips">追加点买金额:</span>
+                    <input id="addTradeMoney" type="number" value="{{addMoneynum}}" ng-model="addMoneynum" style="width:100px;" ng-blur="loseBlur(addMoneynum)">
+                    <span style="width:30px;">万元</span>
+                </p>
+
+                <p class="dialog-tips">
+                    <span class="input-tips">支付履约保证金:</span>
+                    <span class="pl10 input-content" style="text-align: left">{{addMoneyPrincipal}}</span>
+                </p>
+
+                <p class="dialog-tips">
+                    <span class="input-tips">递延费:</span>
+                    <span class="pl10 input-content" style="text-align: left">{{addMoneyDefer}}</span>
+                </p>
+            </div>
+            <div class="dialog-operate">
+                <span ng-click="showAddMoney=false">取消</span>
+                <span style="border-right: none" ng-click="defineAddMoney();">确认</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="db-bg" style="z-index:10000;" ng-show="showAddPrincipal">
+    <div class="operate-dialog">
+        <div class="strategy-dialog txt-black">
+            <p class="dialog-title pl10 txt-black txt-s16">追加履约保证金</p>
+
+            <div class="dialog-content pt20 pb20 pr10">
+                <p class="dialog-tips">
+                    <span class="input-tips">当前市值:</span>
+                    <span class="pl10 input-content">{{initData.marketValue}}</span>
+                </p>
+
+                <p class="dialog-tips">
+                    <span class="input-tips">可用余额:</span>
+                    <span class="pl10 input-content">{{initData.availableMoney.toFixed(2)}}</span>
+                </p>
+
+                <p class="dialog-tips">
+                    <span class="input-tips">追加履约保证金:</span>
+                    <input type="number" value="{{addPrinc}}" ng-model="addPrinc">
+                </p>
+            </div>
+            <div class="dialog-operate">
+                <span ng-click="showAddPrincipal=false">取消</span>
+                <span style="border-right: none" ng-click="defineAddPrincipal();">确认</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="db-bg" style="z-index:10000;" ng-show="showApplyClean">
+    <div class="operate-dialog">
+        <div class="strategy-dialog txt-black">
+            <p class="dialog-title pl10 txt-black txt-s16">申请清算</p>
+
+            <div class="dialog-content pt10 pb10 pr15 pl15">
+                <p class="mb10">尊敬的用户您好：</p>
+
+                <p class="mb10">您当前申请提前清算，请确认所有持仓都已卖出，如持仓中有股票，将无法完成清算请求，请先平仓后再操作！否则系统默认直接发起卖出指令，请慎重选择！
+                </p>
+            </div>
+            <div class="dialog-operate">
+                <span ng-click="showApplyClean=false">取消</span>
+                <span style="border-right: none" ng-click="defineApplyClean();">确认</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="db-bg" style="z-index:10000;" ng-show="showAddDay">
+    <div class="operate-dialog">
+        <div class="strategy-dialog txt-black">
+            <p class="dialog-title pl10 txt-black txt-s16">期限续期</p>
+
+            <div class="dialog-content pt20 pb20 pr10">
+                <p class="dialog-tips">
+                    <span class="input-tips">点买金额:</span>
+                    <span class="pl10 input-content">{{initData.money.toFixed(2)}}</span>
+                </p>
+
+                <p class="dialog-tips">
+                    <span class="input-tips">履约保证金:</span>
+                    <span class="pl10 input-content">{{principalAddDay}}</span>
+                </p>
+
+                <p class="dialog-tips">
+                    <span class="input-tips">递延时间:</span>
+                    <select class="sele" ng-model="holdDays" ng-options="x for x in days">
+                    </select>
+                </p>
+                <p class="dialog-tips">
+                    <span class="input-tips">递延费:</span>
+                    <span class="pl10 input-content">{{deferAddDay}}</span>
+                </p>
+                <p ng-bind-html="tipsWord" class="txt-s12 txt-red txt-center"></p>
+            </div>
+            <div class="dialog-operate">
+                <span ng-click="showAddDay=false">取消</span>
+                <span style="border-right: none" ng-click="defineAddDay();">确认</span>
+            </div>
+        </div>
+    </div>
+</div>

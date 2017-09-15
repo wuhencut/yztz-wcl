@@ -1,0 +1,244 @@
+/*我的和策略组样式*/
+
+.page-user .page-my .strategy-stocks {
+    background: #121C25;
+}
+
+.page-user .page-my .mod-strategy-group .strategy-title {
+    height: 0.4rem;
+    position: relative;
+    display: block;
+}
+
+.page-user .page-my .mod-strategy-group .strategy-title .stock-code {
+    position: absolute;
+    left: 0.2rem;
+    top: 0.12rem;
+}
+
+.page-user .page-my .mod-strategy-group .strategy-title .time-limit {
+    position: absolute;
+    right: 0.38rem;
+    top: 0.1rem;
+}
+
+.page-user .page-my .mod-strategy-group .strategy-info {
+    border-top: 0.01rem solid #1C262F;
+    border-bottom: 0.01rem solid #1C262F;
+    height: 1.48rem;
+    width: 100%;
+}
+
+.page-user .page-my .mod-strategy-group .strategy-info td {
+    height: 0.74rem;
+    display: table-cell;
+}
+
+.page-user .page-my .mod-strategy-group .strategy-info td p {
+    text-align: center;
+    font-size: 0.14rem;
+}
+.page-user .page-my .mod-strategy-group .strategy-info td p:first-child {
+    font-size: 0.12rem;
+}
+
+.page-user .page-my .mod-strategy-operates ul {
+    height: 0.6rem;
+    width: 100%;
+    padding: 0.14rem 0.1rem 0.14rem 0;
+}
+
+.page-user .page-my .mod-strategy-operates li {
+    width: 25%;
+    float: left;
+    padding-left: 0.1rem;
+}
+
+.page-user .page-my .mod-strategy-operates li span {
+    display: block;
+    color: #121C25;
+    line-height: 0.3rem;
+    text-align: center;
+    font-size: 0.12rem;
+    background: #F5C300;
+    border-radius: 0.02rem;
+}
+
+/*table边框*/
+
+.br-gray {
+    border-right: 0.01rem solid #1C262F;
+}
+
+.bb-gray {
+    border-bottom: 0.01rem solid #1C262F;
+}
+
+.bt-light-gray{
+    border-top: 0.01rem solid #1F2F3F;
+}
+
+.bb-light-gray{
+    border-bottom: 0.01rem solid #1F2F3F;
+}
+
+.page-user .page-my .mod-strategy-operates .db-bg {
+    z-index: 1000;
+}
+
+/*策略组的所有弹窗样式*/
+
+.operate-dialog {
+    width: 100%;
+    position: fixed;
+    top: 1.5rem;
+}
+
+.operate-dialog .strategy-dialog {
+    width: 3rem;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border-radius: 0.08rem;
+}
+
+.operate-dialog .strategy-dialog .dialog-title {
+    line-height: 0.4rem;
+    text-align: left;
+    border-bottom: 0.01rem solid #CCCCCC;
+    color: #000000;
+}
+
+.operate-dialog .strategy-dialog .dialog-content {
+    position: relative;
+}
+
+.operate-dialog .strategy-dialog .dialog-content .dialog-tips {
+    height: 0.3rem;
+    padding-top: 0.04rem;
+}
+
+.operate-dialog .strategy-dialog .dialog-content .dialog-tips span {
+    width: 40%;
+    display: inline-block;
+}
+
+.operate-dialog .strategy-dialog .dialog-content .input-tips {
+    font-size: 0.14rem;
+    text-align: right;
+}
+
+.operate-dialog .strategy-dialog .dialog-content .input-content {
+    text-align: left;
+    position: relative;
+}
+
+
+.operate-dialog .strategy-dialog .dialog-content p input,
+.operate-dialog .strategy-dialog .dialog-content .dialog-tips .sele{
+    border: 0.01rem solid #CCCCCC;
+    width: 1.4rem;
+    margin-left: 0.1rem;
+    border-radius: 0.02rem;
+}
+
+.operate-dialog .strategy-dialog .dialog-operate {
+    width: 100%;
+    height: 0.5rem;
+    border-top: 0.01rem solid #CCCCCC;
+}
+
+.operate-dialog .strategy-dialog .dialog-operate span {
+    float: left;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 1.5rem;
+    line-height: 0.49rem;
+    text-align: center;
+    border-right: 0.01rem solid #CCCCCC;
+    color: #DC013E;
+    font-size: 0.16rem;
+}
+
+.operate-dialog .strategy-dialog .dialog-content .option-change {
+    margin-left: -0.22rem;
+    width: 0.22rem;
+    line-height: 0.2rem;
+    text-align: center;
+    font-size: 0.08rem;
+    color: #ABA7A7;
+    border-left: 0.01rem solid #CCCCCC;
+    vertical-align: 1px;
+}
+
+.operate-dialog .strategy-dialog .dialog-content .days-choice {
+    position: absolute;
+    top: 1.04rem;
+    right: 0.3rem;
+    width: 1.4rem;
+    border: 0.01rem solid #CCCCCC;
+    border-radius: 0.02rem;
+    background-color: #FFFFFF;
+}
+
+.operate-dialog .strategy-dialog .dialog-content .days-choice .days30 {
+    width: 1.4rem;
+    line-height: 0.2rem;
+    font-size: 0.14rem;
+}
+
+/*策略详情*/
+
+.mod-strategy-group .strategy-stocks .single-stock {
+    display: block;
+    box-sizing: border-box;
+    border-bottom: 0.01rem solid #1C262F;
+}
+
+.mod-strategy-group .strategy-stocks .single-stock .suspend-title {
+    height: 0.6rem;
+    border-bottom: 0.01rem solid #1C262F;
+}
+
+.mod-strategy-group .strategy-stocks .single-stock:last-child {
+    border: none;
+}
+
+.mod-strategy-group .strategy-stocks .single-stock ul {
+    display: table;
+    height: 0.6rem;
+    width: 100%;
+    padding-right: 0.05rem;
+}
+
+.mod-strategy-group .strategy-stocks .single-stock li {
+    display: table-cell;
+    height: 0.6rem;
+    padding: 0.1rem 0 0 0.05rem;
+}
+
+.mod-strategy-group .strategy-stocks .single-stock .sell {
+    width: 0.6rem;
+    line-height: 0.3rem;
+    color: #121C25;
+    text-align: center;
+    background-color: #F5C300;
+    border-radius: 0.03rem;
+}
+
+.mod-strategy-group .strategy-stocks .single-stock .sell-disabled{
+    width: 0.6rem;
+    line-height: 0.3rem;
+    color: #121C25;
+    text-align: center;
+    background-color: #CCCCCC;
+    border-radius: 0.03rem;
+}
+
+.mod-strategy-group .strategy-stocks .single-stock .suspend-tip {
+    width: 0.4rem;
+    line-height: 0.14rem;
+    font-size: 0.12rem;
+    border: 0.01rem solid #F5C300;
+    color: #F5C300;
+    margin-left: 0.05rem;
+}

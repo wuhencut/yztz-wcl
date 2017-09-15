@@ -1,0 +1,39 @@
+<section class="page-user">
+    <div class="page-phoneBind">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>手机绑定</h3>
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="mod-form-wrap mt20">
+            <div class="mod-form">
+                <label>新手机号</label><input ng-model="mobile" type="tel" class="inp" placeholder="请输入手机号码"/>
+            </div>
+            <div class="mod-form">
+                <span ng-if="time==0" class="tip-r" ng-click="getImgCode();">获取验证码</span>
+                <span ng-if="time!=0" class="tip-r txt-grey">{{time}}秒后重发</span>
+                <label class="pr15">验证码</label><input ng-model="checkCode" type="tel" class="inp" maxlength="6" placeholder="请输入验证码" style="width: 1.2rem"/>
+            </div>
+        </div>
+        <div class="pt30 pl15 pr15">
+            <button class="btn btn-{{btnState}}" ng-disabled="btnDisabled" ng-click="bind();">绑定</button>
+        </div>
+        <p class="txt-center pt15 txt-grey">如有问题，请<a class="txt-blue" href="tel:4008888566">联系客服</a></p>
+    </div>
+</section>
+<dialog ng-show="showCodeDialog">
+    <div class="mod-img-code-wrap">
+        <p class="txt-black txt-center pt50">获取验证码前，请您先填写下面数字</p>
+        <div class="content">
+            <img class="img-code" ng-click="refreshCode();" ng-src="/sso/checkCode.json?v={{temptimes}}">
+            <input class="inp-code ml10" ng-model="$parent.imgCode" type="text" maxlength="4" placeholder="请输入" >
+        </div>
+        <footer class="pt10">
+            <ul>
+                <li ng-click="closeDialog();">取消</li>
+                <li ng-click="sendCode();">确定</li>
+            </ul>
+        </footer>
+    </div>
+</dialog>

@@ -1,0 +1,117 @@
+.page-pay .page-withdraw .mod-withdraw {
+    color: #FFFFFF;
+}
+
+.page-pay .page-withdraw .mod-withdraw .balance {
+    font-size: 0.16rem;
+}
+
+.page-pay .page-withdraw .mod-withdraw .balance,
+.page-pay .page-withdraw .mod-withdraw .bank-card {
+    background: #121C25;
+}
+
+/*.page-pay .page-withdraw .mod-withdraw .bank-card {
+    border-top: 0.01rem solid #1C262F;
+    border-bottom: 0.01rem solid #1C262F;
+}*/
+
+.page-pay .page-withdraw .mod-withdraw .balance,
+.page-pay .page-withdraw .mod-withdraw .bank-card {
+    padding: 0 0.15rem;
+}
+
+.page-pay .page-withdraw .mod-withdraw .balance {
+    line-height: 0.6rem;
+    /* border-bottom: 0.01rem solid #1C262F;*/
+}
+
+.page-pay .page-withdraw .mod-withdraw .tips {
+    padding: 0 0.15rem;
+    line-height: 0.5rem;
+}
+
+.page-pay .page-withdraw .mod-withdraw .bank-card {
+    position: relative;
+    line-height: 0.5rem;
+    padding: 0 0.15rem;
+}
+
+.page-pay .page-withdraw .mod-withdraw .bank-card .bank-icon {
+    width: 0.32rem;
+    height: 0.32rem;
+}
+
+.page-pay .page-withdraw .mod-prompt {
+    width: 2.8rem;
+}
+
+.mod-choose-bank-card .title,
+.mod-choose-bank-card .footer {
+    line-height: 0.5rem;
+    text-align: center;
+}
+
+.mod-choose-bank-card .title {
+    border-bottom: 0.01rem solid #ECECEC;
+    color: #333;
+}
+
+.mod-choose-bank-card .footer {
+    border-top: 0.01rem solid #ECECEC;
+}
+
+.mod-choose-bank-card .bank-card-list > li {
+    position: relative;
+    padding: 0 0.15rem;
+    height: 0.6rem;
+    color: #666666;
+    border-bottom: 0.01rem solid #ECECEC;
+}
+
+.mod-choose-bank-card .bank-card-list > li:last-child {
+    border-bottom: none;
+}
+
+.mod-choose-bank-card .bank-card-list > li > span:first-child {
+    padding: 0.15rem 0.12rem 0 0;
+}
+
+.mod-choose-bank-card .footer {
+    color: #E34C4D;
+}
+
+.mod-choose-bank-card .add-bank-card {
+    display: block;
+    line-height: 0.6rem;
+    padding-left: 0.5rem;
+    background: url("../../../images/disabled-add.png") 0.15rem no-repeat;
+    background-size: 0.24rem;
+    color: #666666;
+    border-top: 0.01rem solid #ECECEC;
+}
+
+.balance-area {
+    height: 1.8rem;
+    padding-top: 0.2rem;
+}
+
+.balance-area .balance-part {
+    display: table;
+    width: 100%;
+    padding: 0.3rem 0.5rem;
+}
+
+.balance-area .balance-part div {
+    display: table-cell;
+    width: 50%;
+}
+
+.balance-area .balance-part .can-with {
+    border-right: 0.01rem solid #ECECEC;
+}
+
+
+
+
+

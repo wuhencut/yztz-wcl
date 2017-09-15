@@ -1,0 +1,41 @@
+
+.page-trade .page-trade-agree .mod-agree {
+    padding: 0 0.15rem;
+    font-size: 0.12rem;
+}
+
+.page-trade .page-trade-agree .mod-agree .tips {
+    padding: .2rem 0 .15rem;
+    color: #999999;
+}
+
+/*.page-trade .page-trade-agree .mod-agree .read-agreement p {
+    color: #aaa;
+}
+
+.page-trade .page-trade-agree .mod-agree .read-agreement .agreement-do {
+    margin-top: .3rem;
+}
+
+.page-trade .page-trade-agree .mod-agree .read-agreement .agreement {
+    margin: 0.05rem 0 0 .1rem;
+}
+
+.page-trade .page-trade-agree .mod-agree .read-agreement .agreement p a {
+    font-size: .13rem;
+    color: #3183E8;
+}*/
+
+.page-trade .page-trade-agree .wrap-btn {
+    height: 0.75rem;
+}
+
+.page-trade .page-trade-agree .wrap-btn .wrap {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: 0.01rem solid #1C262F;
+    background: #0E1821;
+    padding: 0.15rem;
+}

@@ -1,0 +1,65 @@
+﻿<section class="page-trade">
+    <div class="page-trade-result">
+        <header class="page-header">
+            <div class="header-wrap has-border-b">
+                <h3>
+                    <span>模拟炒股</span>
+                </h3>
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="trade-money bgc-black pb15">
+            <div>
+                <ul>
+                    <li>
+                        体验总金额：<i class="txt-orange">{{simAsset[0]}}</i>
+                    </li>
+                    <li>
+                        持仓盈亏：<i class="txt-orange">{{simAsset[1]}}</i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="trade-menu">
+            <div>
+                <ul>
+                    <li class="m-buy"><a href="#/simulateTrade?backURL=/index">点买</a></li>
+                    <li class="m-sell"><a href="#/simulateTradeSell?backURL=/index">点卖</a></li>
+                    <li class="m-result"><a href="#/simulateTradeResult">结算</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mod-result">
+            <div ng-if="settleList.length > 0" class="wrap">
+                <a ng-click="toDetail(settle.id)" ng-repeat="settle in settleList">
+                    <ul>
+                        <li>
+                            <p class="txt-s14">{{settle.stockName}}</p>
+                            <p class="txt-s12 txt-grey">{{settle.volumeDeal}}股</p>
+                        </li>
+                        <li class="txt-center txt-s12" style="width: 34%">
+                            <p class="txt-s14">交易盈亏</p>
+                            <p ng-if="settle.profitTotal>0" class="txt-red">+{{settle.profitTotal.toFixed(2)}}</p>
+                            <p ng-if="settle.profitTotal<0" class="txt-green">{{settle.profitTotal.toFixed(2)}}</p>
+                            <p ng-if="settle.profitTotal==0">{{settle.profitTotal.toFixed(2)}}</p>
+                        </li>
+                        <li ng-if="settle.profitShare>0" class="txt-right txt-s12">
+                            <p class="txt-s14">盈亏分配</p>
+                            <p class="txt-red">+{{settle.profitShare.toFixed(2)}}</p>
+                        </li>
+                        <li ng-if="settle.profitShare<0" class="txt-right txt-s12">
+                            <p class="txt-s14">亏损赔付</p>
+                            <p class="txt-green">{{settle.profitShare.toFixed(2)}}</p>
+                        </li>
+                        <li ng-if="settle.profitShare==0" class="txt-right txt-s12">
+                            <p class="txt-s14">盈亏分配</p>
+                            <p>0.00</p>
+                        </li>
+                    </ul>
+                </a>
+            </div>
+            <a href="#/simulateTrade" ng-if="settleList.length == 0" class="TD-no-data">暂无数据,立即发起点买</a>
+        </div>
+    </div>
+</section>
+<common-menu></common-menu>

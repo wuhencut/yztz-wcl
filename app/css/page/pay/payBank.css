@@ -1,0 +1,45 @@
+.page-pay .page-pay-bank .mod-bank,
+.page-pay .page-pay-bank .mod-card {
+    color: #999999;
+}
+
+.page-pay .page-pay-bank .mod-bank .balance {
+    padding: 0 0.15rem;
+    line-height: 0.6rem;
+    font-size: 0.16rem;
+    background: #121C25;
+    color: #ffffff;
+}
+
+.page-pay .page-pay-bank .mod-bank .username {
+    padding: 0.1rem;
+}
+
+.page-pay .page-pay-bank .mod-bank .choose-bank {
+    display: block;
+    position: relative;
+    font-size: 0.16rem;
+    background: #FFFFFF;
+    padding: 0.2rem 0.15rem;
+    border-top: 0.01rem solid #ECECEC;
+    border-bottom: 0.01rem solid #ECECEC;
+}
+
+.page-pay .page-pay-bank .mod-card .wrap {
+    margin-top: 0.1rem;
+    line-height: 0.44rem;
+    background: #FFFFFF;
+    padding: 0 0.15rem;
+    border-top: 0.01rem solid #ECECEC;
+    border-bottom: 0.01rem solid #ECECEC;
+}
+
+.page-pay .page-pay-bank .mod-card .desc {
+    padding: 0.15rem;
+}
+
+.copy-target .copy {
+    background: #0E1821;
+    border: none;
+    width: 1.15rem;
+}

@@ -1,0 +1,81 @@
+<section class="page-trade">
+    <div class="page-trade-apply">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>T+D点买A股</h3>
+                <!--<a href="#/TDTrade" class="nav-left">
+                    <i class="icon-back"></i>
+                </a>-->
+                <back-menu></back-menu>
+                <a href="#/TDTradeRule" class="nav-right">规则</a>
+            </div>
+        </header>
+        <div class="mod-apply mt15">
+            <div class="choose-{{type}}">
+                <div class="choose-type bgc-black">
+                    <ul>
+                        <li class="apply-money" ng-click = "type='money'"><span>点买金额</span></li>
+                        <li class="other-money" ng-click = "type='other'"><span>其他金额</span></li>
+                    </ul>
+                </div>
+                <div class="bgc-black mod-choose-money pt20 pb20 pr15 pl15 txt-gray">
+                    <ul class="clearfix mod-box">
+                        <li ng-repeat="m in tradeMoneyList" ng-class="{curr:currentIndex==$index}" ng-click="chooseMoney($index, m.value);">{{m.text}}</li>
+                    </ul>
+                </div>
+                <div class="mod-other-money">
+                    <div class="bgc-black pr15 pl10">
+                        <label class="fr txt-s16">万元</label>
+                        <input type="number" class="inp" placeholder="最少1万，最多{{maxMoney}}万" style="width:2.1rem" ng-model="otherMoney">
+                    </div>
+                    <p class="txt-grey txt-s12 pt10 pl15">注：输入的点买金额必须是1万的整数倍</p>
+                </div>
+            </div>
+            <div class="bgc-black mod-form-apply mt15">
+                <div class="item choose-date">
+                    <div class="fr">
+                        <span ng-repeat="m in holdDaysList" ng-class="{curr:dayIndex==$index}" ng-click="chooseDay($index, m.value);">T+{{m.day}}</span>
+                    </div>
+                    <label>持仓时间<i class="icon-info ml10" ng-click="tipHoldDay();"></i></label>
+                </div>
+                <div class="item clearfix">
+                    <span class="fr stop-high clearfix txt-grey">
+                        <span>{{initData.quitGainRatio}}%</span>
+                    </span>
+                    <label>触发止盈<i class="icon-info ml10" ng-click="tips('触发止盈','当合作交易品种的浮动盈亏达到特定数值时，由投资人即时卖出交易品种全部持有数量进行止盈。');"></i></label>
+                </div>
+                <div class="item clearfix">
+                    <span class="fr stop-low clearfix txt-grey">
+                        <span>{{initData.quitLossRatio}}%</span>
+                    </span>
+                    <label>触发止损<i class="icon-info ml10" ng-click="tips('触发止损','当合作交易品种的浮动盈亏达到特定数值时，由投资人即时卖出交易品种全部持有数量进行止损。');"></i></label>
+                </div>
+            </div>
+            <div class="bgc-black mod-form-apply mt10">
+                <div class="item">
+                    <span class="fr clearfix txt-grey">
+                        <span>{{initData.deferConditionRatio}}%</span>
+                    </span>
+                    <label>递延条件<i class="icon-info ml5" ng-click="tips('递延条件','当可操盘资金低于递延条件时，只能点卖不能点买。');"></i></label>
+                </div>
+                <div class="item">
+                    <span class="fr clearfix txt-grey">
+                        <span>{{initData.profitShare}}%</span>
+                    </span>
+                    <label>盈利分成<i class="icon-info ml5" ng-click="tipProfitSharing();"></i></label>
+                </div>
+            </div>
+            <div class="mt15 txt-grey txt-s12 ml10 mb15 mr10">
+                <p>交易规则</p>
+                <p>点买须知：单只股票金额不能超过{{initData.maxMoneyOneStock}}；</p>
+                <p>交易限制：不得购买S、ST、*ST、S*ST、SST、以及被交易所特别处理的股票；</p>
+                <p>收益分配：操盘利润{{initData.profitShare}}%归点买人，{{initData.dealing}}%归投资人。</p>
+            </div>
+        </div>
+        <div class="wrap-btn">
+            <div class="wrap">
+                <button class="btn btn-orange"  ng-click='to();'>下一步</button>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,99 @@
+<section class="page-mine">
+    <div class="page-mine-list">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>我的自选</h3>
+                <a href="#/mineModify" class="nav-left" ng-if="mineList.length!=0">编辑</a>
+                <a href="#/mineSearch?backURL=/mine" class="nav-right"><i class="icon-search"></i></a>
+            </div>
+        </header>
+        <div class="mod-if bgc-black mt15">
+            <ul>
+                <li ng-repeat="quote in defaultList">
+                    <dl ng-if="quote.diff>0" class="high">
+                        <dt>{{quote.stockName}}</dt>
+                        <dd class="info"><i class="iconfont txt-s10">&#xe601;</i>{{quote.price}}</dd>
+                        <dd>+{{quote.diff}}&nbsp;&nbsp;+{{quote.rote}}%</dd>
+                    </dl>
+                    <dl ng-if="quote.diff<0" class="low">
+                        <dt>{{quote.stockName}}</dt>
+                        <dd class="info"><i class="iconfont">&#xe60d;</i>{{quote.price}}</dd>
+                        <dd>{{quote.diff}}&nbsp;&nbsp;{{quote.rote}}%</dd>
+                    </dl>
+                    <dl ng-if="quote.diff==0" class="high">
+                        <dt>{{quote.stockName}}</dt>
+                        <dd class="info"><i class="iconfont txt-s10">&#xe601;</i>{{quote.price}}</dd>
+                        <dd>{{quote.diff}}&nbsp;&nbsp;{{quote.rote}}%</dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div class="mod-stock-add" ng-if="dataLoaded && mineList.length==0">
+            <a href="#/mineSearch?backURL=/mine">暂无股票 点击添加</a>
+        </div>
+        <div class="mod-stock mt15" ng-if="dataLoaded && mineList.length>0">
+            <table>
+                <colgroup>
+                    <col>
+                    <col width="30%">
+                    <col width="45%">
+                </colgroup>
+                <tr>
+                    <td>股票名称</td>
+                    <td class="txt-right">当前价</td>
+                    <td>涨跌幅</td>
+                </tr>
+                <tr ng-repeat="obj in mineList" ng-click="sureStock(obj.stockCode);">
+                    <td class="frontIcon"><i>{{obj.stockClass}}</i>{{obj.stockName}}<p class="stock-code">{{obj.stockCode}}</p></td>
+                    <td ng-if="obj.price>0" class="txt-right price">
+                        <span ng-if="obj.diff>0">{{obj.price}}</span>
+                        <span ng-if="obj.diff<0">{{obj.price}}</span>
+                        <span ng-if="obj.diff==0">{{obj.price}}</span>
+                    </td>
+                    <td ng-if="obj.price==0" class="txt-right price">
+                        <span class="txt-grey">{{obj.closePrice}}</span>
+                    </td>
+                    <td ng-if="obj.price>0" class="limit">
+                        <span ng-if="obj.diff>0" class="high">+{{obj.rote}}%</span>
+                        <span ng-if="obj.diff<0" class="low">{{obj.rote}}%</span>
+                        <span ng-if="obj.diff==0" class="same">{{obj.rote}}%</span>
+                    </td>
+                    <td ng-if="obj.price==0" class="limit">
+                        <span class="same txt-s14">停牌</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <footer class="page-footer">
+            <div class="footer-wrap">
+                <ul>
+                    <li>
+                        <a href="#/index" class="nav-home">
+                            <span></span>首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/trade?backURL=/mine" class="nav-trade">
+                            <span></span>交易
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/mine" class="nav-mine">
+                            <span></span>自选
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/discover" class="nav-discover">
+                            <span></span>发现
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/myHome" class="nav-user">
+                            <span></span>我的
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</section>

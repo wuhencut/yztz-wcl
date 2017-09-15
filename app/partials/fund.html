@@ -1,0 +1,96 @@
+<section class="page-pay">
+    <div class="page-fund">
+        <header class="page-header">
+            <div class="header-wrap has-border-b">
+                <h3>资金明细 </h3>
+                <!--<a href="#/myHome" class="nav-left"><i class="icon-back"></i></a>-->
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="mod-fund">
+            <div ng-if="fundList.length > 0">
+                <div ng-repeat="fund in fundList" class="wrap">
+                    <div class="info clearfix" ng-click="showCurrFundDetail(fund.id);">
+                        <dl class="info-l">
+                            <dt>{{fund.explain}}</dt>
+                            <dd ng-if="currType != 'charge' && currType != 'withdraw'">{{fund.time | date:'yyyy/MM/dd HH:mm:ss'}}
+                            </dd>
+                            <dd ng-if="(currType == 'charge' || currType == 'withdraw')">{{fund.disposeTime | date:'yyyy/MM/dd HH:mm:ss'}}
+                            </dd>
+                            <dd ng-if="(currType == 'all')">{{(fund.disposeTime?fund.disposeTime:fund.requestTime) | date:'yyyy/MM/dd HH:mm:ss'}}
+                            </dd>
+                        </dl>
+                        <dl class="info-r">
+                            <dt ng-if="fund.type==1">+{{fund.money.toFixed(2)}}</dt>
+                            <dt ng-if="fund.type==2">-{{fund.money.toFixed(2)}}</dt>
+                            <dd ng-if="((currType == 'charge' && fund.status == 0) || (currType == 'all' && fund.explain != '提现取出' && fund.status == 0))">未处理</dd>
+                            <dd ng-if="fund.status == 1" class="txt-orange">成功</dd>
+                            <dd ng-if="fund.status == 2" class="txt-grey">失败</dd>
+                            <dd ng-if="fund.status == 3">已取消</dd>
+                            <dd ng-if="fund.status == 4">处理中</dd>
+                        </dl>
+                    </div>
+                    <dd ng-if="(currType == 'withdraw' && fund.status == 0) || (currType == 'all' && fund.explain=='提现取出'&&fund.status == 0)" class="cancel-outcome" ng-click="cancelWithdraw(fund.id);">取消</dd>
+                    <div ng-if="fund.id == currFund" class="detail">
+                        <div ng-if="fund.explain == '提现取出'" class="mod-pay-detail">
+                            <ul ng-class="{'process-begin':(fund.status == 0), 'process-doing':(fund.status == 4), 'process-succ':(fund.status == 1), 'process-fail':(fund.status == 2),'process-cancel':(fund.status == 3)}">
+                                <li class="begin">
+                                    <div class="line"></div>
+                                    <dl>
+                                        <dt>提现</dt>
+                                        <dd>{{ fund.requestTime | date : 'yyyy/MM/dd'}}</dd>
+                                    </dl>
+                                </li>
+                                <li class="doing">
+                                    <div class="line"></div>
+                                    <dl>
+                                        <dt>处理中</dt>
+                                        <dd ng-if="fund.status == 4">{{fund.requestTime | date : 'yyyy/MM/dd'}}</dd>
+                                        <dd ng-if="fund.status == 1 || fund.status == 2 || fund.status == 3">{{fund.disposeTime | date : 'yyyy/MM/dd'}}</dd>
+                                    </dl>
+                                </li>
+                                <li class="done">
+                                    <div class="line"></div>
+                                    <dl ng-if="fund.status != 1 && fund.status != 2 && fund.status != 3">
+                                        <dt>提现成功</dt>
+                                        <dd></dd>
+                                    </dl>
+                                    <dl ng-if="fund.status == 1">
+                                        <dt>提现成功</dt>
+                                        <dd>{{fund.disposeTime | date:'yyyy/MM/dd'}}</dd>
+                                    </dl>
+                                    <dl ng-if="fund.status == 2">
+                                        <dt>提现失败</dt>
+                                        <dd>{{fund.disposeTime | date:'yyyy/MM/dd'}}</dd>
+                                    </dl>
+                                    <dl ng-if="fund.status == 3">
+                                        <dt>已取消</dt>
+                                        <dd>{{fund.disposeTime | date:'yyyy/MM/dd'}}</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                        <p ng-if="currType == 'withdraw'" class="pt10 txt-grey">提现账户:{{fund.detail}}</p>
+                        <p ng-if="currType == 'withdraw' && fund.status == 3" class="pt10 txt-s12 pb10 txt-gray">详情：您已取消提现，提现金额已返还至你的账户余额。</p>
+                        <!--<p ng-if="currType != 'withdraw'||(currType!='all'&&fund.type == 2&&fund.explain == '提现取出'" class="txt-s12 txt-grey">详情：{{fund.detail}}</p>-->
+                        <p ng-if="fund.explain != '提现取出'" class="txt-s12 txt-grey">详情：{{fund.detail}}</p>
+
+                    </div>
+                </div>
+                <div ng-if="currPage != totalPage" class="pt10">
+                    <div class="mod-more" ng-click="getFundDetailList(fundTypeList[currType].value, fundTypeList[currType].explain, (currPage+1));">
+                        加载更多
+                    </div>
+                </div>
+            </div>
+            <div ng-if="fundList.length == 0" class="mod-no-data">暂无数据</div>
+        </div>
+    </div>
+    <div class="fund-dialog" >
+        <ul>
+            <li class="{{currType}}" ng-repeat="(key, value) in fundTypeList" ng-click="confirmFundType(key);">
+                <span class="{{key}}">{{value.text}}</span>
+            </li>
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,23 @@
+<section class="page-aliPay">
+    <div class="mod-aliPay">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>支付宝账户认证</h3>
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="ali-pay pl15 pr15 mt10 txt-s14 bgc-black bt-light-gray bb-light-gray">
+            <p class="bb-gray"><span class="ali-options">支付宝账号</span><input ng-model="alipayAccount" type="text" class="inp" placeholder="请输入支付宝账号"></p>
+            <p class="bb-gray"><span class="ali-options">充值金额</span><input ng-model=" tradeAmount" type="text" class="inp" placeholder="请输入金额"></p>
+            <p><span class="ali-options">支付宝订单号</span><input ng-model="tradeNo" type="text" class="inp" placeholder="请输入支付宝订单号"></p>
+        </div>
+        <div class="ali-tips pl15 txt-s12 pr15 txt-grey pt5">
+            <p>提示：</p>
+            <p>1.支付宝订单号获取方式：登录支付宝，查看交易记录 - 充值记录（必须是24小时内充值记录），查看订单号。</p>
+            <p class="mt5">2.输入订单号，认证通过后，可以提高支付宝到账时间。</p>
+        </div>
+        <div class="ali-footer">
+            <div ng-click="submitAliPay()" class="btn btn-{{btnState}} txt-black txt-s16">提交</div>
+        </div>
+    </div>
+</section>

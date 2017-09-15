@@ -1,0 +1,31 @@
+/*
+基本样式，页面的基本定义，默认样式初始化
+*/
+@import 'base.css';
+/*@import url(base.css);*/
+/*
+通用样式，每个模块独立，不会相互干扰，每一个模块有自己的命名方式，实现独立功能
+*/
+@import url(box.css);
+@import url(text.css);
+@import url(button.css);
+@import url(input.css);
+@import url(icon.css);
+@import url(iconfont.css);
+@import url(dialog.css);
+/*
+公用模块样式
+*/
+@import url(header.css);
+@import url(footer.css);
+@import url(common.css);
+/*
+页面样式，每个页面的独立布局样式，每个页面相互独立，不会相互干扰，每一个页面有自己的命名空间
+
+首页：page-home
+---- page-index 首页
+
+我的：page-user
+---- page-my 用户中心
+ */
+

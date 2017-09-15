@@ -1,0 +1,194 @@
+/*
+padding margin 布局单位，用于微调修正排版
+*/
+.pt5 {
+    padding-top: 0.05rem;
+}
+
+.pt10 {
+    padding-top: 0.1rem;
+}
+
+.pt15 {
+    padding-top: 0.15rem;
+}
+
+.pt20 {
+    padding-top: 0.2rem;
+}
+
+.pt30 {
+    padding-top: 0.30rem;
+}
+
+.pt50 {
+    padding-top: 0.5rem;
+}
+
+.pb5 {
+    padding-bottom: 0.05rem;
+}
+
+.pb10 {
+    padding-bottom: 0.1rem;
+}
+
+.pb15 {
+    padding-bottom: 0.15rem;
+}
+
+.pb20 {
+    padding-bottom: 0.2rem;
+}
+
+.pb30 {
+    padding-bottom: 0.3rem;
+}
+
+.pb50 {
+    padding-bottom: 0.5rem;
+}
+
+.pl5 {
+    padding-left: 0.05rem;
+}
+
+.pl10 {
+    padding-left: 0.1rem;
+}
+
+.pl15 {
+    padding-left: 0.15rem;
+}
+
+.pl20 {
+    padding-left: 0.2rem;
+}
+
+.pl30 {
+    padding-left: 0.3rem;
+}
+
+.pl50 {
+    padding-left: 0.5rem;
+}
+
+.pr5 {
+    padding-right: 0.05rem;
+}
+
+.pr10 {
+    padding-right: 0.1rem;
+}
+
+.pr15 {
+    padding-right: 0.15rem;
+}
+
+.pr20 {
+    padding-right: 0.2rem;
+}
+
+.pr30 {
+    padding-right: 0.3rem;
+}
+
+.pr50 {
+    padding-right: 0.5rem;
+}
+
+.mt5 {
+    margin-top: 0.05rem;
+}
+
+.mt10 {
+    margin-top: 0.1rem;
+}
+
+.mt15 {
+    margin-top: 0.15rem;
+}
+
+.mt20 {
+    margin-top: 0.2rem;
+}
+
+.mt30 {
+    margin-top: 0.3rem;
+}
+
+.mt50 {
+    margin-top: 0.5rem;
+}
+
+.mb5 {
+    margin-bottom: 0.05rem;
+}
+
+.mb10 {
+    margin-bottom: 0.1rem;
+}
+
+.mb15 {
+    margin-bottom: 0.15rem;
+}
+
+.mb20 {
+    margin-bottom: 0.2rem;
+}
+
+.mb30 {
+    margin-bottom: 0.3rem;
+}
+
+.mb50 {
+    margin-bottom: 0.5rem;
+}
+
+.ml5 {
+    margin-left: 0.05rem;
+}
+
+.ml10 {
+    margin-left: 0.1rem;
+}
+
+.ml15 {
+    margin-left: 0.15rem;
+}
+
+.ml20 {
+    margin-left: 0.2rem;
+}
+
+.ml30 {
+    margin-left: 0.3rem;
+}
+
+.ml50 {
+    margin-left: 0.5rem;
+}
+
+.mr5 {
+    margin-right: 0.05rem;
+}
+
+.mr10 {
+    margin-right: 0.1rem;
+}
+
+.mr15 {
+    margin-right: 0.15rem;
+}
+
+.mr20 {
+    margin-right: 0.2rem;
+}
+
+.mr30 {
+    margin-right: 0.3rem;
+}
+
+.mr50 {
+    margin-right: 0.5rem;
+}

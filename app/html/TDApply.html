@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <title>点买-微策略</title>
+    <link rel="stylesheet" href="../css/common/merge.css">
+    <link rel="stylesheet" href="../css/page/trade/merge.css"/>
+</head>
+<body>
+<section id="" class="page-trade">
+    <div class="page-trade-apply">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>T+D点买A股</h3>
+                <a href="index.html" class="nav-left">
+                    <i class="icon-back"></i>
+                </a>
+                <a href="tradeRule.html" class="nav-right">规则</a>
+            </div>
+        </header>
+        <div class="mod-apply mt15">
+            <div class="choose-money">
+                <div class="choose-type bgc-black">
+                    <ul>
+                        <li class="apply-money"><span>点买金额</span></li>
+                        <li class="other-money"><span>其他金额</span></li>
+                    </ul>
+                </div>
+                <div class="bgc-black mod-choose-money mt20 pb20 mr15 ml15 txt-gray">
+                    <ul class="clearfix">
+                        <li class="">1万</li>
+                        <li>3万</li>
+                        <li>5万</li>
+                        <li>10万</li>
+                        <li>20万</li>
+                        <li>30万</li>
+                        <li class="curr">50万</li>
+                        <li>100万</li>
+                    </ul>
+                </div>
+                <div class="mod-other-money">
+                    <div class="bgc-black pr15 pl10">
+                        <label class="fr txt-s16">元</label>
+                        <input type="text" class="inp" placeholder="最少1万，最多100万" style="width:2.1rem">
+                    </div>
+                    <p class="txt-grey txt-s12 pt10 pl15">注：输入的点买金额必须是1万的整数倍</p>
+                </div>
+            </div>
+            <div class="bgc-black mod-form-apply mt15">
+                <div class="item choose-date">
+                    <span class="fr">T+30</span>
+                    <span class="fr curr">T+15</span>
+                    <label>持仓时间<i class="icon-info ml10"></i></label>
+                </div>
+                <div class="item clearfix">
+                    <span class="fr stop-high clearfix txt-grey">
+                        <span>110%</span>
+                    </span>
+                    <label>触发止盈<i class="icon-info ml10"></i></label>
+                </div>
+                <div class="item clearfix">
+                    <span class="fr stop-low clearfix txt-grey">
+                        <span>105%</span>
+                    </span>
+                    <label>触发止损<i class="icon-info ml10"></i></label>
+                </div>
+            </div>
+            <div class="bgc-black mod-form-apply mt10">
+                <div class="item">
+                    <span class="fr clearfix txt-grey">
+                        <span>110%</span>
+                    </span>
+                    <label>递延条件<i class="icon-info ml5"></i></label>
+                </div>
+                <div class="item">
+                    <span class="fr clearfix txt-grey">
+                        <span>9：1</span>
+                    </span>
+                    <label>盈利分成<i class="icon-info ml5"></i></label>
+                </div>
+            </div>
+            <div class="mt15 txt-grey txt-s12 ml10 mb15 mr10">
+                <p>交易规则</p>
+                <p>点买须知：单只股票金额不能超过50万；</p>
+                <p>交易限制：不得购买S、ST、*ST、S*ST、SST、以及被交易所特别处理的股票；</p>
+                <p>收益分配：操盘利润90%归点买人，10%归投资人。</p>
+            </div>
+        </div>
+        <div class="wrap-btn">
+            <div class="wrap">
+                <button class="btn btn-orange"  onclick="window.location='TDApplyConfirm.html';">下一步</button>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<section class="page-mine">
+    <div class="page-mine-search">
+        <div class="mod-search">
+            <ul>
+                <li>
+                    <input type="text" ng-model="stockCode" ng-keyup="searchStock();" maxlength="8" class="search-inp" placeholder="请输入股票代码/名称/简拼">
+                    <i class="icon-clear" ng-click="clear();"></i>
+                </li>
+                <li class="txt-center pl20" style="width: 0.5rem;">
+                    <a href="javascript:window.history.back();" class="txt-orange">取消</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mod-result" ng-if="stockList.length > 0">
+                <div ng-repeat="stock in stockList">
+                    <ul  ng-click="sureStock(stock.code, stock.name, stock.pinyin);">
+                        <li class="txt-s14" style="width: 70px;" >{{stock.name}}</li>
+                        <li class="code">{{stock.code}} <i ng-if="stock.isRisk == true" class="ml10 high-risk txt-center">高风险</i></li>
+                    </ul>
+                    <p class="stock-add"><span class="icon-stock-{{stock.type}}" ng-click="addOrDelMine(stockList, $index);"></span></p>
+                </div>
+        </div>
+        <div class="mod-result" ng-if="stockList.length == 0 && stockHistoryList.length > 0">
+            <p class="pt10 txt-grey">以下为搜索历史记录</p>
+                <div  ng-repeat="stock in stockHistoryList">
+                    <ul ng-click="sureStock(stock.code, stock.name, stock.pinyin);">
+                        <li class="txt-s14" style="width: 70px;">{{stock.name}}</li>
+                        <li class="code">{{stock.code}} <i ng-if="stock.isRisk == true" class="ml10 high-risk txt-center">高风险</i></li>
+                    </ul>
+                    <p class="stock-add"><span class="icon-stock-{{stock.type}}" ng-click="addOrDelMine(stockHistoryList, $index);"></span></p>
+                </div>
+            <p ng-click="clearHistory();" class="clear-result">
+                清除搜索历史记录
+            </p>
+        </div>
+        <footer class="page-footer">
+            <div class="footer-wrap">
+                <ul>
+                    <li>
+                        <a href="#/index" class="nav-home">
+                            <span></span>首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/trade/2" class="nav-trade">
+                            <span></span>交易
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/mine" class="nav-mine">
+                            <span></span>自选
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/discover" class="nav-discover">
+                            <span></span>发现
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/myHome" class="nav-user">
+                            <span></span>我的
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</section>

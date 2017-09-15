@@ -1,0 +1,152 @@
+/*帮助中心*/
+.page-user .page-help .mod-help-center .wrap {
+    padding: 0 0.1rem;
+    background-color: #121C25;
+}
+
+.page-user .page-help .mod-help-center .wrap p {
+    display: block;
+    position: relative;
+    border-bottom: .01rem solid #1C262F;
+    line-height: .5rem;
+    padding-left: 0.05rem;
+}
+
+.page-user .page-help .mod-help-center .wrap p:last-child {
+    border-bottom: none;
+}
+
+.page-user .page-help .mod-help-center .wrap div p {
+    border-bottom: none;
+}
+
+.page-user .page-help .mod-help-center .wrap div {
+    border-bottom: .01rem solid #1C262F;
+    color: #999;
+}
+
+.page-user .page-help .mod-help-center .wrap-footer {
+    height: 0.44rem;
+}
+
+.page-user .page-help .mod-help-center .wrap-footer a {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: .44rem;
+    color: #FFFFFF;
+    border-top: .01rem solid #1C262F;
+    background: #131E29;
+    text-align: center;
+}
+
+/*帮助中心详情*/
+.page-user .page-help .mod-help-detail {
+    padding: 0 0.15rem;
+}
+
+.page-user .page-help .mod-help-detail h3 {
+    line-height: 0.44rem;
+    font-size: 0.16rem;
+    border-bottom: .01rem solid #1C262F;
+}
+
+.page-user .page-help .mod-help-detail .content {
+    color: #999999;
+    padding: .08rem 0;
+}
+
+.page-user .page-help .mod-help-detail .content p {
+    padding: .05rem 0;
+}
+
+/*客服中心*/
+.page-user .page-help .mod-help-service {
+    padding-bottom: 0.15rem;
+}
+
+.page-user .page-help .mod-help-service .wrap {
+    margin: 0.15rem 0.15rem 0;
+    background: #121C25;
+    padding: 0 0.1rem;
+    border: .01rem solid #1C262F;
+    border-radius: 0.05rem;
+}
+
+.page-user .page-help .mod-help-service .question,
+.page-user .page-help .mod-help-service .answer {
+    padding: 0.1rem 0 0.1rem 0.4rem;
+}
+
+.page-user .page-help .mod-help-service .answer {
+    border-top: .01rem solid #1C262F;
+    background: url("../../../images/icon-answer.png") 0.05rem 0.15rem no-repeat;
+    background-size: 0.24rem;
+}
+
+.page-user .page-help .mod-help-service .question {
+    background: url("../../../images/icon-question.png") 0.05rem 0.15rem no-repeat;
+    background-size: 0.24rem;
+}
+
+.page-user .page-help .mod-help-service .question p {
+    word-wrap: break-word;
+}
+
+.page-user .page-help .mod-help-service .help-null {
+    padding-top: 2rem;
+    background: url("../../../images/msg-bg.png") center 0.6rem no-repeat;
+    background-size: 1.3rem 1.07rem;
+    font-size: 0.18rem;
+    text-align: center;
+    color: #999999;
+}
+
+.page-user .page-help .mod-send {
+    height: 0.5rem;
+}
+
+.page-user .page-help .mod-send .wrap {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 0.51rem;
+    width: 100%;
+    background: #121C25;
+    padding: 0 0.15rem;
+    border-top: 0.01rem solid #1C262F;
+}
+
+.page-user .page-help .mod-send .wrap a {
+    display: block;
+    line-height: 0.5rem;
+    width: 100%;
+    color: #F5C300;
+    text-align: center;
+    font-size: 0.18rem;
+}
+
+.page-user .page-help .mod-help-ask {
+    padding: 0 0.15rem;
+}
+
+.page-user .page-help .mod-help-ask select {
+    display: block;
+    width: 100%;
+    padding: 0 0.1rem;
+    line-height: 0.4rem;
+    height: 0.4rem;
+    border: 0.01rem solid #ECECEC;
+    border-radius: 0.05rem;
+    background: #FFF;
+}
+
+.page-user .page-help .mod-help-ask textarea {
+    display: block;
+    width: 100%;
+    padding: 0.1rem;
+    height: 1.5rem;
+    border: 0.01rem solid #ECECEC;
+    border-radius: 0.05rem;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <title>微策略</title>
+    <link rel="stylesheet" href="../css/common/merge.css">
+    <link rel="stylesheet" href="../css/page/user/merge.css">
+</head>
+<body>
+<section id="" class="page-user">
+    <div class="page-my">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>我的策略组</h3>
+                <a href="myHome.html" class="nav-left"><i class="icon-back"></i></a>
+            </div>
+        </header>
+        <div class="mod-strategy-group pt20">
+            <p class="txt-center txt-s16 mb15">持仓盈亏(元)</p>
+            <p class="txt-s40 txt-red txt-center mb15">+ 1000.00</p>
+            <p class="txt-center txt-s14 mb20">操盘天数:15天</p>
+            <table class="strategy-info">
+                <tr>
+                    <td class="br-gray bb-gray"><p class="txt-gray">总点买金额(元)</p>
+                        <p>1,000,00</p></td>
+                    <td class="br-gray bb-gray"><p class="txt-gray">履约保证金(元)</p>
+                        <p>1,000,00</p></td>
+                    <td class="bb-gray"><p class="txt-gray">递延费(元)</p>
+                        <p>200</p></td>
+                </tr>
+                <tr>
+                    <td class="br-gray"><p class="txt-gray">总交易综合费(元)</p>
+                        <p>1,000,00</p></td>
+                    <td class="br-gray"><p class="txt-gray">当前市值(元)</p>
+                        <p>1,000,00</p></td>
+                    <td><p class="txt-gray">停牌市值(元)</p>
+                        <p>1,000,00</p></td>
+                </tr>
+            </table>
+        </div>
+        <div class="mod-strategy-operates">
+            <ul>
+                <li><span>追加点买金</span></li>
+                <li><span>追加保证金</span></li>
+                <li><span>申请清算</span></li>
+                <li><span>期限续期</span></li>
+            </ul>
+            <div class="db-bg">
+                <div class="operate-dialog">
+                    <div class="strategy-dialog txt-black">
+                        <p class="dialog-title pl10 txt-black txt-s16">追加总点买金额</p>
+                        <div class="dialog-content pt20 pb20 pr10">
+                            <p class="dialog-tips"><span class="input-tips">追加点买金额:</span><input type="text" value="1,000,00"></p>
+                            <p class="dialog-tips"><span class="input-tips">支付履约保证金:</span><span class="pl10 input-content" style="text-align: left">200,00</span></p>
+                            <p class="dialog-tips"><span class="input-tips">递延费:</span><input type="text" value="200,00"></p>
+                        </div>
+                        <div class="dialog-operate">
+                            <span>确认</span>
+                            <span style="border-right: none">取消</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="operate-dialog">
+                    <div class="strategy-dialog txt-black">
+                        <p class="dialog-title pl10 txt-black txt-s16">追加履约保证金</p>
+                        <div class="dialog-content pt20 pb20 pr10">
+                            <p class="dialog-tips"><span class="input-tips">当前市值:</span><span class="pl10 input-content">1,000,00</span></p>
+                            <p class="dialog-tips"><span class="input-tips">可用余额:</span><span class="pl10 input-content">200,00</span></p>
+                            <p class="dialog-tips"><span class="input-tips">递延费:</span><input type="text" value="1000,00"></p>
+                        </div>
+                        <div class="dialog-operate">
+                            <span>确认</span>
+                            <span style="border-right: none">取消</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="operate-dialog">
+                    <div class="strategy-dialog txt-black">
+                        <p class="dialog-title pl10 txt-black txt-s16">申请清算</p>
+                        <div class="dialog-content pt10 pb10 pr15 pl15">
+                            <p class="mb10">尊敬的用户您好：</p>
+                            <p class="mb10">您当前申请提前清算，请确认所有持仓都已卖出，如持仓中有股票，将无法完成清算请求，请先平仓后再操作！否则系统默认直接发起卖出指令，请慎重选择！
+                            </p>
+                        </div>
+                        <div class="dialog-operate">
+                            <span>确认</span>
+                            <span style="border-right: none">取消</span>
+                        </div>
+                    </div>
+                </div>-->
+
+                <div class="operate-dialog">
+                    <div class="strategy-dialog txt-black">
+                        <p class="dialog-title pl10 txt-black txt-s16">期限续期</p>
+                        <div class="dialog-content pt20 pb20 pr10">
+                            <p class="dialog-tips"><span class="input-tips">点买金额:</span><span class="pl10 input-content">1,000,00</span></p>
+                            <p class="dialog-tips"><span class="input-tips">履约保证金:</span><span class="pl10 input-content">200,00</span></p>
+                            <p class="dialog-tips"><span class="input-tips">递延时间:</span><input type="text" value="15天"><i class="option-change iconfont">&#xe60d;</i></p>
+                            <p class="dialog-tips"><span class="input-tips">递延费:</span><span class="pl10 input-content">200,00</span></p>
+                            <p class="days-choice">
+                                <i class="days30">30天</i>
+                            </p>
+                        </div>
+                        <div class="dialog-operate">
+                            <span>确认</span>
+                            <span style="border-right: none">取消</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mod-menu">
+            <a href="tradeSell.html" class="bb-gray">
+                当前持仓<i class="mod-arrow-r"></i>
+            </a>
+
+            <a href="tradeResult.html" class="bb-gray">
+                交易记录<i class="mod-arrow-r"></i>
+            </a>
+            <a href="historyStrategies.html" class="">
+                历史策略组<i class="mod-arrow-r"></i>
+            </a>
+        </div>
+    </div>
+</section>
+</body>
+</html>

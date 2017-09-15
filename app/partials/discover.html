@@ -1,0 +1,75 @@
+<section id="" class="page-discover">
+    <div>
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>发现</h3>
+            </div>
+        </header>
+        <div class="mod-discover">
+           <div class="discover-nav txt-s12">
+               <!--<a href="#/dayGainList?type=day" class="dayProfit">每日盈利榜 <i class="iconfont go-activity txt-grey txt-s12">&#xe65e;</i></a>
+               <a href="#/dayGainList?type=month" class="comProfit">佣金收入榜 <i class="iconfont go-activity txt-grey txt-s12">&#xe65e;</i></a>
+               <a href="#/extension" class="extension">推广赚钱 <i class="iconfont txt-grey go-activity">&#xe65e;</i></a>-->
+               <div class="activity-nav">
+                   <a class="activity-center" href="#/activityCenter">活动中心</a>
+                   <a class="extension-nav" href="#/extension">推广赚钱</a>
+                   <!--<a class="day-gain" href="#/dayGainList?type=day">每日盈利榜</a>-->
+                   <a class="com-gain" href="#/dayGainList?type=month">佣金收入榜</a>
+               </div>
+           </div>
+            <!--<a href="#/notice" class="notice-message">公告信息 <i class="iconfont go-activity">&#xe65e;</i></a>-->
+        </div>
+
+        <div class="notice-outer">
+            <div class="notice-fixed">
+                <p class="notice bb-gray txt-s14 pl15">公告信息</p>
+            </div>
+        </div>
+
+        <div class="mod-notice bgc-black pt10">
+            <div  class="notice-list bb-gray" ng-repeat="item in noticeList" >
+                <div ng-click="showCurrNotice(item.id)" class="notice-title">
+                    <p class="notice-title" ng-click="showContent(item.id)">{{item.noticeTitle}}</p><i ng-if="currNoticeIndex != item.id" class="iconfont icon-down">&#xe608;</i>
+                    <p class="txt-s12 txt-grey">{{item.releaseTime | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+                </div>
+                <div class="txt-s12" ng-if="currNoticeIndex == item.id">
+                    <div class="notice-content pb20" ng-bind-html="item.noticeContent"></div>
+                    <span class="icon-hide" ng-click="showCurrNotice(item.id)">收起</span>
+                </div>
+            </div>
+            <div class=" btn btn-gray" ng-click="getNoticeList(currPage + 1)" ng-if="currPage < totalPage">加载更多</div>
+        </div>
+
+        <footer class="page-footer">
+            <div class="footer-wrap">
+                <ul>
+                    <li>
+                        <a href="#/index" class="nav-home">
+                            <span></span>首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/trade?backURL=/discover" class="nav-trade">
+                            <span></span>交易
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/mine" class="nav-mine">
+                            <span></span>自选
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/discover" class="nav-discover">
+                            <span></span>发现
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/myHome" class="nav-user">
+                            <span></span>我的
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</section>

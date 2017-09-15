@@ -1,0 +1,91 @@
+.page-user .page-my .mod-userinfo {
+    background: #121C25 url("../../../images/home-bg.jpg") no-repeat center;
+    padding: 0.15rem 0.2rem;
+    background-size: 100%;
+}
+
+.page-user .page-my .mod-userinfo .balance-wrap {
+    text-align: center;
+    color: #FFFFFF;
+    padding: 0.4rem 0;
+}
+
+.page-user .page-my .mod-userinfo .pay-wrap {
+    display: table;
+    width: 100%;
+}
+
+.page-user .page-my .mod-userinfo .pay-wrap li {
+    display: table-cell;
+    width: 50%;
+}
+
+/*.page-user .page-my .mod-userinfo .pay-wrap a {
+    border: 0.01rem solid #FFFFFF;
+    display: block;
+    text-align: center;
+    line-height: 0.44rem;
+    border-radius: 0.03rem;
+    color: #FFFFFF;
+    font-size: 0.16rem;
+}*/
+
+.page-user .page-my .mod-userinfo .pay-wrap .logined {
+    display: block;
+    text-align: center;
+    line-height: 0.44rem;
+    border-radius: 0.03rem;
+    color: #121C25;
+    font-size: 0.16rem;
+    background: #F5C300;
+    border: none;
+}
+
+.page-user .page-my .mod-menu {
+    padding: 0 0.1rem;
+    background-color: #121C25;
+}
+
+.page-user .page-my .mod-menu .iconfont {
+    width: 0.4rem;
+    font-size: 0.2rem;
+    float: left; /*消除对父标签高估的影响*/
+
+}
+
+.page-user .page-my .mod-menu a {
+    position: relative;
+    display: block;
+    line-height: 0.46rem;
+    font-size: 0.14rem;
+    color: #FFFFFF;
+    background: #121C25;
+    box-sizing: border-box;
+}
+
+.page-user .page-my .mod-menu .link-trade-list {
+    background: url("../../../images/icon-trade-list.png") left center no-repeat;
+    background-size: 0.14rem;
+    border-bottom: 0.01rem solid #1C262F;
+}
+.page-user .page-my .mod-menu .link-packet {
+    background: url("../../../images/icon-packet.png") left center no-repeat;
+    background-size: 0.14rem;
+    border-bottom: 0.01rem solid #1C262F;
+}
+
+.page-user .page-my .mod-menu .link-attention {
+    background: url("../../../images/icon-attention.png") left center no-repeat;
+    background-size: 0.14rem;
+}
+
+.page-user .page-my .mod-menu .link-strategy-group {
+    background: url("../../../images/icon-startegy-group.png") left center no-repeat;
+    background-size: 0.14rem;
+    border-bottom: 0.01rem solid #1C262F;
+}
+
+.page-user .page-my .mod-menu .link-suspended-strategy {
+    background: url("../../../images/icon-suspended-strategy.png") left center no-repeat;
+    background-size: 0.14rem;
+}

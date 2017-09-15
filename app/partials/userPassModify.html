@@ -1,0 +1,27 @@
+<section class="page-user">
+    <div class="page-user-pass">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>修改登录密码</h3>
+                <!--<a href="#/myInfo" class="nav-left"><i class="icon-back"></i></a>-->
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="mt10">
+            <div class="mod-form bt-light-gray bb-light-gray">
+                <label>原登录密码</label><input minlength="6" ng-model="oldPassword" type="password" class="inp" placeholder="请输入原登录密码"/>
+            </div>
+        </div>
+        <div class="mod-form-wrap mt10 bt-light-gray bb-light-gray">
+            <div class="mod-form">
+                <label>登录密码</label><input minlength="6" ng-model="newPassword" type="password" class="inp" placeholder="请输入新登录密码"/>
+            </div>
+            <div class="mod-form">
+                <label>确认密码</label><input minlength="6" ng-model="surePassword" type="password" class="inp" placeholder="请输入确认密码"/>
+            </div>
+        </div>
+        <div class="pt30 pl15 pr15">
+            <button class="btn btn-{{btnState}}" ng-click="changePass()">确定</button>
+        </div>
+    </div>
+</section>

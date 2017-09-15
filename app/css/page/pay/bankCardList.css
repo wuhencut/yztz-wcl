@@ -1,0 +1,75 @@
+.mod-bank-card-list {
+    padding: 0 0.15rem;
+}
+
+.mod-bank-card-list > a,
+.mod-modify-bank-card .card-info {
+    display: block;
+    padding: 0.15rem 0 0 0.6rem;
+    background: #E47070;
+    border-radius: 0.1rem;
+    color: #FFFFFF;
+    margin-top: 0.15rem;
+}
+.mod-bank-card-list > a.card-list-bg0,
+.mod-modify-bank-card .card-list-bg0{
+    background:-webkit-linear-gradient(to top, #4D7BCF, #A6D4FA);
+    background:linear-gradient(to top, #4D7BCF, #A6D4FA);
+}
+
+.mod-bank-card-list > a.card-list-bg1,
+.mod-modify-bank-card .card-list-bg1{
+    background:-webkit-linear-gradient(to top, #984DCF, #FAA6C7);
+    background:linear-gradient(to top, #984DCF, #FAA6C7);
+}
+
+.mod-bank-card-list > a.card-list-bg2,
+.mod-modify-bank-card .card-list-bg2{
+    background:-webkit-linear-gradient(to top, #CF4D4D, #FAA6BB);
+    background:linear-gradient(to top, #CF4D4D, #FAA6BB);
+}
+
+.mod-bank-card-list > a.add {
+    line-height: 1.13rem;
+    text-align: center;
+    padding: 0;
+    border: 0.01rem solid #CCCCCC;
+    color: #CCCCCC;
+    font-size: 0.16rem;
+    background: none;
+}
+
+.mod-bank-card-list > a.add .add-icon {
+    display: inline-block;
+    width: 0.36rem;
+    height: 0.36rem;
+    margin-right: 0.1rem;
+    background: url("../../../images/disabled-add.png") center no-repeat;
+    background-size: 100%;
+    vertical-align: middle;
+}
+
+.mod-bank-card-list > a .icon,
+.mod-modify-bank-card .card-info .icon {
+    float: left;
+    margin-left: -0.4rem;
+    width: 0.32rem;
+    height: 0.32rem;
+    line-height: 0.32rem;
+    background: #FFFFFF;
+    border-radius: 100%;
+    text-align: center;
+}
+
+.mod-bank-card-list > a .title,
+.mod-modify-bank-card .card-info .title {
+    font-size: 0.16rem;
+    line-height: 0.32rem;
+}
+
+.mod-bank-card-list > a .number,
+.mod-modify-bank-card .card-info .number {
+    font-size: 0.26rem;
+    line-height: 0.56rem;
+    padding-bottom: 0.1rem;
+}

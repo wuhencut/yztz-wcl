@@ -1,0 +1,155 @@
+.page-trade .page-trade-apply .mod-apply .choose-type ul {
+    display: table;
+    width: 100%;
+    border-bottom: .01rem solid #1C262F;
+}
+
+.page-trade .page-trade-apply .mod-apply .choose-type li {
+    display: table-cell;
+    padding: 0 .15rem;
+}
+
+.page-trade .page-trade-apply .mod-apply .choose-type span {
+    display: block;
+    text-align: center;
+    line-height: 0.42rem;
+    padding: .03rem 0;
+    font-size: .16rem;
+    color: #FFFFFF;
+}
+
+.page-trade .page-trade-apply .mod-apply .choose-money .apply-money span,
+.page-trade .page-trade-apply .mod-apply .choose-other .other-money span{
+    color: #FFD900;
+    border-bottom: 0.02rem solid #F5C300;
+}
+
+.page-trade .page-trade-apply .mod-apply .mod-choose-money,
+.page-trade .page-trade-apply .mod-apply .mod-other-money{
+    display: none;
+}
+
+.page-trade .page-trade-apply .mod-apply .choose-money .mod-choose-money,
+.page-trade .page-trade-apply .mod-apply .choose-other .mod-other-money {
+    display: block;
+}
+
+/*.page-trade .page-trade-apply .mod-apply .mod-choose-money ul {
+    border-top: 0.01rem solid #1C262F;
+    border-left: 0.01rem solid #1C262F;
+}
+
+.page-trade .page-trade-apply .mod-apply .mod-choose-money li {
+    float: left;
+    width: 25%;
+    line-height: 0.5rem;
+    border-right: 0.01rem solid #1C262F;
+    border-bottom: 0.01rem solid #1C262F;
+    text-align: center;
+}
+
+.page-trade .page-trade-apply .mod-apply .mod-choose-money .curr {
+    background: #F5C300;
+    color: #121C25;
+    padding-right: 0.01rem;
+    font-weight: bold;
+    z-index :10;
+    /!*margin: -0.01rem 0 0 0;*!/
+}*/
+
+.page-trade .page-trade-apply .mod-apply .mod-other-money>div {
+    height: 0.54rem;
+    line-height: 0.54rem;
+}
+
+.page-trade .page-trade-apply .mod-apply .mod-form-apply .item {
+    border-bottom: 0.01rem solid #1C262F;
+    margin: 0 0.15rem;
+    padding: 0.13rem 0;
+}
+
+.page-trade .page-trade-apply .mod-apply .mod-form-apply .item:last-child {
+    border-bottom: none;
+}
+
+.page-trade .page-trade-apply .mod-apply .mod-form-apply  .choose-date  span {
+    color: #FFD900;
+    margin-left: 0.12rem;
+    height: 0.22rem;
+    font-size: 0.16rem;
+    line-height: 0.22rem;
+    padding: 0 0.05rem;
+    border: 0.01rem solid #F5C300;
+    border-radius: 0.02rem;
+}
+
+.page-trade .page-trade-apply .mod-apply .mod-form-apply  .choose-date  span.curr {
+    color: #121C25;
+    background-color: #F5C300;
+}
+
+.page-trade .page-trade-apply .mod-apply .confirm-message > p {
+    margin: 0 0.15rem;
+    padding: 0.16rem 0 0.16rem 0.1rem;
+    border-bottom: 0.01rem solid #1C262F;
+}
+
+.page-trade .page-trade-apply .mod-apply .confirm-message ul {
+    display: table;
+    width:100%;
+}
+
+.page-trade .page-trade-apply .mod-apply .confirm-message li {
+    display: table-cell;
+    width:50%;
+    /*margin: 0.07rem 0 0.18rem 0;*/
+    border-right: 0.01rem solid #1C262F;
+}
+
+.page-trade .page-trade-apply .mod-apply .confirm-message li:last-child {
+    border-right: none;
+}
+
+.page-trade .page-trade-apply .mod-pop-balance .pop-balance {
+    position: fixed;
+    top: 30%;
+    left: 30px;
+    right: 30px;
+    background: #FFFFFF;
+    color: #333333;
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+}
+
+.page-trade .page-trade-apply .mod-pop-balance .pop-title{
+    padding: 0.1rem 0.3rem;
+    border-bottom:1px solid #CCCCCC;
+    font-size:16px;
+}
+
+.page-trade .page-trade-apply .mod-pop-balance .pop-footer {
+    border-top: 1px solid #ECECEC;
+}
+
+.page-trade .page-trade-apply .mod-pop-balance .pop-footer ul {
+    display: table;
+    width: 100%;
+}
+
+.page-trade .page-trade-apply .mod-pop-balance .pop-footer li {
+    width: 1%;
+    display: table-cell;
+    border-right: 1px solid #ECECEC;
+}
+
+.page-trade .page-trade-apply .mod-pop-balance .pop-footer li:last-child {
+    border-right: none;
+}
+
+.page-trade .page-trade-apply .mod-pop-balance .pop-footer  a {
+    display: block;
+    line-height: 45px;
+    text-align: center;
+    font-size: 0.16rem;
+    color: #E8003F;
+}

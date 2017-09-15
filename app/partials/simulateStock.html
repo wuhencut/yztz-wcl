@@ -1,0 +1,242 @@
+<section class="page-activity">
+    <div class="page-simulate">
+        <header class="page-header" ng-if="showHeader">
+            <div class="header-wrap">
+                <h3>模拟炒股</h3>
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="mod-simu-header">
+            <img src="/app/images/activity/simulation-banner.jpg"/>
+            <p class="simu-rule txt-center" ng-click="showRule=true">规则</p>
+        </div>
+        <div class="mod-simu-content">
+            <div class="history-champion bg-white txt-gray mb20">
+                <i class="icon-left" ng-if="rankIndex > 0" ng-click="showRank(rankIndex-1);"></i>
+                <i class="icon-right" ng-if="rankIndex < rankLen-1" ng-click="showRank(rankIndex+1);"></i>
+                <div>
+                    <p class="simu-title txt-center pt15">
+                        ——<span class="pl10 pr10 txt-gray txt-s16 txt-bold">模拟大赛第{{count}}季TOP3榜单</span>——
+                    </p>
+                    <div class="history-top">
+                        <div class="history-top-image">
+                            <ul class="top">
+                                <li ng-repeat="ran in rankList">
+                                    <i></i>
+                                    <p class="txt-s12">{{ran.userName}}</p>
+                                    <span class="txt-s10 txt-grey">收益率</span>
+                                    <p class="txt-s12 txt-bold txt-red" ng-if="ran.returnRate > 0">+{{ran.returnRate}}%</p>
+                                    <p class="txt-s12 txt-bold txt-green" ng-if="ran.returnRate < 0">{{ran.returnRate}}%</p>
+                                    <p class="txt-s12 txt-bold txt-gray" ng-if="ran.returnRate == 0">{{ran.returnRate}}%</p>
+                                    <span class="txt-s10 txt-grey">盈利金额</span>
+                                    <p class="txt-s12 txt-bold txt-red" ng-if="ran.userProfit > 0">+{{ran.userProfit}}</p>
+                                    <p class="txt-s12 txt-bold txt-green" ng-if="ran.userProfit < 0">{{ran.userProfit}}</p>
+                                    <p class="txt-s12 txt-bold txt-gray" ng-if="ran.userProfit == 0">{{ran.userProfit}}</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="time-flow bg-white txt-gray mb20">
+                <span class="line">
+                    <i class="icon-arr-l"></i>
+                    <i class="icon-arr-r"></i>
+                </span>
+                <ul>
+                    <li class="first">
+                        <i></i>
+                        <p class="txt-red txt-s16">{{startDate}}</p>
+                        <p class="txt-s12 pl10">报名参赛</p>
+                    </li>
+                    <li class="txt-center">
+                        <i></i>
+                        <p class="txt-red txt-s16">{{endDate}}</p>
+                        <p class="txt-s12 ">比赛结束</p>
+                    </li>
+                    <li class="txt-right last">
+                        <i></i>
+                        <p class="txt-red txt-s16">{{simData.releaseDate}}</p>
+                        <p class="txt-s12 pr10">发放奖金</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="countdown mb20" id="timer">
+                <p class="simu-title txt-center pt15">
+                    ——<b class="pl10 pr10 txt-s16 txt-bold">距离比赛结束还剩</b>——
+                </p>
+                <ul class="clearfix pt10 pb10">
+                    <li class="fl">
+                        <span></span>
+                        <span></span>
+                        <em>天</em>
+                    </li>
+                    <li class="fl">
+                        <span></span>
+                        <span></span>
+                        <em>时</em>
+                    </li>
+                    <li class="fl">
+                        <span></span>
+                        <span></span>
+                        <em>分</em>
+                    </li>
+                    <li class="fl">
+                        <span></span>
+                        <span></span>
+                        <em>秒</em>
+                    </li>
+                </ul>
+            </div>
+            <div class="competing-time bg-white mb20">
+                <p class="simu-title txt-center pt15">
+                    ——<span class="pl10 pr10 txt-gray txt-s16 txt-bold">比赛时间</span>——
+                </p>
+                <p class="txt-center pt5 ">{{simData.gameTime}}</p>
+                <ul class="mt20 mb30">
+                    <li>
+                        <p>参赛人数</p>
+                        <p class="txt-s24 txt-red txt-bold">{{simData.userCount}}</p>
+                    </li>
+                    <li>
+                        <p>模拟资金</p>
+                        <p class="txt-s24 txt-red txt-bold">{{simData.simAsset}}</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="prize-set bg-white mb20">
+                <p class="simu-title txt-center pt15">
+                    ——<span class="pl10 pr10 txt-gray txt-s16 txt-bold">奖项设置</span>——
+                </p>
+                <p class="txt-center">
+                    <i class="simu-awards mt20 mb20"></i>
+                </p>
+                <ul class="mb10">
+                    <li class="txt-black txt-bold clearfix">
+                        排名
+                        <span>赛季大咖奖</span>
+                    </li>
+                    <li class="clearfix">
+                        冠军
+                        <span><i>6000</i>元</span>
+                    </li>
+                    <li class="clearfix">
+                        亚军
+                        <span><i>4000</i>元</span>
+                    </li>
+                    <li class="clearfix">
+                        季军
+                        <span><i>2000</i>元</span>
+                    </li>
+                    <li class="clearfix">
+                        11-20名
+                        <span><i>100</i>元充值卡</span>
+                    </li>
+                    <li class="clearfix">
+                        21-100名
+                        <span><i>50</i>元充值卡</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="current-list bg-white mb20 pl10 pr10">
+                <p class="simu-title txt-center pt15">
+                    ——<span class="pl10 pr10 txt-gray txt-s16 txt-bold">TOP榜单</span>——
+                </p>
+                <p class="txt-center pt5">
+                    第{{season}}季 {{timeNoYear}}
+                    <span class="pl10" ng-if="simData.rowNum > 0">
+                        当前排名：<i class="txt-red">{{simData.rowNum}}</i>
+                    </span>
+                </p>
+                <table>
+                    <tr>
+                        <td style="width:10%;">排名</td>
+                        <td style="width:20%;">用户名</td>
+                        <td style="width:20%;">收益率</td>
+                        <td style="width:30%;">总资产(元)</td>
+                        <td style="width:20%;" >查看持仓</td>
+                    </tr>
+                </table>
+                <div class="simu-table-body mb20" ng-if="!NoMatchData">
+                    <table>
+                        <tr ng-repeat="ma in match">
+                            <td style="width:10%;"><i></i></td>
+                            <td style="width:20%;">{{ma.userName}}</td>
+                            <td style="width:20%;" class="txt-red txt-bold" ng-if="ma.userProfit > 0">+{{ma.userProfit}}%</td>
+                            <td style="width:20%;" class="txt-green txt-bold" ng-if="ma.userProfit < 0">{{ma.userProfit}}%</td>
+                            <td style="width:20%;" class="txt-gray txt-bold" ng-if="ma.userProfit == 0">{{ma.userProfit}}%</td>
+                            <td style="width:30%;">{{ma.userAssest}}</td>
+                            <td style="width:20%;" class="txt-blue" ng-click="showDetail(ma.userId);">查看</td>
+                        </tr>
+                        <tr ng-repeat="o in matchNoTop3">
+                            <td style="width:10%;">{{o.rowNum}}</td>
+                            <td style="width:20%;">{{o.userName}}</td>
+                            <td style="width:20%;" class="txt-red txt-bold" ng-if="o.userProfit > 0">+{{o.userProfit}}%</td>
+                            <td style="width:20%;" class="txt-green txt-bold" ng-if="o.userProfit < 0">{{o.userProfit}}%</td>
+                            <td style="width:20%;" class="txt-gray txt-bold" ng-if="o.userProfit == 0">{{o.userProfit}}%</td>
+                            <td style="width:30%;">{{o.userAssest}}</td>
+                            <td style="width:20%;" class="txt-blue" ng-click="showDetail(o.userId);">查看</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="no-list-data txt-center mb20 pt10" ng-if="NoMatchData">
+                    暂无数据
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="simu-button">
+        <button class="btn btn-simu-{{btn.className}}" ng-disabled="btn.disabled" ng-click="to();">{{btn.btnText}}</button>
+    </div>
+    <div class="sium-rule-bg" style="z-index: 1000;" ng-if="showRule">
+        <div class="mod-sium-rule">
+            <div class="sium-rule-content pl15 pr15">
+                <span class="close iconfont" ng-click="$parent.showRule=false">&#xe695;</span>
+                <h4 class="pt30 pb10 txt-center txt-s16 ml50">比赛规则</h4>
+                <p>1. 全部行情与沪深交易所实盘数据一致，交易品种支持沪深上市的A股。不支持基金、权证、新股申购、及不设涨跌停限制的股票（如增发）；</p>
+                <p>2. 交易制度：以10万模拟本金为起始，可按比例选择点买额度，最高点买50万，实行T+1，即当天买入的股票不能在当天卖出；</p>
+                <p>3. 交易费用：交易综合费为点买金额的万分之50（交易佣金1‰，双向收取），不足5元按5元收取，印花税1‰（卖出收取），委托费0.0487‰（双向收取），过户费0.02‰（双向收取）以及平台交易撮合费。展期费为点买金额的万之22收取（即延期费用）；</p>
+                <p>4. 交易时间：9：30—11：30；13：00—14：55，卖出即清算；</p>
+                <p>5. 股票实际买入卖出价格以市价成交，不支持部分成交；</p>
+                <p>6. 股票持仓第三日起前一天14：55要扣除下一个交易的展期费用，如费用不足，强制平仓，切勿将10万操盘金全额买完；</p>
+                <p>7. 除权除息和实盘交易相同；</p>
+                <p>8. 本次比赛为期一个月，排名以盈利为准，无盈利用户不计入最终排名，比赛结束，发放奖励，赢在投资平台员工不计入比赛排名。</p>
+            </div>
+        </div>
+    </div>
+    <div class="sium-list-bg" style="z-index: 1000;"ng-if="showUserDetail">
+        <div class="mod-sium-list">
+            <div class="sium-list-content pl10 pr10">
+                <span class="close iconfont" ng-click="$parent.showUserDetail = false">&#xe695;</span>
+                <h4 class="pt30 pb10 txt-center txt-s16 ml50">TOP榜单</h4>
+                <table>
+                    <tr class="txt-blue">
+                        <td style="width:20%;">股票名称</td>
+                        <td style="width:20%;">买入价格</td>
+                        <td style="width:20%;">卖出价格</td>
+                        <td style="width:25%;">浮动盈亏</td>
+                        <td style="width:15%;">状态</td>
+                    </tr>
+                </table>
+                <div class="sium-list-table mb20" ng-if="!NoUserDetail">
+                    <table>
+                        <tr ng-repeat="obj in userDetailList">
+                            <td style="width:20%;">{{obj.stockName}}</td>
+                            <td style="width:20%;">{{obj.buyPriceDeal}}</td>
+                            <td style="width:20%;">{{obj.sellPriceDeal}}</td>
+                            <td style="width:25%;" class="txt-red" ng-if="obj.profitTotal > 0">+{{obj.profitTotal}}</td>
+                            <td style="width:25%;" class="txt-green" ng-if="obj.profitTotal < 0">{{obj.profitTotal}}</td>
+                            <td style="width:25%;" class="txt-white" ng-if="obj.profitTotal == 0">0</td>
+                            <td style="width:25%;" class="txt-white" ng-if="obj.profitTotal == null">0</td>
+                            <td style="width:15%;" ng-if="obj.status == 8">已结算</td>
+                            <td style="width:15%;" ng-if="obj.status == 4">持仓中</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="no-list-data txt-center mb20 pt10" ng-if="NoUserDetail">
+                    暂无数据
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,23 @@
+<section  class="page-gain-list">
+    <div class="page-day-gain">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>{{txtObj[type]['title']}}</h3>
+               <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="day-gain-content txt-white">
+            <ul class="day-gain-title txt-s16">
+                <li>排名</li>
+                <li>用户</li>
+                <li>{{txtObj[type]['gainTxt']}}</li>
+            </ul>
+            <ul ng-repeat="item in rankList" class="day-gain-list">
+                <li ng-if="item.rankNum < 4 && item.rankNum > 0" class="list-NO" style="width:33.33%;height: 44px;display:inline-block"></li>
+                <li ng-if="item.rankNum > 3">{{item.rankNum}}</li>
+                <li class="list-name">{{item.userName}}</li>
+                <li class="list-gain txt-red">{{item.money}}元</li>
+            </ul>
+        </div>
+    </div>
+</section>

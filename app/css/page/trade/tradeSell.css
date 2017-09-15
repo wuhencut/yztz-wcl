@@ -1,0 +1,123 @@
+.page-trade .page-trade-sell .mod-sell .wrap {
+    margin-bottom: 0.1rem;
+    padding: 0 0.15rem;
+    background: #121C25;
+    /*border-top: 0.01rem solid #1C262F;
+    border-bottom: 0.01rem solid #1C262F;*/
+    color: #FFFFFF;
+}
+
+.page-trade .page-trade-sell .mod-sell .all-profit {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.page-trade .page-trade-sell .mod-sell .all-profit .all-profit-content {
+    height: 0.4rem;
+    text-align: center;
+}
+
+.page-trade .page-trade-sell .mod-sell .all-profit .all-profit-content span {
+    display: inline-block;
+    width: 50%;
+    line-height: 0.4rem;
+}
+
+.page-trade .page-trade-sell .mod-sell .wrap ul {
+    width: 100%;
+    display: table;
+    border-bottom: 0.01rem solid #1C262F;
+}
+
+.page-trade .page-trade-sell .mod-sell .wrap li {
+    display: table-cell;
+}
+
+.page-trade .page-trade-sell .mod-sell .wrap .part1 {
+    padding: 0.1rem 0 0.05rem;
+}
+
+.page-trade .page-trade-sell .mod-sell .wrap .part1 .detail-right div {
+    display: inline-block;
+    width: 24%;
+}
+
+.page-trade .page-trade-sell .mod-sell .wrap .part1 .detail-right .stock-operate {
+    width: 1.1rem;
+    float: right;
+}
+
+.page-trade .page-trade-sell .mod-sell .wrap .part1 .btn {
+    display: inline-block;
+    width: 0.5rem;
+    line-height: 0.3rem;
+    font-size: 0.12rem;
+    vertical-align: -0.05rem;
+    color: #121C25;
+    border-radius: 0.03rem;
+}
+
+.page-trade .page-trade-sell .mod-sell .wrap .part2 {
+    padding: 0.1rem 0 0.05rem;
+}
+
+.page-trade .page-trade-sell .mod-sell .wrap .part2 li:last-child {
+    width: 0.6rem;
+}
+
+.page-trade .page-trade-sell .mod-sell .wrap .part3 {
+    padding: 0.1rem 0;
+    font-size: 0.12rem;
+    color: #FFFFFF;
+}
+
+.page-trade .page-trade-sell .mod-sell .wrap .part3 p {
+    line-height: 2;
+}
+
+.page-trade .page-trade-sell .mod-sell .wrap .part3 label {
+    display: inline-block;
+    width: 0.7rem;
+}
+
+.page-trade .page-trade-sell .mod-sell .wrap .tips {
+    display: inline-block;
+    font-size: 0.12rem;
+    line-height: 0.12rem;
+    padding: 0.01rem 0.02rem;
+    color: #F5C300;
+    border: 0.01rem solid #F5C300;
+    vertical-align: 2px;
+}
+
+.page-trade .page-trade-sell .mod-sell .defer-wrap {
+    padding: 0.15rem;
+    color: #666666;
+    background: #E2E2E2;
+    font-size: 0.12rem;
+    border-bottom: 0.01rem solid #E2E2E2;
+}
+
+.mod-sale-confirm-wrap {
+    text-align: left;
+    color: #666666;
+}
+
+.mod-sale-confirm-wrap .item {
+    line-height: 0.3rem;
+}
+
+.mod-part-deal-wrap {
+    text-align: left;
+}
+
+.mod-part-deal-wrap .info {
+    padding-bottom: 0.15rem;
+    margin-bottom: 0.15rem;
+    border-bottom: 0.01rem solid #EDEDED;
+}
+
+.mod-part-deal-wrap td {
+    color: #666666;
+}

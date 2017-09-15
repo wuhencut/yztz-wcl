@@ -1,0 +1,29 @@
+<section class="page-user">
+    <div class="page-register">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>注册</h3>
+                <!--<a href="#/register1" class="nav-left"><i class="icon-back"></i></a>-->
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="mod-step2 mt10">
+            <!--<div class="mod-form bt-light-gray bb-light-gray">
+                <span ng-if="time==0" class="tip-r" ng-click="registerCode()">获取验证码</span>
+                <span ng-if="time!=0" class="tip-r">{{time}}秒后重发</span>
+                <label>验证码</label><input ng-model="checkCode" type="tel" class="inp" placeholder="验证码" style="width: 0.9rem"/>
+            </div>-->
+            <div class="mod-form mt10 bt-light-gray bb-light-gray">
+                <label>用户名</label><input ng-model="username" type="text" class="inp" placeholder="请设置用户名"/>
+            </div>
+            <div class="mod-form mt10 bt-light-gray bb-light-gray">
+                <label>登录密码</label><input  ng-model="password" type={{pswType}} class="inp" placeholder="6-16位数字和字母组成"/> <span ng-if="pswType == 'password'" ng-click="showPsw()" class="eye-icon iconfont">&#xe657;</span> <span ng-if="pswType == 'text'" ng-click="showPsw()" class="eye-icon iconfont">&#xe625;</span>
+            </div>
+            <div class="mod-form mt10 bt-light-gray bb-light-gray">
+                <label>确认密码</label><input  ng-model="surepass" type="password" class="inp" placeholder="请输入确认密码"/>
+            </div>
+        </div>
+        <div class="pl15 pr15 pt30"><button class="btn btn-{{btnState}}"  ng-click="register()">注册</button></div>
+        <p class="pt20 txt-center txt-grey">点击注册即同意<a href="#/agreementRegister" class="txt-blue">《平台网站服务协议》</a></p>
+    </div>
+</section>

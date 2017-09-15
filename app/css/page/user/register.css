@@ -1,0 +1,74 @@
+.page-user .page-register .mod-step2 .mod-form label {
+    width: 0.8rem;
+}
+
+.phone-inp {
+    position: relative;
+    padding: 0.05rem 0 0.05rem .15rem;
+    line-height: 0.34rem;
+    background: #121C25;
+    border-top: 0.01rem solid #868B90;
+    border-bottom: 0.01rem solid #868B90;
+    /*border-top: .01rem solid #1C262F;
+    border-bottom: .01rem solid #1C262F;*/
+}
+
+.phonenum-copy {
+    height: 0.44rem;
+    background: #121C25;
+    line-height: 0.44rem;
+    font-size: 30px;
+}
+
+.phone-inp-orange {
+    position: relative;
+    padding: 0.05rem 0 0.05rem .15rem;
+    line-height: 0.34rem;
+    background: #121C25;
+    border-top: 0.01rem solid #F5C300;
+    border-bottom: 0.01rem solid #F5C300;
+    /*border-top: .01rem solid #1C262F;
+    border-bottom: .01rem solid #1C262F;*/
+}
+
+.phone-icon {
+    color: #868B90;
+    padding-left: 0.01rem;
+    vertical-align: -3px;
+    display: inline-block;
+    width: 0.3rem;
+    line-height: 0.28rem;
+    font-size: 0.25rem;
+    border: 0.01rem solid #868B90;
+    border-radius: 0.15rem;
+}
+
+.phone-icon-orange {
+    color: #F5C300;
+    padding-left: 0.01rem;
+    vertical-align: -3px;
+    display: inline-block;
+    width: 0.3rem;
+    line-height: 0.28rem;
+    font-size: 0.25rem;
+    border: 0.01rem solid #F5C300;
+    border-radius: 0.15rem;
+}
+
+.eye-icon {
+    float: right;
+    margin-right: 15px;
+    font-size: 26px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

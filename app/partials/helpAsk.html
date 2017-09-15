@@ -1,0 +1,25 @@
+<section class="page-user">
+    <div class="page-help">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>提问</h3>
+                <!--<a href="#/helpCenter" class="nav-left"><i class="icon-back"></i></a>-->
+                <back-menu></back-menu>
+                <a href="" class="nav-right"><i class="icon-tel"></i></a>
+            </div>
+        </header>
+        <div class="mod-help-ask">
+            <div class="pt20">
+                <select ng-model="type">
+                    <option ng-repeat="type in types">{{type}}</option>
+                </select>
+            </div>
+            <div class="pt20">
+                <textarea ng-model="content" placeholder="请写下你宝贵的意见，我们客服将及时解答您的题！"></textarea>
+            </div>
+            <div class="pt30">
+                <button class="btn btn-orange" ng-click="postMsg();">提交</button>
+            </div>
+        </div>
+    </div>
+</section>

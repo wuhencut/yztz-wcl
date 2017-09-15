@@ -1,0 +1,42 @@
+<section class="page-user">
+    <div class="page-my">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>策略详情</h3>
+                <!--<a href="#/historyStrategies" class="nav-left"><i class="icon-back"></i></a>-->
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="mod-strategy-group mt20">
+            <div class="strategy-stocks">
+                <a class="single-stock" ng-repeat="obj in list" href="#/TDTradeDetail/{{obj.id}}">
+                    <ul>
+                        <li class="txt-left">
+                            <p class="txt-s14">{{obj.stockName}}</p>
+                            <p class="txt-s12 txt-grey">{{obj.volumeDeal}}</p>
+                        </li>
+                        <li class="txt-center">
+                            <p class="txt-14">交易盈亏</p>
+                            <p class="txt-s12 txt-grey" ng-if="obj.profitTotal > 0">+ {{obj.profitTotal.toFixed(2)}}</p>
+                            <p class="txt-s12 txt-grey" ng-if="obj.profitTotal == 0">0.00</p>
+                            <p class="txt-s12 txt-grey" ng-if="obj.profitTotal < 0">{{obj.profitTotal.toFixed(2)}}</p>
+                        </li>
+                        <li class="txt-right">
+                            <p class="txt-s14">盈亏分配</p>
+                            <p class="txt-s12 txt-red" ng-if="obj.profitShare > 0">+ {{obj.profitShare.toFixed(2)}}</p>
+                            <p class="txt-s12 txt-white" ng-if="obj.profitShare == 0">0.00</p>
+                            <p class="txt-s12 txt-green" ng-if="obj.profitShare < 0">{{obj.profitShare.toFixed(2)}}</p>
+                        </li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+
+        <div class="pl15 pr15 mt10 mb10" ng-if="pageIndex != totalPage && totalPage != 0">
+            <p class="btn txt-center txt-s14 btn-gray" ng-click="getDetailList(pageIndex+1);">查看更多</p>
+        </div>
+
+        <a style="display:block" ng-if="showNoData" class="no-data">暂无数据</a>
+    </div>
+</section>
+

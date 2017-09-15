@@ -1,0 +1,13 @@
+.pay-success{
+    background: url("../../../images/pay-success.png") center no-repeat;
+    background-size: 100%;
+}
+.pay-failed{
+    background: url("../../../images/pay-failed.png") center no-repeat;
+    background-size: 100%;
+}
+.pay-success,.pay-failed{
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.6rem;
+}

@@ -1,0 +1,65 @@
+<section class="page-mine">
+    <div class="page-mine-modify">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>我的自选</h3>
+                <a href="#/mine" class="nav-left">完成</a>
+                <span ng-click="delete();" class="nav-right">删除</span>
+            </div>
+        </header>
+        <div class="mod-manager mt15">
+            <table>
+                <colgroup>
+                    <col width="20%">
+                    <col width="40%">
+                    <col width="20%">
+                    <col width="20%">
+                </colgroup>
+                <tr class="title">
+                    <td></td>
+                    <td>股票名称</td>
+                    <td class="txt-center">置顶</td>
+                    <td class="txt-center">&nbsp;</td>
+                </tr>
+                <tr ng-repeat="stock in mineList">
+                    <td class="txt-center">
+                        <span ng-click="check($index);" class="{{deleteArr[$index]}}"></span>
+                    </td>
+                    <td>{{stock.stockName}}<p class="code">{{stock.stockCode}}</p></td>
+                    <td class="txt-center">
+                        <i class="icon-top" ng-click="up($index);"></i>
+                    </td>
+                    <td class="txt-center"></td>
+                </tr>
+            </table>
+        </div>
+        <!--
+        <footer class="page-footer">
+            <div class="footer-wrap">
+                <ul>
+                    <li>
+                        <a href="index.html" class="nav-home">
+                            <span></span>首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tradeBuy.html" class="nav-trade">
+                            <span></span>交易
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mine.html" class="nav-mine">
+                            <span></span>自选
+                        </a>
+                    </li>
+                    <li>
+                        <a href="myHome.html" class="nav-user">
+                            <span></span>我的
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+        -->
+    </div>
+</section>

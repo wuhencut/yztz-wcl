@@ -1,0 +1,287 @@
+*, *:before, *:after {
+    /* 设置元素的盒模型为border-box */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    /* chrome不再支持下面的属性。移动端Safari横屏时禁止字体放大 */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* 去除点击元素后的高亮效果 */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* 去除元素周围的虚线 */
+*:focus {
+    outline: none;
+}
+
+html {
+    font-size: 625%; /* 相当于100px，方便计算，浏览器默认字体为16px */
+    color: #FFFFFF;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #0E1821;
+}
+
+body {
+    position: relative;
+    font: 14px/1.5 微软雅黑, Arial, YaHei, tahoma, 'Hiragino Sans GB', 宋体;
+    /*开发环境先注释掉，上线以后放开
+	-webkit-user-select: none;
+            user-select: none;
+    */
+}
+
+body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td, img {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+@media all and (max-width: 320px) {
+    body {
+        font-size: 12px;
+    }
+}
+*/
+ul, ol, dl, dd {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6,
+p {
+    margin: 0;
+    font-weight: normal;
+}
+
+i, em,
+strong {
+    font-style: normal;
+    font-weight: normal;
+}
+
+i {
+    display: inline-block;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+    font-family: inherit;
+}
+
+input::-webkit-input-placeholder,
+input::-moz-placeholder,
+input::-ms-input-placeholder,
+textarea::-webkit-input-placeholder,
+textarea::-moz-placeholder,
+textarea::-ms-input-placeholder {
+    color: #999;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    vertical-align: middle;
+}
+
+input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+
+button[disabled], html input[disabled] {
+    cursor: default
+}
+
+input[type="text"], input[type="password"], input[type="tel"], input[type="number"] {
+    -webkit-appearance: none;
+}
+
+img {
+    border: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+td, th {
+    padding: 0;
+    text-align: left;
+    font-weight: normal;
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: #121C25;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.hide {
+    display: none !important;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.viewport {
+    position: absolute;
+    width: 100%;
+}
+
+.viewport.ng-enter {
+    animation: my_enter_animation .1s linear;
+    -webkit-animation: my_enter_animation .1s linear;
+}
+
+.viewport.ng-leave {
+    animation: my_leave_animation .1s linear;
+    -webkit-animation: my_leave_animation .1s linear;
+}
+
+@keyframes my_enter_animation {
+    /*from { -webkit-transform: translate3d(100%,0,0); }*/
+    /*to { -webkit-transform: translate3d(0%,0,0); }*/
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes my_enter_animation {
+    /*from { -webkit-transform: translate3d(100%,0,0); }*/
+    /*to { -webkit-transform: translate3d(0%,0,0); }*/
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes my_leave_animation {
+    /*from { -webkit-transform: translate3d(0%,0,0); }*/
+    /*to { -webkit-transform: translate3d(-100%,0,0); }*/
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes my_leave_animation {
+    /*from { -webkit-transform: translate3d(0%,0,0); }*/
+    /*to { -webkit-transform: translate3d(-100%,0,0); }*/
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.heartbeat {
+    -webkit-transform-origin: center;
+    -moz-transform-origin: center;
+    transform-origin: center;
+    -webkit-animation: am-heartbeat .5s infinite alternate;
+    -moz-animation: am-heartbeat .5s infinite alternate;
+    animation: am-heartbeat .5s infinite alternate
+}
+
+@-webkit-keyframes am-heartbeat {
+    from {
+        -webkit-transform: scale(1.33);
+        -moz-transform: scale(1.33);
+        transform: scale(1.33)
+    }
+
+    to {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        transform: scale(1)
+    }
+}
+
+@-moz-keyframes am-heartbeat {
+    from {
+        -webkit-transform: scale(1.33);
+        -moz-transform: scale(1.33);
+        transform: scale(1.33)
+    }
+
+    to {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        transform: scale(1)
+    }
+}
+
+@keyframes am-heartbeat {
+    from {
+        -webkit-transform: scale(1.33);
+        -moz-transform: scale(1.33);
+        transform: scale(1.33)
+    }
+
+    to {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        transform: scale(1)
+    }
+}
+
+.bgc-black {
+    background-color: #121C25;
+}

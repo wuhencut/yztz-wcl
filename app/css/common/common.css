@@ -1,0 +1,258 @@
+/*
+常用颜色：
+红：#E8003F(使用于所有行情股票涨数值，弹窗，总价值)
+淡红: #DB4E54(仅用于股票显示标框)
+橙：#F5C300(主要用于按钮、停牌线框等)
+黄: #E34C4D
+绿：#41FFAD
+蓝：#49A7F6
+灰：#999999,666666
+黑：#333333
+白色: #FFFFFF(文字颜色)
+禁用：#CCCCCC
+边框：#ECECEC
+分割线: #1C262F
+分割模块底色: #121C25
+标签栏底色: #131E29
+背景颜色: ＃0E1821
+公共模块样式
+定义为mod的模块样式，如果某个页面的模块要在其他页面复用，则将该模块抽取为公共内容
+
+z-index:
+页面层级<100
+头尾层级=100
+弹窗层级=10000
+加载层级=100000
+*/
+
+/*公用的列表右侧箭头，用于a标签跳转指引*/
+.mod-arrow-r {
+    position: absolute;
+    width: 0.2rem;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url("../../images/icon-arrow-r.png") left center no-repeat;
+    background-size: 0.08rem;
+}
+
+.icon-down{
+    position: absolute;
+    right: 0.15rem;
+    font-size: 10px;
+    color: #B7BABD;
+}
+
+.mod-ok-r {
+    position: absolute;
+    width: 0.2rem;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url("../../images/icon-ok-s.png") left center no-repeat;
+    background-size: 0.12rem;
+}
+
+/*公用表单布局，适用于左右结构*/
+.mod-form {
+    position: relative;
+    padding: 0.05rem 0 0.05rem .15rem;
+    line-height: 0.32rem;
+    background: #121C25;
+    /*border-top: .01rem solid #1C262F;
+    border-bottom: .01rem solid #1C262F;*/
+}
+
+.mod-form label {
+    display: inline-block;
+    color: #FFFFFF;
+    font-size: 0.16rem;
+}
+
+/*公用表单布局，右侧操作区，eg:获取验证码*/
+.mod-form .tip-r {
+    position: absolute;
+    top: 0.05rem;
+    bottom: 0.05rem;
+    right: 0;
+    line-height: 0.32rem;
+    padding: 0 0.15rem;
+    color: #FFD900;
+    /*border-left: 0.01rem solid #ECECEC;*/
+    border-left: 0.01rem solid #FFD900;
+}
+
+/*公共表单容器，用于多个表单使用*/
+.mod-form-wrap {
+    background: #121C25;
+    padding: 0 0.1rem;
+    /*border-top: 0.01rem solid #1C262F;
+    border-bottom: 0.01rem solid #1C262F;*/
+}
+
+.mod-form-wrap .mod-form {
+    padding: 0.05rem;
+    border-bottom: none;
+    border-top: 0.01rem solid #1C262F;
+}
+
+.mod-form-wrap .mod-form:first-child {
+    border-top: none;
+}
+
+/*公共表单标题，用于多个表单分割，说明表单功能或者辅助功能*/
+.mod-form-title {
+    line-height: 0.44rem;
+    padding: 0 0.15rem;
+    color: #999999;
+}
+
+/*公共列表菜单*/
+.mod-menu-wrap {
+    padding: 0 0.1rem;
+    background: #121C25;
+    /*border-top: 0.01rem solid #1C262F;
+    border-bottom: 0.01rem solid #1C262F;*/
+}
+
+.mod-menu-wrap .mod-menu {
+    display: block;
+    position: relative;
+    line-height: 0.5rem;
+    padding-left: 0.05rem;
+    /*color: #999999;*/
+    border-bottom: 0.01rem solid #1C262F;
+}
+
+.mod-menu-wrap .mod-menu:last-child {
+    border-bottom: none;
+}
+
+/*更多*/
+.mod-more {
+    display: block;
+    line-height: 0.5rem;
+    background: #121C25;
+    text-align: center;
+}
+
+
+.mod-no-found,
+.mod-no-data,
+.TD-no-data,
+.no-data {
+    display:block;
+    padding-top: 2rem;
+    font-size: 0.16rem;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.mod-no-found {
+    background: url("../../images/404.png") center 0.6rem no-repeat;
+    background-size: 1.3rem 1rem;
+    color: #999999;
+}
+
+.mod-no-data {
+    background: url("../../images/txt.png") center 0.6rem no-repeat;
+    background-size: 0.8rem 0.9rem;
+    color: #999999;
+}
+
+.TD-no-data {
+    background: url("../../images/TD-no-data.png") center 0.6rem no-repeat;
+    background-size: 1rem 1rem;
+}
+
+.no-data {
+    background: url("../../images/no-data.png") center 0.6rem no-repeat;
+    background-size: 1.2rem 1.2rem;
+}
+
+/*支付宝充值页面提示*/
+.mod-prompt {
+    font-size: .12rem;
+    color: #999999;
+    width: 1.68rem;
+    margin: 0 auto;
+}
+
+/*选择金额(点买A股二级页面和申请金额页面)*/
+.mod-box {
+    border-top: 0.01rem solid #1C262F;
+    border-left: 0.01rem solid #1C262F;
+}
+
+.mod-box li {
+    float: left;
+    width: 33.33%;
+    line-height: 0.5rem;
+    border-right: 0.01rem solid #1C262F;
+    border-bottom: 0.01rem solid #1C262F;
+    text-align: center;
+}
+
+.mod-box li.curr {
+    background: #F5C300;
+    color: #121C25;
+    padding-right: 0.01rem;
+    font-weight: bold;
+    z-index :10;
+}
+
+/*验证码布局*/
+.mod-img-code-wrap {
+    position: fixed;
+    top: 20%;
+    left: 0.3rem;
+    right: 0.3rem;
+    background: #FFF;
+    border-radius: 0.05rem;
+}
+
+.mod-img-code-wrap > footer > ul {
+    display: table;
+    width: 100%;
+    border-top: 0.01rem solid #DBDBDB;
+}
+
+.mod-img-code-wrap > footer > ul > li {
+    display: table-cell;
+    width: 50%;
+    line-height: 0.4rem;
+    font-size: 0.16rem;
+    text-align: center;
+    color: #E34C4D;
+    border-left: 0.01rem solid #DBDBDB;
+}
+
+.mod-img-code-wrap > footer > ul > li:first-child {
+    border-left: none;
+}
+
+.mod-img-code-wrap > header {
+    text-align: center;
+    color: #666;
+    font-size: 0.16rem;
+    padding: 0.15rem 0 0;
+}
+
+.mod-img-code-wrap .content {
+    text-align: center;
+    padding:0.2rem 0;
+}
+
+.mod-img-code-wrap .img-code {
+    width: 0.8rem;
+    height: 0.3rem;
+    vertical-align: middle;
+}
+
+.mod-img-code-wrap .inp-code {
+    width: 0.8rem;
+    height: 0.3rem;
+    padding: 0 0.15rem;
+    vertical-align: middle;
+    border: 0.01rem solid #DBDBDB;
+}

@@ -1,0 +1,27 @@
+.page-trade .page-trade-detail .mod-strategy .wrap {
+    font-size: 0.12rem;
+    margin: 0 0 .15rem;
+}
+
+.page-trade .page-trade-detail .mod-strategy .wrap .mod-form-title {
+    line-height: 0.4rem;
+}
+
+.page-trade .page-trade-detail .mod-strategy .wrap .item {
+    padding: 0.1rem 0.15rem;
+    background: #121C25;
+    /*border-top: .01rem solid #1C262F;*/
+    /*border-bottom: .01rem solid #1C262F;*/
+}
+
+.page-trade .page-trade-detail .mod-strategy .wrap .trade-detail li {
+    float: left;
+    width: 50%;
+    line-height: 0.26rem;
+}
+
+.page-trade .page-trade-detail .mod-strategy .wrap label {
+    color: #999999;
+    margin-right: 0.1rem;
+}
+

@@ -1,0 +1,45 @@
+<section class="page-user">
+    <div class="page-register">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>注册</h3>
+                <!--<a href="#/login" class="nav-left"><i class="icon-back"></i></a>-->
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <!--<div class="phone-inp{{state}} register1 mt20">
+            <span class="phone-icon{{state}} iconfont txt-center">&#xe6be;</span><input  ng-model="mobile" type="tel" maxlength="11" class="inp" placeholder="请输入手机号码"/>
+        </div>-->
+        <div class="mod-form bt-light-gray bb-light-gray mt10">
+            <label>手机号</label><input maxlength="11" ng-maxlength="11" ng-model="mobile" type="tel" class="inp" placeholder="请输入手机号码"/>
+            <span style="border-left: none; color:#ECECEC;" ng-if="mobile != ''" ng-click="clearMobile()" class="tip-r iconfont txt-s16">&#xe62e;</span>
+        </div>
+        <div class="mod-form bt-light-gray bb-light-gray mt15">
+            <span ng-if="time==0" class="tip-r" ng-click="getImgCode()">获取验证码</span>
+            <span ng-if="time!=0" class="tip-r">{{time}}秒后重发</span>
+            <label>验证码</label><input ng-model="checkCode" type="tel" class="inp" placeholder="验证码" style="width: 0.9rem"/>
+        </div>
+        <div ng-if="mobile.length > 0" class="phonenum-copy txt-center txt-orange">{{mobile}}</div>
+        <div class="pl15 pr15 pt30">
+            <button class="btn btn-{{btnState}}" ng-click="register();">下一步</button>
+        </div>
+        <p class="pt20 txt-center txt-grey">
+            已有账号？<a class="txt-blue" href="#login">请登录</a>
+        </p>
+    </div>
+</section>
+<dialog ng-show="showCodeDialog">
+    <div class="mod-img-code-wrap">
+        <header>请输入验证码</header>
+        <div class="content">
+            <img class="img-code" ng-click="refreshCode();" ng-src="/sso/checkCode.json?v={{temptimes}}">
+            <input class="inp-code ml10" ng-model="$parent.imgCode" type="text" maxlength="4">
+        </div>
+        <footer>
+            <ul>
+                <li ng-click="closeDialog();">取消</li>
+                <li ng-click="registerCode()">确定</li>
+            </ul>
+        </footer>
+    </div>
+</dialog>

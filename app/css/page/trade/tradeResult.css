@@ -1,0 +1,30 @@
+.page-trade .page-trade-result .mod-result .wrap {
+    width: 100%;
+    display: block;
+    padding: 0 .15rem;
+    background: #121C25;
+    /*border-top: .01rem solid #1C262F;*/
+    /*border-bottom: .01rem solid #1C262F;*/
+}
+
+.page-trade .page-trade-result .mod-result .wrap a {
+    display: block;
+    border-bottom: .01rem solid #1C262F;
+    color: #FFFFFF;
+    width: 100%;
+}
+
+.page-trade .page-trade-result .mod-result .wrap a:last-child {
+    border-bottom: none;
+}
+
+.page-trade .page-trade-result .mod-result .wrap ul {
+    width: 100%;
+    display: table;
+    padding: 0.1rem 0;
+}
+
+.page-trade .page-trade-result .mod-result .wrap li {
+    display: table-cell;
+    width: 33.33%;
+}

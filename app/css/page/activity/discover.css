@@ -1,0 +1,137 @@
+.mod-discover .discover-nav {
+    position: fixed;
+    left: 0;
+    height: 0.8rem;
+    width: 100%;
+    padding-top: 0.1rem;
+    background-color: #0E1821;
+    z-index: 98;
+}
+
+.mod-discover {
+    height: 0.8rem;
+}
+
+/*.mod-discover .discover-nav a {
+    background-color: #121C25;
+    border-bottom: 0.01rem solid #1C262F;
+}*/
+
+/*.mod-discover .discover-nav a:last-child {
+    border-bottom: none;
+}*/
+
+.mod-discover .discover-nav a {
+    display: inline-block;
+    width: 32%;
+    text-align: center;
+    padding-top: 0.44rem;
+    color: #FFFFFF;
+}
+
+.mod-discover .discover-nav .activity-nav {
+    background-color: #121C25;
+    height: 0.8rem;
+}
+
+.extension, .notice-message, .dayProfit, .comProfit {
+    display: block;
+    line-height: 0.5rem;
+    width: 100%;
+    padding-left: 0.4rem;
+    position: relative;
+}
+
+.extension {
+    background: url("../../../images/one-yuan-icon.png") no-repeat left 0.1rem center #121C25;
+    background-size: 0.22rem;
+}
+
+.comProfit {
+    background: url("../../../images/com-profit.png") no-repeat left 0.1rem center #121C25;
+    background-size: 0.22rem;
+}
+
+.dayProfit {
+    background: url("../../../images/day-profit.png") no-repeat left 0.1rem center #121C25;
+    background-size: 0.22rem;
+}
+
+.notice-message {
+    background: url("../../../images/icon-notice.png") no-repeat left center;
+    background-size: 0.22rem;
+}
+
+.mod-discover .go-activity {
+    position: absolute;
+    right: 0.15rem;
+}
+
+.mod-notice .notice {
+    line-height: 0.35rem;
+}
+
+.mod-notice .notice-list {
+    position: relative;
+    padding: 0.1rem 0.15rem;
+    z-index: 80;
+}
+
+.mod-notice .notice-list .icon-hide {
+    position: absolute;
+    bottom: 0.1rem;
+    right: 0.1rem;
+    width: 0.3rem;
+    line-height: 0.2rem;
+    color: #4399E1;
+}
+
+.mod-notice .notice-list .icon-down {
+    position: absolute;
+    right: 0.15rem;
+    top: 0.2rem;
+    font-size: 10px;
+    color: #B7BABD;
+}
+
+.notice-outer {
+    height: 0.5rem;
+}
+
+.notice-outer .notice-fixed {
+    position: fixed;
+    left: 0;
+    background-color: #0E1821;
+    width: 100%;
+    padding-top: 0.1rem;
+    z-index: 98;
+}
+
+.notice-outer .notice-fixed .notice {
+    line-height: 0.4rem;
+    background-color: #121C25;
+}
+
+.discover-nav .activity-center {
+    background: url("/app/images/discover/activity-center.png") top 0.08rem center no-repeat;
+    background-size: 0.3rem 0.3rem;
+}
+
+.discover-nav .extension-nav {
+    background: url("/app/images/discover/extension.png") top 0.08rem center no-repeat;
+    background-size: 0.3rem 0.3rem;
+}
+
+.discover-nav .day-gain {
+    background: url("/app/images/discover/day.png") top 0.08rem center no-repeat;
+    background-size: 0.3rem 0.3rem;
+}
+
+.discover-nav .com-gain {
+    background: url("/app/images/discover/com.png") top 0.08rem center no-repeat;
+    background-size: 0.3rem 0.3rem;
+}
+
+.help-title {
+    position: relative;
+}

@@ -1,0 +1,11 @@
+/*
+输入框样式
+*/
+.inp{
+    border: none;
+    line-height: 0.30rem;
+    padding: 0.01rem 0.1rem;
+    font-size: 0.14rem;
+    background: #121C25;
+    color: #FFFFFF;
+}

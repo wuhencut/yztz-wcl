@@ -1,0 +1,77 @@
+<section class="page-trade">
+    <div class="page-trade-result">
+        <header class="page-header">
+            <div class="header-wrap has-border-b">
+                <!--<h3>T+D点买A股 <span class="iconfont txt-center">&#xe608;</span>
+                    &lt;!&ndash;<span class="iconfont txt-center">&#xe609;</span>&ndash;&gt;</h3>-->
+                <common-title></common-title>
+                <!--<a href="#/index" class="nav-left">
+                    <i class="icon-back"></i>
+                </a>-->
+                <back-menu></back-menu>
+                <a href="#/TDTradeRule" class="nav-right">规则</a>
+            </div>
+        </header>
+        <div class="user-tips">
+            <div class="amount-tips txt-s12">
+                <div class="outer-tip">
+                    <ul ng-if="hold != null" class="tips-warp bgc-black">
+                        <li class="pl20 tip-left">
+                            当前市值: <span class="txt-yellow">{{currentMarketMoney.toFixed(2)}}</span>
+                        </li>
+                        <li class="tip-right">可用点买金额: <span class="txt-yellow">{{canUseMoney}}</span></li>
+                    </ul>
+                    <a href="#/TDApply" ng-if="hold == null" class="no-strategy-tip txt-center txt-gray">
+                        您当前还没有点买策略组，赶紧去申请一个 <i class="tips-go iconfont">&#xe65e;</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="mod-result">
+            <div class="trade-menu">
+                <div>
+                    <ul>
+                        <li class="m-buy"><a href="#/TDTrade?backURL=index">点买</a></li>
+                        <li class="m-sell"><a href="#/TDTradeSell?backURL=index">点卖</a></li>
+                        <li class="m-result"><a href="#/TDTradeResult">结算</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div ng-if="settleList.length > 0" class="wrap">
+                <a ng-repeat="settle in settleList"  ng-click="toDetail(settle.id)">
+                    <ul>
+                        <li>
+                            <p class="txt-s14">{{settle.stockName}}</p>
+                            <p class="txt-s12 txt-grey">{{settle.volumeDeal}}股</p>
+                        </li>
+                        <li class="txt-center" style="width: 34%">
+                            <p class="txt-s14">交易盈亏</p>
+                            <p ng-if="settle.profitTotal > 0" class="txt-red txt-s12">+{{settle.profitTotal}}</p>
+                            <p ng-if="settle.profitTotal == 0" class="txt-s12 txt-grey">0</p>
+                            <p ng-if="settle.profitTotal < 0" class="txt-green txt-s12">{{settle.profitTotal}}</p>
+                        </li>
+                        <li ng-if="settle.profitShare < 0" class="txt-right">
+                            <p class="txt-s14">亏损赔付</p>
+                            <p class="txt-green txt-s12">{{settle.profitShare.toFixed(2)}}</p>
+                        </li>
+                        <li ng-if="settle.profitShare > 0" class="txt-right">
+                            <p class="txt-s14">盈利分配</p>
+                            <p class="txt-red txt-s12">+{{settle.profitShare.toFixed(2)}}</p>
+                        </li>
+                        <li ng-if="settle.profitShare == 0" class="txt-right">
+                            <p class="txt-s14">盈利分配</p>
+                            <p class="txt-grey txt-s12">0</p>
+                        </li>
+                    </ul>
+                </a>
+                <div ng-if="currPage != totalPage">
+                    <div class="mod-more" ng-click="getSettleList(currPage+1);">
+                        加载更多
+                    </div>
+                </div>
+            </div>
+            <a href="#/TDTrade" ng-if="settleList.length == 0" class="TD-no-data">暂无数据,立即发起点买</a>
+        </div>
+    </div>
+</section>
+<common-menu></common-menu>

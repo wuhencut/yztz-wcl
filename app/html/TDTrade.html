@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <title>点买-微策略</title>
+    <link rel="stylesheet" href="../css/common/merge.css">
+    <link rel="stylesheet" href="../css/page/trade/merge.css"/>
+</head>
+<body>
+<section id="" class="page-trade">
+    <div class="page-trade-stock">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>T+D点买A股</h3>
+                <a href="index.html" class="nav-left">
+                    <i class="icon-back"></i>
+                </a>
+                <a href="tradeRule.html" class="nav-right">规则</a>
+            </div>
+        </header>
+        <div class="trade-money bgc-black pb15" style="display: none">
+            <div>
+                <ul>
+                    <li>
+                        当前市值：<i class="txt-orange">629,637,00</i>
+                    </li>
+                    <li>
+                        可用点买金额：<i class="txt-orange">100,000,00</i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="trade-tip pb15 txt-center txt-s12">
+            <div>
+                <a href="" class="txt-gray">
+                    您当前还没有点买方案，赶紧去申请一个
+                    <i class="arrow-r fr mr5"></i>
+                </a>
+            </div>
+        </div>
+        <div class="trade-menu">
+            <div>
+                <ul>
+                    <li class="m-buy"><a href="TDTrade.html">点买</a></li>
+                    <li class="m-sell"><a href="TDTradeSell.html">点卖</a></li>
+                    <li class="m-result"><a href="tradeResult.html">结算</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mod-stock bgc-black pb5">
+            <div class="wrap">
+                <ul>
+                    <li style="width: 1.1rem">
+                        <p class="txt-s18" style="line-height: 0.24rem;">国农科技<i class="icon-delete ml5"></i></p>
+                        <p class="txt-grey">SZ000004</p>
+                    </li>
+                    <li class="txt-red pl10" >
+                        <p class="txt-s24" style="line-height: 0.24rem;"><b>332.10</b> <b class="danger-stock txt-s10">停牌股</b></p>
+                        <p>+33.85&nbsp;&nbsp;+10.00%</p>
+                    </li>
+                    <li class="stock-search txt-right fr mt5">
+                        <a href="" ></a>
+                    </li>
+                </ul>
+            </div>
+            <!--<div class="pt10 pb10 txt-s12">
+                <table>
+                    <colgroup>
+                        <col width="12%">
+                        <col width="21%">
+                        <col width="12%">
+                        <col width="20%">
+                        <col width="15%">
+                        <col width="20%">
+                    </colgroup>
+                    <tr>
+                        <td>今开</td>
+                        <td class="txt-red">31.89</td>
+                        <td>最高</td>
+                        <td class="txt-red">31.45</td>
+                        <td>成交量</td>
+                        <td class="txt-right txt-grey">42.84万手</td>
+                    </tr>
+                    <tr>
+                        <td>振幅</td>
+                        <td class="txt-red">+2.30%</td>
+                        <td>最低</td>
+                        <td class="txt-green">31.45</td>
+                        <td>成交额</td>
+                        <td class="txt-right txt-grey">4.28亿元</td>
+                    </tr>
+                </table>
+            </div>-->
+        </div>
+        <div class="mod-line">
+            <div class="tab-wrap act-sline">
+                <div class="tab-title">
+                    <ul>
+                        <li class="sline">分时</li>
+                        <li class="kline">日K</li>
+                        <li class="market">盘口</li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="charts-wrap clearfix">
+                        <div class="sline-wrap">
+                            <ul>
+                                <li style="padding-right: 0.1rem">
+                                    <div id="sline-wrap" style="height: 2.4rem"></div>
+                                </li>
+                                <li style="width: 1.1rem">
+                                    <table>
+                                        <tr>
+                                            <td style="width: 0.25rem">卖5</td>
+                                            <td class="txt-center"><span>—</span></td>
+                                            <td class="txt-right"><span>—</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>卖4</td>
+                                            <td class="txt-center"><span>—</span></td>
+                                            <td class="txt-right"><span>—</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>卖3</td>
+                                            <td class="txt-center"><span>—</span></td>
+                                            <td class="txt-right"><span>—</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>卖2</td>
+                                            <td class="txt-center"><span>—</span></td>
+                                            <td class="txt-right"><span>—</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>卖1</td>
+                                            <td class="txt-center"><span>—</span></td>
+                                            <td class="txt-right"><span>—</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>买1</td>
+                                            <td class="txt-center"><span>6.98</span></td>
+                                            <td class="txt-right"><span>191923</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>买2</td>
+                                            <td class="txt-center"><span>6.97</span></td>
+                                            <td class="txt-right"><span>1955</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>买3</td>
+                                            <td class="txt-center"><span>6.96</span></td>
+                                            <td class="txt-right"><span>189</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>买4</td>
+                                            <td class="txt-center"><span>6.95</span></td>
+                                            <td class="txt-right"><span>177</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>买5</td>
+                                            <td class="txt-center"><span>6.94</span></td>
+                                            <td class="txt-right"><span>590</span></td>
+                                        </tr>
+                                    </table>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="kline-wrap">
+                            <div id="kline-wrap" style="height: 2.4rem"></div>
+                        </div>
+                        <div class="market-wrap">
+                            <table id="market-wrap" class="mod-table">
+                                <tbody>
+                                <tr>
+                                    <td class="txt-s12 txt-grey ">今开
+                                        <span class="fr txt-s16 txt-red">31.89</span>
+                                    </td>
+                                    <td class="txt-s12 txt-grey">昨收
+                                        <span class="fr txt-s16 txt-white">31.02</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="txt-s12 txt-grey ">振幅
+                                        <span class="fr txt-s16 txt-red">2.30%</span>
+                                    </td>
+                                    <td class="txt-s12 txt-grey">涨跌
+                                        <span class="fr txt-s16 txt-red">+0.32</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="txt-s12 txt-grey ">涨停
+                                        <span class="fr txt-s16 txt-red">33.23</span>
+                                    </td>
+                                    <td class="txt-s12 txt-grey">跌停
+                                        <span class="fr txt-s16 txt-green">29.23</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="txt-s12 txt-grey ">最高
+                                        <span class="fr txt-s16 txt-red">31.89</span>
+                                    </td>
+                                    <td class="txt-s12 txt-grey">最低
+                                        <span class="fr txt-s16 txt-green">30.89</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="txt-s12 txt-grey ">成交量
+                                        <span class="fr txt-s16 txt-white">42.81万手</span>
+                                    </td>
+                                    <td class="txt-s12 txt-grey">成交额
+                                        <span class="fr txt-s16 txt-white">4.28亿元</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mod-trade-td mt15 bgc-black">
+            <ul class="pl10 pr10">
+                <li>
+                    买入价格
+                    <span class="fr txt-grey">市价委托</span>
+                </li>
+                <li>
+                    交易综合费
+                    <span class="fr txt-grey">
+                        <b class="txt-orange">200</b>元
+                    </span>
+                </li>
+                <li class="buy-num">
+                    <span>买入数量</span>
+                    <i class="txt-s24 txt-orange fr has-border-b">＋</i>
+                    <b class="txt-orange buy-number txt-center fr has-border-b">100</b>
+                    <i class="txt-s24 fr has-border-b">-</i>
+                    <!--<div class="fr txt-center has-border-b">
+
+                    </div>-->
+                </li>
+            </ul>
+        </div>
+        <p class="txt-right pt10 pb10 pr10 txt-grey">资金预计占用<i class="txt-orange pr5 pl5">9600</i>元</p>
+        <div class="wrap-btn">
+            <div class="wrap">
+                <button class="btn btn-orange" onclick="window.location='tradeBuy.html';">立即点买</button>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

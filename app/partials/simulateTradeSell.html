@@ -1,0 +1,126 @@
+﻿<section class="page-trade">
+    <div class="page-trade-sell">
+        <header class="page-header">
+            <div class="header-wrap has-border-b">
+                <h3>
+                    <span>模拟炒股</span>
+                </h3>
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="trade-money bgc-black pb15">
+            <div>
+                <ul>
+                    <li>
+                        体验总金额：<i class="txt-orange">{{simAsset[0]}}</i>
+                    </li>
+                    <li>
+                        持仓盈亏：<i class="txt-orange">{{simAsset[1]}}</i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="trade-menu">
+            <div>
+                <ul>
+                    <li class="m-buy"><a href="#/simulateTrade?backURL=/index">点买</a></li>
+                    <li class="m-sell"><a href="#/simulateTradeSell">点卖</a></li>
+                    <li class="m-result"><a href="#/simulateTradeResult?backURL=/index">结算</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mod-sell">
+            <!--<div ng-if="isInDYFShowTime && tradingDeferCharge > 0" class="defer-wrap">
+                递延费：{{tradingDeferCharge.toFixed(2)}}元<span ng-if="unHanldHoldDeferCharge != 0">(含逾期金额{{unHanldHoldDeferCharge.toFixed(2)}}元)</span><br>
+                请保持余额充足，若截至当日14:50余额不足，视为终止合约，将点卖策略。
+            </div>-->
+            <div ng-if="dataList.length > 0">
+                <div class="wrap" ng-repeat="trade in dataList">
+                    <ul class="part1 txt-grey">
+                        <li style="width: 37%">
+                            <p class="txt-s16 txt-white">{{trade.stockName}}
+                                <i ng-if="isInTradeTime && trade.quotePrice==0" class="tips ml5">停</i>
+                            </p>
+
+                            <p>{{trade.stockCode}}</p>
+                        </li>
+                        <li ng-if="trade.buyPriceDeal==0" class="txt-center" style="width: 26%">
+                            <p class="txt-s16">浮动盈亏</p>
+
+                            <p>— —</p>
+                        </li>
+                        <li ng-if="trade.buyPriceDeal>0" class="txt-center" style="width: 26%">
+                            <p class="txt-s16">浮动盈亏</p>
+
+                            <p ng-if="trade.profit>0" class="txt-red">+{{trade.profit.toFixed(2)}}</p>
+
+                            <p ng-if="trade.profit<0" class="txt-green">{{trade.profit.toFixed(2)}}</p>
+
+                            <p ng-if="trade.profit==0">0.00</p>
+                        </li>
+                        <li ng-if="isHoliday || !isInTradeTime" class="txt-right" style="width: 37%">
+                            <p class="txt-grey">非交易时段</p>
+                        </li>
+                        <li ng-if="!isHoliday && isInTradeTime" class="txt-right" style="width: 37%">
+                            <p ng-if="trade.status==4">
+                                <button ng-if="trade.quotePrice>0 && trade.dealTime<todayStartTime" class="btn btn-orange" ng-click="sale(trade);">点卖</button>
+                                <button ng-if="trade.dealTime>todayStartTime && trade.quotePrice>0" class="btn btn-disabled">点卖</button>
+                                <button ng-if="isInTradeTime && trade.quotePrice==0" class="btn btn-disabled">点卖</button>
+                            </p>
+                            <p ng-if="trade.status!=4" class="txt-orange">{{tradeState[trade.status]}}</p>
+                        </li>
+                    </ul>
+                    <ul class="part2 txt-grey">
+                        <li style="width: 20%">
+                            <p>成本价</p>
+
+                            <p ng-if="trade.buyPriceDeal>0" class="txt-white">{{trade.buyPriceDeal.toFixed(2)}}</p>
+
+                            <p ng-if="trade.buyPriceDeal==0" class="txt-white">— —</p>
+                        </li>
+                        <li class="txt-center" style="width: 30%">
+                            <p>当前价</p>
+
+                            <p ng-if="trade.quotePrice > 0 && trade.buyPriceDeal > 0 ">
+                                <span ng-if="trade.quotePrice>trade.buyPriceDeal" class="txt-red">{{trade.quotePrice.toFixed(2)}}</span>
+                                <span ng-if="trade.quotePrice<trade.buyPriceDeal" class="txt-green">{{trade.quotePrice.toFixed(2)}}</span>
+                                <span ng-if="trade.quotePrice==trade.buyPriceDeal">{{trade.quotePrice.toFixed(2)}}</span>
+                            </p>
+                            <p ng-if="trade.quotePrice > 0 && trade.buyPriceDeal == 0 ">
+                                <span>{{trade.quotePrice.toFixed(2)}}</span>
+                            </p>
+                            <p ng-if="trade.quotePrice==0">{{trade.lastClosePrice}}</p>
+                        </li>
+                        <li class="txt-center" style="width: 30%">
+                            <p>数量 <i ng-if="trade.tradingRecordList.length>0" ng-click="showPartDeal(trade);" class="icon-info"></i></p>
+
+                            <p ng-if="trade.volumeHold > 0" class="txt-white">{{trade.volumeHold}}</p>
+
+                            <p ng-if="trade.volumeHold == 0" class="txt-white">— —</p>
+                        </li>
+                        <li class="txt-right" style="width: 20%">
+                            <p>止损</p>
+
+                            <p class="txt-white">{{trade.quitLoss.toFixed(0)}}</p>
+                        </li>
+                    </ul>
+                    <div class="part3 txt-grey">
+                        <p>
+                            <label>策略交易号</label>JQ{{trade.id}} <i ng-if="trade.status==4 && trade.arrearsBalance" ng-click="showArrears(trade.arrearsBalance);" class="icon-qian"></i>
+                        </p>
+
+                        <p ng-if="trade.status==1 || trade.status==2 || trade.status==3">
+                            <label>成交时间</label> — —
+                        </p>
+
+                        <p ng-if="trade.status==4 || trade.status==5 || trade.status==6 || trade.status==7 || trade.status==8">
+                            <label>成交时间</label>{{trade.dealTime | date:'yyyy-MM-dd HH:mm'}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <a href="#/simulateTrade" ng-if="dataList.length == 0" class="TD-no-data">暂无数据,立即发起点买</a>
+        </div>
+    </div>
+</section>
+<common-menu></common-menu>

@@ -1,0 +1,25 @@
+<section class="page-user">
+    <div class="page-identification">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>实名认证</h3>
+                <!--<a href="#{{backURL}}" class="nav-left"><i class="icon-back"></i></a>-->
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="mod-form-wrap mt20 bt-light-gray bb-light-gray">
+            <div class="mod-form">
+                <label>真实姓名</label><input ng-model="name" type="text" class="inp" placeholder="请输入真实姓名"/>
+            </div>
+            <div class="mod-form">
+                <label>身份证号</label><input ng-model="IDNum" type="text" class="inp" placeholder="请输入身份证号"/>
+            </div>
+        </div>
+        <div class="pt30 pl15 pr15">
+            <button ng-click="certification()" class="btn btn-{{btnState}}">认证</button>
+        </div>
+        <div class="txt-center txt-grey pt20">
+            为保证资金安全，请务必输入您的真实信息。如遇到<p>问题，请联系<a href="tel:4008888566" class="txt-blue">客服</a></p>
+        </div>
+    </div>
+</section>

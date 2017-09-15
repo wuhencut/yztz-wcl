@@ -1,0 +1,107 @@
+<section class="page-trade">
+    <div class="page-trade-apply">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>T+D点买A股</h3>
+                <!--<a href="#/TDApply" class="nav-left">
+                    <i class="icon-back"></i>
+                </a>-->
+                <back-menu></back-menu>
+                <a href="#/TDTradeRule" class="nav-right">规则</a>
+            </div>
+        </header>
+        <div class="mod-apply mt15">
+            <div class="mt15 bgc-black confirm-message">
+                <p class="txt-s16">确认点买信息</p>
+                <ul class="txt-center pt5 pb10">
+                    <li>
+                        <p class="txt-s22 txt-red">{{initData.money}}</p>
+                        <p class="txt-s12">点买金额(元)</p>
+                    </li>
+                    <li>
+                        <p class="txt-s22 txt-red">{{initData.holdDays}}</p>
+                        <p class="txt-s12">合作期限(天)</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="bgc-black mod-form-apply mt15">
+                <div class="item">
+                    <span class="fr clearfix txt-orange txt-bold txt-s16">
+                        <span>{{initData.principal}}</span>
+                    </span>
+                    <label>履约保证金(元)</label>
+                </div>
+                <div class="item clearfix">
+                    <span class="fr clearfix txt-orange txt-bold txt-s16">
+                        <span>{{initData.deferredCharge}}</span>
+                    </span>
+                    <label>递延费(元)</label>
+                </div>
+                <div class="item clearfix">
+                    <span class="fr clearfix txt-orange txt-bold txt-s16">
+                        <span>{{initData.totalCharge}}</span>
+                    </span>
+                    <label>总共需要支付(元)</label>
+                </div>
+            </div>
+            <div class="mt15 txt-grey txt-s12 ml10 mb15 mr10">
+                <p class="txt-grey pb5 pl5 txt-s14">申请点买，即您已同意</p>
+                <a href="#/agreementTDSaletor" class="txt-blue">《平台点买人参与沪深A股交易合作涉及费用及资费标准》</a><br>
+                <a href="#/agreementTDInvestor" class="txt-blue">《平台投资人与点买人参与沪深A股交易合作协议》</a><br>
+                <a href="#/agreementTrade" class="txt-blue">《平台服务协议》</a>
+            </div>
+        </div>
+        <div class="wrap-btn">
+            <div class="wrap">
+                <button class="btn btn-orange" ng-click="sub();">提交</button>
+            </div>
+        </div>
+        <div class="mod-pop-balance db-bg" style='z-index:10000;' ng-show="showBalance">
+            <div class="pop-balance">
+                <div class="pop-title">余额不足</div>
+                <div style="padding: 35px 50px; text-align: center;">您的账户余额为{{balance}}元,本次付款还差<i class="txt-red">{{needMoney}}</i>元！请充值后再发起T+D点买策略组</div>
+                <div class="pop-footer">
+                    <ul>
+                        <li>
+                            <a ng-click="showBalance = false">暂不充值</a>
+                        </li>
+                        <li>
+                            <a href="#/payType?goURL=/TDApplyConfirm">马上充值</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mod-pop-balance db-bg" style='z-index:10000;' ng-show="showUnHanldBalance">
+            <div class="pop-balance">
+                <div class="pop-title">余额不足</div>
+                <div style="padding: 35px 50px; text-align: center;">您在T+1账户历史策略未缴纳递延费共<i class="txt-red">{{unHanldDeferCharge}}</i>元,本次付款还差<i class="txt-red">{{unHanldneedMoney}}</i>元！请充值后再发起T+D点买策略组</div>
+                <div class="pop-footer">
+                    <ul>
+                        <li>
+                            <a ng-click="showUnHanldBalance = false">暂不充值</a>
+                        </li>
+                        <li>
+                            <a href="#/payType?goURL=/TDApplyConfirm">马上充值</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mod-pop-balance db-bg" style='display: block;z-index:10000;' ng-show="showUnHanldDeferCharge">
+            <div class="pop-balance">
+                <div style="padding: 35px 50px; text-align: center;">您在T+1的账户历史策略未缴纳递延费共<i class="txt-red">{{unHanldDeferCharge}}</i>元，需缴纳后才能发起T+D点买策略组，确定支付吗？</div>
+                <div class="pop-footer">
+                    <ul>
+                        <li>
+                            <a ng-click="showUnHanldDeferCharge = false;">取消</a>
+                        </li>
+                        <li>
+                            <a style="border-left: none;" ng-click="createT();">确定</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

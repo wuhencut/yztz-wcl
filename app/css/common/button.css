@@ -1,0 +1,51 @@
+/*
+按钮样式
+*/
+
+.btn {
+    display: block;
+    width: 100%;
+    border: none;
+    line-height: 0.44rem;
+    text-align: center;
+    border-radius: 0.03rem;
+    font-size: 0.16rem;
+}
+
+.btn-red {
+    color: #FFFFFF;
+    background: #E34C4D;
+}
+
+.btn-orange {
+    color: #0E1821;
+    background: #F5C300;
+}
+
+.btn-green {
+    color: #FFFFFF;
+    background: #01B28E;
+}
+
+.btn-disable {
+    color: #666666;
+    background: #0E1821;
+    border: 0.01rem solid #242D35;
+    border-radius: 0.03rem;
+}
+
+.btn-disabled {
+    color: #666666;
+    background: #CCCCCC;
+}
+
+.btn-gray {
+    color: #FFFFFF;
+    background: #121C25;
+
+}
+.btn-yellow {
+    color: #0E1821;
+    background: #F5C300;
+
+}

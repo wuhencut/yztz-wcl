@@ -1,0 +1,16 @@
+/*guide设置的整体页面样式*/
+.page-guide .page-guide-menu .mod-guide-content {
+    margin-top: 0.14rem;
+    padding: 0 0.1rem;
+    background: #121C25;
+}
+.page-guide .page-guide-menu .mod-guide-content a {
+    display: block;
+    position: relative;
+    line-height: .5rem;
+    padding-left: 0.05rem;
+    border-bottom: 0.01rem solid #1C262F;
+}
+.page-guide .page-guide-menu .mod-guide-content a:last-child {
+    border-bottom: none;
+}

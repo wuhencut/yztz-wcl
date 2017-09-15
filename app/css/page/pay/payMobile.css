@@ -1,0 +1,37 @@
+.page-pay .page-pay-msg .mod-info,
+.page-pay .page-pay-msg .mod-msg{
+	color: #999999;
+	background: #121C25;
+	border-bottom: 0.01rem solid #1C262F;
+}
+
+.page-pay .page-pay-msg .mod-info .money{
+	text-align: center;
+	padding: 0.1rem 0;
+}
+
+.page-pay .page-pay-msg .mod-info .bank{
+	font-size: 0.16rem;
+	line-height: 0.6rem;
+	padding-left: 0.15rem;
+	border-top: 0.01rem solid #1C262F;
+}
+
+.page-pay .page-pay-msg .mod-msg{
+	margin-top: 0.1rem;
+	border-top: 0.01rem solid #1C262F;
+}
+
+.page-pay .page-pay-msg .mod-msg .wrap{
+	position: relative;
+	padding: 0.05rem 0 0.05rem 0.15rem ;
+	border-bottom: 0.01rem solid #1C262F;
+}
+
+.page-pay .page-pay-msg .mod-msg .mod-form{
+	border-bottom: none;
+}
+
+.page-pay .page-pay-msg .mod-msg .mod-form:first-child{
+	border-top: none;
+}

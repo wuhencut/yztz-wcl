@@ -1,0 +1,58 @@
+<section class="page-pay">
+    <div class="page-bank-info">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>银行卡信息</h3>
+                <!--<a href="#{{backURL}}" class="nav-left"><i class="icon-back"></i></a>-->
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="mod-menu-wrap mt20">
+            <div class="mod-menu">
+                <span class="fr mr15">{{user.maskName}}</span>
+                开户名
+            </div>
+            <div class="mod-menu">
+                <span class="fr mr15">{{bank.bank}}(尾号{{bank.cardNumber.substr(-4)}})</span>
+                银行
+            </div>
+            <a class="mod-menu" ng-click="chooseProvice();">
+                <span class="fr mr30 txt-grey">{{province}}</span>
+                开户省份
+                <i class="mod-arrow-r"></i>
+            </a>
+            <a class="mod-menu" ng-click="chooseCity();">
+                <span class="fr mr30 txt-grey">{{city}}</span>
+                开户城市
+                <i class="mod-arrow-r"></i>
+            </a>
+            <a class="mod-menu" ng-click="chooseBranch();">
+                <span class="fr mr30 txt-grey">{{branch}}</span>
+                开户支行
+                <i class="mod-arrow-r"></i>
+            </a>
+        </div>
+        <p class="pt20 pl15 txt-grey"><span class="txt-red">温馨提示：</span>准确的开户行信息，将会加快银行提现的到账速度</p>
+
+        <div class="pt20 pl15 pr15">
+            <button class="btn btn-orange" ng-click="save();">确定</button>
+        </div>
+    </div>
+</section>
+<div class="dialog-wrap" ng-show="showDialog" style="padding-bottom: 0;">
+    <section class="page-pay">
+        <div class="page-bank-branch page-dialog">
+            <header class="page-header">
+                <div class="header-wrap">
+                    <h3>{{title}}</h3>
+                    <a ng-click="closeDialog();" class="nav-left"><i class="icon-back"></i></a>
+                </div>
+            </header>
+            <div class="mod-menu-wrap">
+                <a class="mod-menu" ng-repeat="item in list" ng-click="sureChoose(title,item[0],item[1]);">
+                    {{item[1]}}
+                </a>
+            </div>
+        </div>
+    </section>
+</div>

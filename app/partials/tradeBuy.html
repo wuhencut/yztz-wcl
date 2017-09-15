@@ -1,0 +1,68 @@
+<section class="page-trade">
+    <div class="page-trade-buy">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>点买A股</h3>
+                <!--<a href="#/trade" class="nav-left">-->
+                    <!--<i class="icon-back"></i>-->
+                <!--</a>-->
+                <back-menu></back-menu>
+                <a href="#/tradeRule" class="nav-right">规则</a>
+            </div>
+        </header>
+        <div class="mod-buy mb10">
+            <div class="wrap mt10">
+                <div class="item">
+                    <span class="fr">{{stock.stockName}} {{stock.stockCode}}</span>
+                    股票名称
+                </div>
+                <div class="mod-choose-money">
+                    <p class="pt10 pb10">点买金额</p>
+                    <ul class="clearfix mod-box">
+                        <li ng-repeat="m in tradeMoneyList" ng-class="{curr:currentIndex==$index}" ng-click="chooseMoney($index, m.value);">{{m.text}}</li>
+                    </ul>
+                </div>
+                <div class="item txt-right txt-s12">可买入<b class="txt-orange">{{stockCount}}</b>股，资金利用率 <span class="txt-orange">{{moneyUseRate}}</span>%，今天还可点买<b class="txt-orange">{{canBuyCount}}</b>次</div>
+                <div class="item">
+                    <span class="fr txt-orange">T+1/D</span>
+                    <label>持仓时间<i class="icon-info ml5" ng-click="tips('持仓时间','2～20个交易日，默认每天自动递延，递延费从账户余额扣除，若余额不足或者不符合递延条件，策略将由投资人卖出清算，T+20当日必须结算。');"></i></label>
+                </div>
+                <div class="item clearfix">
+                    <span class="fr stop-high clearfix">
+                        <span ng-repeat="m in highMoneyList" ng-class="{curr:highIndex==$index}" ng-click="chooseHigh($index, m);">{{m}}</span>
+                    </span>
+                    <label>触发止盈<i class="icon-info ml5" ng-click="tips('触发止盈','当合作交易品种的浮动盈亏达到特定数值时，由投资人即时卖出交易品种全部持有数量进行止盈。');"></i></label>
+                </div>
+                <div class="item clearfix">
+                    <span class="fr stop-low clearfix">
+                        <span ng-repeat="m in lowMoneyList" ng-class="{curr:lowIndex==$index}" ng-click="chooseLow($index, m);">{{m}}</span>
+                    </span>
+                    <label>触发止损<i class="icon-info ml5" ng-click="tips('触发止损','当合作交易品种的浮动盈亏达到特定数值时，由投资人即时卖出交易品种全部持有数量进行止损。');"></i></label>
+                </div>
+            </div>
+            <div class="wrap mt10">
+                <div class="item">
+                    <span class="fr"><b class="txt-orange">{{serviceCharge}}<span class="txt-white">元</span></b></span>
+                    <label>交易综合费<i class="icon-info ml5" ng-click="tips('交易综合费',serviceChargeTips);"></i></label>
+                </div>
+                <div class="item">
+                    <span class="fr"><b class="txt-orange">{{principal}}<span class="txt-white">元</span></b></span>
+                    <label>履约保证金<i class="icon-info ml5" ng-click="tips('履约保证金','履约保证金为点买人委托平台冻结用于履行交易亏损赔付义务的保证金，结束时根据策略盈亏结算。保证金越低风险也越大，保证金越高抗风险也越高。');"></i></label>
+                </div>
+
+            </div>
+            <div class="item item-single" ng-show="tipBalance>0">
+                    <span class="fr stop-low txt-s12" ng-class="{'stop-lowPacket':useTip}">
+                        <span class="ng-binding ng-scope" ng-click="useTip = !useTip;">-{{usTipBalance.toFixed(2)}}元
+                    </span>
+                    </span>
+                <label>是否使用红包余额（余额：{{tipBalance.toFixed(2)}}元）<p class="txt-s10 txt-grey">红包余额只能抵扣交易综合费</p></label>
+            </div>
+        </div>
+        <div class="wrap-btn">
+            <div class="wrap">
+                <button class="btn btn-{{btn.className}}" ng-disabled="btn.disabled" ng-click="toTrade();">{{btn.btnText}}</button>
+            </div>
+        </div>
+    </div>
+</section>

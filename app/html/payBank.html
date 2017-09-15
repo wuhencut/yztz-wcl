@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>微策略</title>
+    <link rel="stylesheet" href="../css/common/merge.css">
+    <link rel="stylesheet" href="../css/page/pay/merge.css">
+</head>
+<body>
+    <section id="" class="page-pay">
+        <div class="page-pay-bank">
+            <header class="page-header">
+                <div class="header-wrap">
+                    <h3>账户充值</h3>
+                    <a href="payType.html" class="nav-left"><i class="icon-back"></i></a>
+                </div>
+            </header>
+            <div class="mod-bank">
+                <div class="balance">账户余额：0.00元</div>
+                <div class="username">
+                    <p><i class="icon-express mr10"></i>无需开通网银，有银行卡就能支付</p>
+                    <p class="pt10">持卡人姓名：小明</p>
+                </div>
+                <div class="choose-bank" onclick="window.location='bankList.html';">
+                    选择开户行
+                    <i class="mod-arrow-r"></i>
+                </div>
+                <!--
+                <div class="choose-bank" onclick="window.location='bankList.html';">
+                    选择开户行
+                    <i class="mod-arrow-r"></i>
+                </div>
+                <div class="choose-bank">
+                    <i class="icon-bank-ccb mr10"></i>中国建设银行
+                    <i class="mod-arrow-r"></i>
+                </div>
+
+                <div class="choose-bank">
+                    <i class="icon-bank-ccb mr10"></i>中国建设银行　尾号5536
+                </div>
+                -->
+            </div>
+            <div class="mod-card">
+                <div class="mod-form mt10">
+                    <label>银行卡号</label>
+                    <input class="inp" type="text" placeholder="请输入银行卡号" style="width: 2rem">
+                </div>
+                <div class="mod-form mt10">
+                    <label>充值金额</label>
+                    <input class="inp" type="text" placeholder="请输入充值金额" style="width: 2rem">
+                </div>
+                <p class="desc">
+                    <span class="txt-red">充值手续费：3.5元</span><br>
+                    <span class="txt-grey">单卡单笔限额5万，每日最高20万</span>
+                </p>
+            </div>
+            <div class="pl15 pr15">
+                <a href="payMobile.html" class="btn btn-red">提交</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

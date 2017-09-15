@@ -1,0 +1,18 @@
+.mod-act-list .list-option{
+    display: inline-block;
+    width:100%;
+    height:1.1rem;
+    margin-bottom: 0.14rem;
+}
+.mod-act-list .list-option img{
+    width:100%;
+    height:100%;
+}
+.mod-act-list .list-expect{
+    text-align: center;
+    line-height: 1.1rem;
+    font-size: 0.24rem;
+    color: #ffffff;
+    background: url("../../../images/activity/packet/coming.png") no-repeat;
+    background-size: 100% 100%;
+}

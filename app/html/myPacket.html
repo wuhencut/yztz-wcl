@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <title>微策略</title>
+    <link rel="stylesheet" href="../css/common/merge.css">
+    <link rel="stylesheet" href="../css/page/user/merge.css">
+</head>
+<body>
+<section id="" class="page-user">
+    <div class="page-myPacket" ng-if="packetFund.tipAllBalance==0">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>我的红包</h3>
+                <a href="#/myHome" class="nav-left"><i class="icon-back"></i></a>
+            </div>
+        </header>
+        <ul class="mod-mypacket-head">
+            <li>我收到的红包<p class="txt-white">100<em>元</em></p></li>
+            <li>红包余额<p  class="txt-white">100<em>元</em></p></li>
+        </ul>
+        <div class="mod-actpacket-space mt15">
+            <div class="wrap txt-center pt50 pb50">
+                <img src="../images/activity/packet/space-icon.png" alt="" width="91px">
+                <div>
+                    您还没有获得红包，
+                    <p>快来参加活动，红包正在召唤你</p>
+                </div>
+            </div>
+        </div>
+        <div class="pt30 pl15 pr15 pb30">
+            <a class="btn btn-yellow" href="#/actPacket">更多红包活动</a>
+        </div>
+    </div>
+    <div class="page-myPacket" ng-if="packetFund.tipAllBalance!=0">
+        <div class="mod-actpacket-list mt15">
+            <div class="wrap" >
+                <div class="list" ng-repeat="item in items" >
+                    <div class="tit">
+                        <p class="txt-s14 txt-white" >完成实名认证送红包</p>
+                        <p class="desc">11-03 15:30</p>
+                    </div>
+                    <span class="fr txt-red txt-s14">+30.00元</span>
+                </div>
+            </div>
+            <div ng-if="totalPage != 0 && (pageIndex != totalPage)" class="pt10">
+                <div class="mod-more" ng-click="getPacketRecordList(pageIndex+1);">
+                    加载更多
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

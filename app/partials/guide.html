@@ -1,0 +1,35 @@
+<section class="page-guide">
+    <div class="page-guide-menu">
+        <header ng-if="showHeader" class="page-header">
+            <div class="header-wrap">
+                <h3>新手引导</h3>
+                <!--<a href="#/index" class="nav-left">-->
+                    <!--<i class="icon-back"></i>-->
+                <!--</a>-->
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="mod-guide-content">
+            <a href="#/introduce{{showHeader?'':'?source=IOSAPP'}}">
+                一分钟介绍
+                <i class="mod-arrow-r"></i>
+            </a>
+            <a href="#/tradeRule{{showHeader?'':'?source=IOSAPP'}}">
+                A股交易规则
+                <i class="mod-arrow-r"></i>
+            </a>
+            <a href="#/TDTradeRule{{showHeader?'':'?source=IOSAPP'}}">
+                T+D A股交易规则
+                <i class="mod-arrow-r"></i>
+            </a>
+            <a href="#/safe{{showHeader?'':'?source=IOSAPP'}}">
+                安全保障
+                <i class="mod-arrow-r"></i>
+            </a>
+            <a href="#/aboutUs{{showHeader?'':'?source=IOSAPP'}}">
+                关于我们
+                <i class="mod-arrow-r"></i>
+            </a>
+        </div>
+    </div>
+</section>

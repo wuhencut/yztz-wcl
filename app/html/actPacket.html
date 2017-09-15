@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <title>红包-微策略</title>
+    <link rel="stylesheet" href="../css/common/merge.css">
+    <link rel="stylesheet" href="../css/page/activity/merge.css"/>
+</head>
+<body>
+<section id="" class="page-guide">
+    <div class="page-activity">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>红包活动</h3>
+                <a href="guide.html" class="nav-left">
+                    <i class="icon-back"></i>
+                </a>
+            </div>
+        </header>
+        <div class="mod-actpacket-list">
+            <div class="wrap">
+                <!--新用户注册-->
+                <a  class="list" href="#/register1" title=""  ng-if="TipInfo.ZCHB.status==0">
+                    <div class="tit">
+                        <p class="txt-s14 txt-white">新用户注册 <span class="hot-icon"></span></p>
+                        <p class="desc">新用户注册可送10元现金红包</p>
+                    </div>
+                    <span class="fr"><em class="packet-icon packet-icon-on">10元</em><em class="packet-type txt-yellow">GO</em> </span>
+                </a>
+                <div  class="list" ng-if="TipInfo.ZCHB.status==1">
+                    <div class="tit">
+                        <p class="txt-s14  txt-white">新用户注册 <span class="hot-icon"></span></p>
+                        <p class="desc">新用户注册可送10元现金红包</p>
+                    </div>
+                    <span class="fr"><em class="packet-icon packet-icon-on" ng-click="receivePacket(TipInfo.ZCHB.title,10)">10元</em><em class="packet-type">完成</em> </span>
+                </div>
+                <div  class="list" ng-if="TipInfo.ZCHB.status==2">
+                    <div class="tit">
+                        <p class="txt-s14 txt-white">新用户注册 <span class="hot-icon"></span></p>
+                        <p class="desc">新用户注册可送10元现金红包</p>
+                    </div>
+                    <span class="fr"><em class="packet-icon">10元</em><em class="packet-type">已领</em> </span>
+                </div>
+                <!--模拟交易-->
+                <a  class="list" href="#/outerTrade/HSI/1" title=""   ng-if="TipInfo.MNJY.status==0">
+                    <div class="tit">
+                        <p class="txt-s14  txt-white">模拟交易 <span class="hot-icon"></span></p>
+                        <p class="desc">完成5次模拟练习</p>
+                    </div>
+                    <span class="fr"><em class="packet-icon packet-icon-on">50元</em><em class="packet-type txt-yellow">GO</em> </span>
+                </a>
+                <div  class="list"  ng-if="TipInfo.MNJY.status==1">
+                    <div class="tit">
+                        <p class="txt-s14  txt-white">模拟交易 <span class="hot-icon"></span></p>
+                        <p class="desc">完成5次模拟练习</p>
+                    </div>
+                    <span class="fr"><em class="packet-icon packet-icon-on" ng-click="receivePacket(TipInfo.MNJY.title,50)">50元</em><em class="packet-type">完成</em> </span>
+                </div>
+                <div  class="list"  ng-if="TipInfo.MNJY.status==2">
+                    <div class="tit">
+                        <p class="txt-s14 txt-white">模拟交易 <span class="hot-icon"></span></p>
+                        <p class="desc">完成5次模拟练习</p>
+                    </div>
+                    <span class="fr"><em class="packet-icon">50元</em><em class="packet-type">已领</em> </span>
+                </div>
+                <!--首次充值-->
+                <a  class="list" href="#/payType" title=""   ng-if="TipInfo.SCCZ.status==0">
+                    <div class="tit">
+                        <p class="txt-s14  txt-white">首次充值 <span class="hot-icon"></span></p>
+                        <p class="desc">任意金额充值成功</p>
+                    </div>
+                    <span class="fr"><em class="packet-icon packet-icon-on">30元</em><em class="packet-type txt-yellow">GO</em> </span>
+                </a>
+                <div  class="list"  ng-if="TipInfo.SCCZ.status==1">
+                    <div class="tit">
+                        <p class="txt-s14  txt-white">首次充值 <span class="hot-icon"></span></p>
+                        <p class="desc">任意金额充值成功</p>
+                    </div>
+                    <span class="fr"><em class="packet-icon packet-icon-on" ng-click="receivePacket(TipInfo.SCCZ.title,30)">30元</em><em class="packet-type">完成</em> </span>
+                </div>
+                <div  class="list"  ng-if="TipInfo.SCCZ.status==2">
+                    <div class="tit">
+                        <p class="txt-s14 txt-white">首次充值 <span class="hot-icon"></span></p>
+                        <p class="desc">任意金额充值成功</p>
+                    </div>
+                    <span class="fr"><em class="packet-icon">30元</em><em class="packet-type">已领</em> </span>
+                </div>
+                <!--实盘交易-->
+                <a  class="list" href="#/outerTrade/HSI/2" title=""   ng-if="TipInfo.SPJY.status==0">
+                    <div class="tit">
+                        <p class="txt-s14  txt-white">实盘交易 <span class="hot-icon"></span></p>
+                        <p class="desc">完成首次实盘交易</p>
+                    </div>
+                    <span class="fr"><em class="packet-icon packet-icon-on">50元</em><em class="packet-type txt-yellow">GO</em> </span>
+                </a>
+                <div  class="list"  ng-if="TipInfo.SPJY.status==1">
+                    <div class="tit">
+                        <p class="txt-s14  txt-white">实盘交易 <span class="hot-icon"></span></p>
+                        <p class="desc">完成首次实盘交易</p>
+                    </div>
+                    <span class="fr"><em class="packet-icon packet-icon-on" ng-click="receivePacket(TipInfo.SPJY.title,50)">50元</em><em class="packet-type">完成</em> </span>
+                </div>
+                <div  class="list"  ng-if="TipInfo.SPJY.status==2">
+                    <div class="tit">
+                        <p class="txt-s14 txt-white">实盘交易 <span class="hot-icon"></span></p>
+                        <p class="desc">完成首次实盘交易</p>
+                    </div>
+                    <span class="fr"><em class="packet-icon">50元</em><em class="packet-type">已领</em> </span>
+                </div>
+                <!--实名认证-->
+                <a  class="list" href="#/identification" title=""   ng-if="TipInfo.SMRZ.status==0">
+                    <div class="tit">
+                        <p class="txt-s14  txt-white">实名认证 <span class="hot-icon new-icon"></span></p>
+                        <p class="desc">完成实名认证送红包</p>
+                    </div>
+                    <span class="fr"><em class="packet-icon packet-icon-on">18元</em><em class="packet-type txt-yellow">GO</em> </span>
+                </a>
+                <div  class="list"  ng-if="TipInfo.SMRZ.status==1">
+                    <div class="tit">
+                        <p class="txt-s14  txt-white">实名认证 <span class="hot-icon new-icon"></span></p>
+                        <p class="desc">完成实名认证送红包</p>
+                    </div>
+                    <span class="fr"><em class="packet-icon packet-icon-on" ng-click="receivePacket(TipInfo.SMRZ.title,18)">18元</em><em class="packet-type">完成</em> </span>
+                </div>
+                <div  class="list"  ng-if="TipInfo.SMRZ.status==2">
+                    <div class="tit">
+                        <p class="txt-s14 txt-white">实名认证 <span class="hot-icon new-icon"></span></p>
+                        <p class="desc">完成实名认证送红包</p>
+                    </div>
+                    <span class="fr"><em class="packet-icon">18元</em><em class="packet-type">已领</em> </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

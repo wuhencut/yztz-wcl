@@ -1,0 +1,377 @@
+.page-activity .page-simulate .mod-simu-header {
+    position: relative;
+}
+
+.page-activity .page-simulate .mod-simu-header img{
+    display: block;
+    width: 100%;
+}
+
+.page-activity .page-simulate .mod-simu-header .simu-rule {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 0.5rem;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 0.2rem 0 0 0.2rem;
+    line-height: 0.3rem;
+}
+
+.mod-simu-content {
+    background: url("../../../images/activity/simulation-bg.png") repeat-y;
+    background-size: 100% auto;
+    padding: 0 0.2rem 0.8rem 0.2rem;
+}
+
+.mod-simu-content .bg-white {
+    width: 100%;
+    color: #666666;
+    background-color: #FFFFFF;
+    border: 0.02rem solid #be0630;
+}
+
+.mod-simu-content .simu-title {
+    color: #EEEEEE;
+}
+
+.mod-simu-content .history-champion {
+    position: relative;
+    height: 2.5rem;
+    width: 100%;
+}
+
+.mod-simu-content .history-champion .change-top{
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.mod-simu-content .history-champion .icon-left,
+.mod-simu-content .history-champion .icon-right {
+    height: 0.26rem;
+    width: 0.14rem;
+    top: 1rem;
+    position: absolute;
+}
+
+.mod-simu-content .history-champion .icon-left {
+    background: url('../../../images/icon-l.png') no-repeat;
+    background-size: 0.14rem;
+    left: 0.1rem;
+}
+
+.mod-simu-content .history-champion .icon-right {
+    background: url('../../../images/icon-r.png') no-repeat;
+    background-size: 0.14rem;
+    right: 0.1rem;
+}
+
+.mod-simu-content .history-champion .history-top {
+    margin: 0.4rem 0.3rem 0.2rem;
+    height: 1.5rem;
+}
+
+.mod-simu-content .history-champion .history-top .history-top-image {
+    background: url('../../../images/activity/border-gradient.png') no-repeat;
+    background-size: 100% 1.5rem;
+}
+
+.mod-simu-content .history-champion .history-top ul.top {
+    display: table;
+    width: 100%;
+}
+
+.mod-simu-content .history-champion .history-top ul.top li {
+    display: table-cell;
+    width: 33.33%;
+    height: 1.2rem;
+    text-align: center;
+}
+
+.mod-simu-content .history-champion .history-top .history-top-image ul.top li i {
+    width: 0.5rem;
+    height: 0.45rem;
+    margin-top:  -0.25rem;
+    margin-left: 0.05rem;
+}
+
+.mod-simu-content .history-champion .history-top .history-top-image ul.top li:nth-child(2) i {
+    width: 0.63rem;
+    height: 0.6rem;
+    background: url('../../../images/activity/simulation-trophy1.png') no-repeat;
+    background-size: 0.63rem;
+}
+
+.mod-simu-content .history-champion .history-top .history-top-image ul.top li:first-child i {
+    background: url('../../../images/activity/simulation-trophy2.png') no-repeat;
+    background-size: 0.5rem;
+}
+
+.mod-simu-content .history-champion .history-top .history-top-image ul.top li:last-child i {
+    background: url('../../../images/activity/simulation-trophy3.png') no-repeat;
+    background-size: 0.5rem;
+}
+
+.mod-simu-content .time-flow {
+    position: relative;
+}
+
+.mod-simu-content .time-flow .line {
+    border-bottom: 0.03rem dashed #F0ECEC;
+    position: absolute;
+    top: 0.45rem;
+    right: 0.2rem;
+    left: 0.2rem;
+}
+
+.mod-simu-content .time-flow .line i {
+    position: absolute;
+    top: -0.07rem;
+    width: 0.16rem;
+    height: 0.16rem;
+    background: url('../../../images/activity/i-arr.png') no-repeat;
+    background-size: 0.16rem;
+}
+
+.mod-simu-content .time-flow .line .icon-arr-l {
+    left: 26%;
+}
+
+.mod-simu-content .time-flow .line .icon-arr-r {
+    right: 26%;
+}
+
+.mod-simu-content .time-flow ul {
+    display: table;
+    width:100%;
+    padding: 0.1rem 0.15rem 0.2rem 0.15rem;
+}
+
+.mod-simu-content .time-flow li {
+    display: table-cell;
+    width: 33.33%;
+}
+
+.mod-simu-content .time-flow li i {
+    width: 0.65rem;
+    height: 0.65rem;
+    display: inline-block;
+    background: url('../../../images/activity/i-step02.png') no-repeat;
+    background-size: 0.65rem;
+    position: relative;
+}
+
+.mod-simu-content .time-flow li.first i {
+    background: url('../../../images/activity/i-step01.png') no-repeat;
+    background-size: 0.65rem;
+}
+
+.mod-simu-content .time-flow li.last i {
+    background: url('../../../images/activity/i-step03.png') no-repeat right top;
+    background-size: 0.65rem;
+}
+
+.mod-simu-content .countdown {
+
+}
+
+.mod-simu-content .countdown .simu-title {
+    color: #E9E9E9;
+}
+
+.mod-simu-content .countdown ul{
+    width: 2.6rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mod-simu-content .countdown li span {
+    display: inline-block;
+    width: 0.2rem;
+    line-height: 0.3rem;
+    background-color: #520819;
+    border-radius: 0.03rem;
+    color: #fff;
+    font-size: 0.16rem;
+}
+
+
+.mod-simu-content .competing-time ul{
+    display: table;
+    width: 100%;
+}
+
+.mod-simu-content .competing-time li {
+    display: table-cell;
+    width: 50%;
+    text-align: center;
+}
+
+.mod-simu-content .competing-time li:first-child {
+    border-right: 0.01rem solid #f1f1f1;
+}
+
+.mod-simu-content .prize-set .simu-awards {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: url("../../../images/activity/simulation-awards.png") no-repeat;
+    background-size: 1rem;
+}
+
+.mod-simu-content .prize-set ul{
+    padding: 0 0.1rem;
+}
+
+.mod-simu-content .prize-set li {
+    line-height: 0.45rem;
+    border-bottom: 0.01rem solid #f1f1f1;
+    padding: 0 0.2rem;
+}
+
+.mod-simu-content .prize-set li span {
+    float: right;
+}
+
+.mod-simu-content .prize-set li span > i {
+    color: #db1f4a;
+    font-size: 0.16rem;
+    font-weight: bold;
+}
+
+.mod-simu-content .current-list table {
+    font-size: 0.1rem;
+}
+
+.mod-simu-content .current-list table tr{
+    line-height: 0.45rem;
+    border-bottom: 0.01rem solid #f1f1f1;
+}
+
+.mod-simu-content .current-list table tr td {
+    text-align: center;
+}
+
+.mod-simu-content .current-list table tr td:last-child {
+    text-align: right;
+}
+
+.mod-simu-content .current-list .simu-table-body {
+    height: 2.3rem;
+    overflow-y: scroll;
+}
+
+.mod-simu-content .current-list .simu-table-body tr td i {
+    display: inline-block;
+    width: 0.2rem;
+    height: 0.15rem;
+}
+
+.mod-simu-content .current-list .simu-table-body tr:first-child td i{
+    background: url("../../../images/activity/simulation-crown1.png") no-repeat;
+    background-size: 0.2rem;
+}
+
+.mod-simu-content .current-list .simu-table-body tr:nth-child(2) td i{
+    background: url("../../../images/activity/simulation-crown2.png") no-repeat;
+    background-size: 0.2rem;
+}
+
+.mod-simu-content .current-list .simu-table-body tr:nth-child(3) td i{
+    background: url("../../../images/activity/simulation-crown3.png") no-repeat;
+    background-size: 0.2rem;
+}
+
+.simu-button {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    padding: 0.15rem;
+}
+.simu-button .btn-simu-red {
+    color: #FFFFFF;
+    background:-webkit-linear-gradient(to bottom, #ff7297, #db1f4a);
+    background:linear-gradient(to bottom, #ff7297, #db1f4a);
+}
+
+.simu-button .btn-simu-disable {
+    color: #FFFFFF;
+    background:-webkit-linear-gradient(to bottom, #ffffff, #cccccc);
+    background:linear-gradient(to bottom, #ffffff, #cccccc);
+}
+
+
+.sium-rule-bg,
+.sium-list-bg{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.sium-rule-bg .mod-sium-rule,
+.sium-list-bg .mod-sium-list{
+    position: fixed;
+    padding: 0 0.15rem;
+    top: 15%;
+    bottom: 15%;
+    width: 100%;
+}
+
+.sium-rule-bg .mod-sium-rule .sium-rule-content,
+.sium-list-bg .mod-sium-list .sium-list-content {
+    height:100%;
+    font-size: 0.12rem;
+    border: 0.02rem solid #8A0205;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.sium-rule-bg .mod-sium-rule .sium-rule-content .close,
+.sium-list-bg .mod-sium-list .sium-list-content .close {
+    width: 0.4rem;
+    line-height: 0.4rem;
+    text-align: center;
+    font-size: 0.2rem;
+    float: right;
+    padding-top: 0.1rem;
+}
+
+.sium-rule-bg .mod-sium-rule .sium-rule-content{
+    overflow-y: scroll;
+}
+
+.sium-rule-bg .mod-sium-rule .sium-rule-content p {
+    line-height: 0.22rem;
+}
+
+.sium-list-bg .mod-sium-list .sium-list-content table tr{
+    line-height: 0.3rem;
+}
+
+.sium-list-bg .mod-sium-list .sium-list-content table tr td {
+    text-align: center;
+}
+
+.sium-list-bg .mod-sium-list .sium-list-content table tr td:last-child {
+    text-align: right;
+}
+
+.sium-list-bg .mod-sium-list .sium-list-content .sium-list-table {
+    overflow-y: scroll;
+    height: 70%;
+}
+
+.mod-simu-content .current-list .sium-list-table tr td i {
+    display: inline-block;
+    width: 0.2rem;
+    height: 0.15rem;
+}
+
+.no-list-data {
+    line-height: 0.3rem;
+}

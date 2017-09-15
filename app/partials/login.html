@@ -1,0 +1,24 @@
+<section class="page-user">
+    <div class="page-login">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>登录</h3>
+                <!--<a href="#/index" class="nav-left"><i class="icon-back"></i></a>-->
+                <back-menu></back-menu>
+                <a href="#/register1" class="nav-right">注册</a>
+            </div>
+        </header>
+        <div class="mod-form-wrap bt-light-gray bb-light-gray mt20">
+            <div class="mod-form bt-light-gray">
+                <label>账号</label><input ng-model="form.username" type="text" class="inp" placeholder="请输入昵称或手机号码"/>
+            </div>
+            <div class="mod-form bb-light-gray">
+                <label>密码</label><input ng-model="form.password" type="password" class="inp" placeholder="请输入密码"/>
+                <a href="#forgetUserPass" class="tip-r">忘记密码</a>
+            </div>
+        </div>
+        <div class="pt30 pl15 pr15">
+            <button ng-click="login();" class="btn btn-{{btnState}}">登录</button>
+        </div>
+    </div>
+</section>

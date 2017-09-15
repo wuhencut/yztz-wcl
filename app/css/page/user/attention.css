@@ -1,0 +1,9 @@
+.page-user .page-attention .mod-attention {
+    padding: 0.7rem 0;
+    background-color: #121C25;
+}
+
+.page-user .page-attention .mod-attention img {
+    height: 1.4rem;
+    width: 1.4rem;
+}

@@ -1,0 +1,210 @@
+/*
+弹出框样式
+*/
+@-webkit-keyframes loading {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(720deg);
+    }
+}
+
+@-moz-keyframes loading {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(720deg);
+    }
+}
+
+/*db*/
+.db-bg, #loading {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.79);
+}
+
+/*loading*/
+#loading {
+    z-index: 100000;
+}
+
+#loading .load-wrap {
+    background: rgba(0, 0, 0, .5);
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    top: 50%;
+    margin-top: -35px;
+    width: 70px;
+    height: 70px;
+}
+
+#loading .load-wrap p {
+    width: 70px;
+    height: 70px;
+    background: url(data:image/png;base64,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) center center no-repeat;
+    -webkit-animation: loading 2s linear infinite;
+    -moz-animation: loading 2s linear infinite;
+    background-size: contain;
+}
+
+.db-wrap {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 30px;
+    right: 30px;
+    background: #FFFFFF;
+    color: #333333;
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+}
+
+.db-wrap .db-header {
+    font-size: 16px;
+    text-align: center;
+    padding: 12px 0 0;
+}
+
+.db-wrap .db-footer {
+    border-top: 1px solid #ECECEC;
+}
+
+.db-wrap .db-footer ul {
+    display: table;
+    width: 100%;
+}
+
+.db-wrap .db-footer li {
+    width: 1%;
+    display: table-cell;
+    border-right: 1px solid #ECECEC;
+}
+
+.db-wrap .db-footer li:last-child {
+    border-right: none;
+}
+
+.db-wrap .db-footer a {
+    display: block;
+    line-height: 45px;
+    text-align: center;
+    font-size: 0.16rem;
+    color: #E8003F;
+}
+
+/*移动端提示框样式*/
+@-webkit-keyframes boxfade {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    20% {
+        opacity: 0.8;
+        -webkit-transform: translate3d(0px, -20px, 0px);
+    }
+    80% {
+        opacity: 0.8;
+        -webkit-transform: translate3d(0px, -20px, 0px);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+@-moz-keyframes boxfade {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    20% {
+        opacity: 0.8;
+        -webkit-transform: translate3d(0px, -20px, 0px);
+    }
+    80% {
+        opacity: 0.8;
+        -webkit-transform: translate3d(0px, -20px, 0px);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+.db-tip-wrap {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 80%;
+    margin-top: -20px;
+    padding: 0 20px;
+    text-align: center;
+    z-index: 99999;
+    -webkit-animation: boxfade 2.1s ease;
+    -moz-animation: boxfade 2.1s ease;
+    -ms-animation: boxfade 2.1s ease;
+}
+
+.db-tip {
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 5px;
+    padding: 10px;
+    background: #000;
+    color: #fff;
+    line-height: 1.5;
+}
+
+/*遮罩层*/
+.dialog-wrap {
+    position: fixed;
+    display: -webkit-box;
+    display: -moz-box;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: scroll;
+    z-index: 10000;
+    background-color: #0E1821;
+}
+
+.page-dialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: scroll;
+}
+
+.mod-db-wrap{
+    position: fixed;
+    top: 20%;
+    left: 0.3rem;
+    right: 0.3rem;
+    background: #FFFFFF;
+    border-radius: 0.05rem;
+}
+
+.mod-stockType-list .wrap {
+    padding-top: .5rem;
+    background: #E2E2E2;
+}
+
+.mod-stockType-list .wrap a {
+    display: block;
+    line-height: .5rem;
+    border-bottom: .01rem solid #FFFFFF;
+    text-align: center;
+    font-size: .16rem;
+    color: #131D26;
+}

@@ -1,0 +1,40 @@
+
+.page-mine .page-mine-modify .mod-manager tr{
+    background: #121C25;
+    border-bottom: 0.01rem solid #1C262F;
+}
+
+.page-mine .page-mine-modify .mod-manager tr:last-child{
+    border-bottom: none;
+}
+
+/*.page-mine .page-mine-modify .mod-manager .title{
+    background: none;
+    height: 0.36rem;
+}*/
+
+.page-mine .page-mine-modify .mod-manager td{
+    padding: 0.1rem 0;
+}
+
+.page-mine .page-mine-modify .mod-manager td .code{
+    font-size: 12px;
+    color: #999999;
+}
+
+.page-mine .page-mine-modify .mod-manager td .check,
+.page-mine .page-mine-modify .mod-manager td .uncheck{
+    display: inline-block;
+    width: 0.24rem;
+    height: 0.24rem;
+}
+
+.page-mine .page-mine-modify .mod-manager td .check{
+    background: url("../../../images/icon-checked.png") center no-repeat;
+    background-size: 100%;
+}
+
+.page-mine .page-mine-modify .mod-manager td .uncheck{
+    background: url("../../../images/icon-uncheck.png") center no-repeat;
+    background-size: 100%;
+}

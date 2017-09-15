@@ -1,0 +1,38 @@
+<section class="page-user">
+    <div class="page-help">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>提问</h3>
+                <!--<a href="#/help" class="nav-left"><i class="icon-back"></i></a>-->
+                <back-menu></back-menu>
+                <!--<a href="tel:4008888566" class="nav-right"><i class="icon-tel"></i></a>-->
+                <call></call>
+            </div>
+        </header>
+        <div class="mod-help-service">
+            <div ng-if="helpList.length > 0">
+                <div class="wrap" ng-repeat="obj in helpList">
+                    <div class="question">
+                        <p>{{obj.msg}}</p>
+                        <p class="txt-s10 txt-grey">{{obj.msgTime | date:'yyyy-MM-dd HH:mm'}}</p>
+                    </div>
+                    <div class="answer" ng-if="obj.reply">
+                        <p>{{obj.reply}}</p>
+                        <p class="txt-s10 txt-grey">{{obj.replyTime | date:'yyyy-MM-dd HH:mm'}}</p>
+                    </div>
+                </div>
+                <div ng-if="currPage != totalPage" class="pt20">
+                    <div class="mod-more" ng-click="getHelpList(currPage+1);">
+                        加载更多
+                    </div>
+                </div>
+            </div>
+            <div ng-if="helpList.length == 0" class="mod-no-data">暂无数据</div>
+        </div>
+        <div class="mod-send">
+            <div class="wrap">
+                <a href="#/helpAsk">我要留言</a>
+            </div>
+        </div>
+    </div>
+</section>

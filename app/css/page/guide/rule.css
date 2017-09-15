@@ -1,0 +1,70 @@
+.page-guide .page-rule .mod-trade-rule,
+.page-guide .page-safe .mod-about,
+.page-guide .page-about .mod-about,
+.page-guide .page-introduce .mod-intro {
+    padding: 0 .15rem;
+    background: #0E1821;
+}
+
+/*.page-guide .page-rule .mod-trade-rule td {
+    padding: .05rem;
+    border: 1px solid #DBDBDB;
+    color: #666666;
+    text-align: center;
+}*/
+
+.page-guide .page-rule .mod-trade-rule .wrap,
+.page-guide .page-safe .mod-about .wrap,
+.page-guide .page-about .mod-about .wrap,
+.page-guide .page-introduce .mod-intro .wrap {
+    padding: 0 0 0.15rem;
+}
+
+.page-guide .page-rule .mod-trade-rule .wrap > h3,
+.page-guide .page-safe .mod-about .wrap > h3,
+.page-guide .page-about .mod-about .wrap > h3,
+.page-guide .page-introduce .mod-intro .wrap > h3 {
+    line-height: 0.3rem;
+    border-left: 0.04rem solid #F5C300;
+    padding-left: 0.1rem;
+    background: #131E29;
+    font-size: 0.14rem;
+    margin-bottom: 0.05rem;
+}
+
+.page-guide .page-rule .mod-trade-rule .wrap > h3 i,
+.page-guide .page-safe .mod-about .wrap > h3 i,
+.page-guide .page-about .mod-about .wrap > h3 i,
+.page-guide .page-introduce .mod-intro .wrap > h3 i{
+    display: inline-block;
+    float: right;
+    width: 0;
+    height: 0;
+    border-top: 0.15rem solid transparent;
+    border-bottom: 0.15rem solid transparent;
+    border-right: 0.15rem solid #0E1821;
+}
+
+.page-guide .page-rule .mod-trade-rule .wrap > p,
+.page-guide .page-safe .mod-about .wrap > p,
+.page-guide .page-about .mod-about .wrap > p,
+.page-guide .page-introduce .mod-intro .wrap > p {
+    color: #999999;
+    padding-top: 0.05rem;
+    font-size: 0.12rem;
+}
+
+.page-guide .page-rule .mod-trade-rule .wrap > p:before,
+.page-guide .page-safe .mod-about .wrap > p:before,
+.page-guide .page-about .mod-about .wrap > p:before,
+.page-guide .page-introduce .mod-intro .wrap > p:before {
+    content: '　　';
+}
+
+.page-guide .page-rule .mod-trade-rule .wrap > p.noc:before,
+.page-guide .page-safe .mod-about .wrap > p.noc:before,
+.page-guide .page-about .mod-about .wrap > p.noc:before,
+.page-guide .page-introduce .mod-intro .wrap > p.noc:before {
+    content: '';
+}
+

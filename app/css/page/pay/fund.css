@@ -1,0 +1,210 @@
+.page-pay .page-fund .page-header .header-wrap h3 img {
+    height: 0.1rem;
+    width: 0.1rem;
+}
+.page-pay .page-fund .mod-fund{
+    padding-top: 0.50rem;
+}
+.page-pay .page-fund .mod-fund .wrap {
+    color: #FFFFFF;
+    position: relative;
+}
+
+.page-pay .page-fund .mod-fund .wrap .info {
+    background: #121C25;
+    padding: 0.1rem 0.15rem;
+    border-bottom: 0.01rem solid #1C262F;
+}
+
+.page-pay .page-fund .mod-fund .wrap .info .info-l {
+    float: left;
+}
+
+.page-pay .page-fund .mod-fund .wrap .info .info-r {
+    float: right;
+    text-align: right;
+}
+
+.page-pay .page-fund .mod-fund .wrap .info dt {
+    font-size: 0.14rem;
+}
+
+.page-pay .page-fund .mod-fund .wrap .info .info-l dd {
+    font-size: 0.12rem;
+    color: #999999;
+}
+
+.page-pay .page-fund .mod-fund .wrap .cancel-outcome{
+    position: absolute;
+    right: 0.15rem;
+    top: 0.35rem;
+    display: inline-block;
+    font-size: 0.1rem;
+    color: #F5C300;
+    border: 0.01rem solid #F5C300;
+    border-radius: 0.02rem;
+    padding: 0 0.05rem;
+}
+
+.page-pay .page-fund .mod-fund .wrap .detail {
+    padding: 0.1rem 0.15rem;
+    border-bottom: 0.01rem solid #1C262F;
+    color: #FFFFFF;
+}
+
+.page-pay .page-fund .mod-fund .mod-pay-detail {
+    padding-top: 0.1rem;
+}
+
+.page-pay .page-fund .mod-fund .mod-pay-detail ul {
+    display: table;
+    width: 100%;
+}
+
+.page-pay .page-fund .mod-fund .mod-pay-detail li {
+    display: table-cell;
+    position: relative;
+    vertical-align: top;
+}
+
+.page-pay .page-fund .mod-fund .mod-pay-detail dl {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    width: 0.7rem;
+    padding-top: 0.34rem;
+    z-index: 1;
+}
+
+.page-pay .page-fund .mod-fund .mod-pay-detail dt {
+    font-size: 0.12rem;
+}
+
+.page-pay .page-fund .mod-fund .mod-pay-detail dd {
+    font-size: 0.10rem;
+    color: #999999;
+    display: inline-block;
+    width: 0.7rem;
+    height: 0.18rem;
+}
+
+.page-pay .page-fund .mod-fund .mod-pay-detail .doing {
+    text-align: center;
+}
+
+.page-pay .page-fund .mod-fund .mod-pay-detail .done {
+    text-align: right;
+}
+
+.page-pay .page-fund .mod-fund .mod-pay-detail .line {
+    position: absolute;
+    height: 0.02rem;
+    top: 0.11rem;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+}
+
+.page-pay .page-fund .mod-fund .mod-pay-detail .begin dl {
+    background: url("../../../images/icon-money.png") top center no-repeat;
+    background-size: 0.24rem;
+}
+
+.page-pay .page-fund .mod-fund .mod-pay-detail .doing dl {
+    background: url("../../../images/icon-doing.png") top center no-repeat;
+    background-size: 0.24rem;
+}
+
+.page-pay .page-fund .mod-fund .mod-pay-detail .done dl {
+    background: url("../../../images/icon-succ.png") top center no-repeat;
+    background-size: 0.24rem;
+}
+
+.page-pay .page-fund .mod-fund .mod-pay-detail .begin .line {
+    left: 0.35rem;
+}
+
+.page-pay .page-fund .mod-fund .mod-pay-detail .done .line {
+    right: 0.35rem;
+}
+
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-begin .begin dl,
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-doing .begin dl,
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-succ .begin dl,
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-fail .begin dl,
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-cancel .begin dl {
+    background: url("../../../images/icon-money-1.png") top center no-repeat;
+    background-size: 0.24rem;
+}
+
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-doing .doing dl,
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-succ .doing dl,
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-fail .doing dl,
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-cancel .doing dl{
+    background: url("../../../images/icon-doing-1.png") top center no-repeat;
+    background-size: 0.24rem;
+}
+
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-succ .done dl {
+    background: url("../../../images/icon-succ-1.png") top center no-repeat;
+    background-size: 0.24rem;
+}
+
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-fail .done dl,
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-cancel .done dl {
+    background: url("../../../images/icon-fail-1.png") top center no-repeat;
+    background-size: 0.24rem;
+}
+
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-begin .begin .line,
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-doing .begin .line,
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-doing .doing .line,
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-succ .doing .line,
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-succ .done .line,
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-succ .begin .line,
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-fail .begin .line,
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-fail .doing .line,
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-fail .done .line,
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-cancel .begin .line,
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-cancel .doing .line,
+.page-pay .page-fund .mod-fund .mod-pay-detail .process-cancel .done .line {
+    background: #F5C300;
+}
+
+.fund-dialog {
+    position: fixed;
+    top: .5rem;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.fund-dialog ul {
+    display: table;
+    width: 100%;
+    padding: 0.10rem 0.15rem 0.10rem 0;
+    background: #E2E2E2;
+}
+
+.fund-dialog li {
+    display: table-cell;
+    padding-left: 0.15rem;
+}
+
+.fund-dialog li span {
+    display: block;
+    line-height: 0.3rem;
+    text-align: center;
+    font-size: 0.16rem;
+    border-radius: 0.05rem;
+    color: #333333;
+}
+.fund-dialog .all .all,
+.fund-dialog .charge .charge,
+.fund-dialog .withdraw .withdraw,
+.fund-dialog .income .income,
+.fund-dialog .outcome .outcome {
+    background: #F5C300;
+    color: #121C25;
+}

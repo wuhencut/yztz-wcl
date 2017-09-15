@@ -1,0 +1,122 @@
+<section class="page-activity">
+    <div class="page-extension">
+        <header class="page-header">
+            <div class="header-wrap has-border-b">
+                <h3>推广赚钱</h3>
+                <!--<a href="#/discover" class="nav-left">
+                    <i class="icon-back"></i>
+                </a>-->
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="mod-extension mod-{{type}}">
+            <div class="extension-menu bg-black">
+                <ul>
+                    <li class="act-detail" ng-click="type='detail'">推广详情</li>
+                    <li class="act-user" ng-click="getUsers(pageIndex)">我的用户</li>
+                </ul>
+            </div>
+            <div class="wrap con-detail">
+                <div class="extension-detail bg-black">
+                    <ul>
+                        <li>
+                            <p>已赚佣金</p>
+                            <p><em class="number">{{extenInfo.commission.toFixed(2)}}</em></p>
+                            <p></p>
+                        </li>
+                        <li>
+                            <p>佣金比例<em class="ml5 icon-rate" onclick="javascript:document.getElementById('rate').scrollIntoView()"></em></p>
+                            <p><em class="number">{{extenInfo.ratio}}%</em></p>
+                            <p><span class="officer">{{extenInfo.commType}}</span></p>
+                        </li>
+                        <li>
+                            <p>我的用户</p>
+                            <p><em  class="number">{{extenInfo.userCount}}</em></p>
+                            <p>交易{{extenInfo.tradeCount}}人</p>
+                        </li>
+                    </ul>
+                </div>
+                <div ng-if="extenInfo.ratio == 0" class="not-login mt10" ng-if="extensionInfo.ratio == 0">
+                    <a class="btn txt-yellow txt-s16" href="#/login?goURL=/extension">登录后获取您的推广链接</a>
+                </div>
+                <div ng-if="extenInfo.ratio != 0" class="extension-code mt15 bg-black">
+                    <p>复制推广链接发给朋友 <span class="txt-grey"> (已访问{{extenInfo.generalizeVisitCount}}次)</span></p>
+                    <p class="reproduce">
+                        <input type="text" value={{extenInfo.generalizeUrl}} readonly="readonly" class="copy-target">
+                        <span class="copy">复制</span>
+                    </p>
+                    <p class="mt20">推荐朋友扫码，成为你的用户</p>
+                    <p class="mt5"><img class="qrCode" ng-src={{codeInfo}}> </p>
+                </div>
+                <div class="extension-intro">
+                    <h3>------ 如何赚钱 -----</h3>
+                    <img src="/app/images/extension-intro.jpg" width="100%" class="mt10 mb10">
+                    <h3>------ 推广渠道 -----</h3>
+                    <div class="extension-intro-channel mt20">
+                        朋友、微信、朋友圈、QQ、微博、博客、论坛 <br>或在自己的网站上推广
+                    </div>
+                    <!--<p class="mt30 txt-s16">1个用户1天交易<b>10</b>次</p>
+                    <p class="txt-s20">你<span class="txt-deep-yellow">赚<b>500</b>元</span></p>
+                    <p class="txt-s20"><b>100</b>个用户</p>
+                    <p class="txt-s24">你<span class="txt-deep-yellow">赚<b>50000</b>元</span></p>
+                    <p class="txt-s24">交易一个月</p>
+                    <p class="txt-s24">你<span class="txt-deep-yellow">赚<b>1000000</b>元</span></p>
+                    <p class="txt-s24">交易一年</p>
+                    <p class="txt-s24">你<span class="txt-deep-yellow">赚<b>12000000</b>元</span></p>-->
+                </div>
+                <div class="extension-level mt15 mb20 bg-black">
+                    <h2>推广员级别</h2>
+                    <table class="mb20" id="rate">
+                        <tr>
+                            <th style="width:31%;">级别</th>
+                            <th style="width:23%;">下线交易<br>用户数量</th>
+                            <th style="width:23%;">交易提成<br>佣金比例</th>
+                            <th style="width:23%;">下线<br>有效期</th>
+                        </tr>
+                        <tr>
+                            <td>普通推广员</td>
+                            <td>≤9人</td>
+                            <td>0.01%</td>
+                            <td>半年</td>
+                        </tr>
+                        <tr>
+                            <td>金牌推广员</td>
+                            <td>10-49人</td>
+                            <td>0.03%</td>
+                            <td>一年</td>
+                        </tr>
+                        <tr>
+                            <td>钻石推广员</td>
+                            <td>≥50人</td>
+                            <td>0.05%</td>
+                            <td>两年</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="wrap con-user">
+                <div class="extension-user bg-black">
+                    <ul class="list-head clearfix">
+                        <li>用户</li>
+                        <li>点买金额</li>
+                        <li>注册时间</li>
+                    </ul>
+                    <div ng-show="!showNoData">
+                        <ul class="clearfix" ng-repeat="obj in list">
+                            <li>{{obj.username}}</li>
+                            <li>{{obj.money.toFixed(0)}}</li>
+                            <li>{{obj.registerTime}}</li>
+                        </ul>
+                        <div class="more txt-grey txt-center" ng-if="pageIndex != totalPage" ng-click="getList(pageIndex+1);">
+                            查看更多（共{{totalUserCount}}人，交易{{tradeCount}}人）
+                        </div>
+                        <div class="more txt-grey txt-center" ng-if="pageIndex == totalPage">（共{{totalUserCount}}人，交易{{tradeCount}}人）</div>
+                    </div>
+                </div>
+                <div class="extension-userNo txt-center" ng-show="showNoData">
+                    暂无用户
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

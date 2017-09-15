@@ -1,0 +1,95 @@
+/*
+尾部导航样式
+*/
+.page-footer {
+    height: 0.5rem;
+}
+
+.page-footer .footer-wrap {
+    position: fixed;
+    width: 100%;
+    height: 0.5rem;
+    bottom: 0;
+    left: 0;
+    background-color: #131E29;
+    border-top: 0.01rem solid #1C262F;
+    z-index: 100;
+}
+
+.page-footer ul {
+    display: table;
+    width: 100%;
+}
+
+.page-footer li {
+    display: table-cell;
+    width: 20%;
+}
+
+.page-footer a {
+    display: block;
+    height: 0.5rem;
+    text-align: center;
+    padding: 0.05rem 0.1rem 0;
+    color: #FFFFFF;
+    font-size: 0.12rem;
+}
+
+.page-footer a span {
+    display: block;
+    margin: 0 auto;
+    width: 0.2rem;
+    height: 0.2rem;
+}
+
+.page-footer .nav-home span {
+    background: url("../../images/footer-home.png") top center no-repeat;
+    background-size: 0.2rem;
+}
+
+.page-footer .nav-trade span {
+    background: url("../../images/footer-trade.png") top center no-repeat;
+    background-size: 0.2rem;
+}
+
+.page-footer .nav-mine span {
+    background: url("../../images/footer-mine.png") top center no-repeat;
+    background-size: 0.2rem;
+}
+
+.page-footer .nav-discover span {
+    background: url("../../images/footer-discover.png") top center no-repeat;
+    background-size: 0.2rem;
+}
+
+.page-footer .nav-user span {
+    background: url("../../images/footer-my.png") top center no-repeat;
+    background-size: 0.2rem;
+}
+
+.page-home .page-footer .nav-home,
+.page-mine .page-footer .nav-mine,
+.page-user .page-footer .nav-user,
+.page-discover .page-footer .nav-discover{
+    color: #FFD900;
+}
+
+.page-home .page-footer .nav-home span {
+    background: url("../../images/footer-home-act.png") top center no-repeat;
+    background-size: 0.2rem;
+}
+
+.page-mine .page-footer .nav-mine span {
+    background: url("../../images/footer-mine-act.png") top center no-repeat;
+    background-size: 0.2rem;
+}
+
+.page-user .page-footer .nav-user span {
+    background: url("../../images/footer-my-act.png") top center no-repeat;
+    background-size: 0.2rem;
+}
+
+.page-discover .page-footer .nav-discover span {
+    background: url("../../images/footer-discover-act.png") top center no-repeat;
+    background-size: 0.2rem;
+}

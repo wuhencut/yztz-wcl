@@ -1,0 +1,100 @@
+
+.page-trade .page-trade-buy .mod-buy .wrap {
+    padding: 0 0.15rem;
+    background: #121C25;
+    /*border-top: 0.01rem solid #1C262F;
+    border-bottom: 0.01rem solid #1C262F;*/
+}
+
+.page-trade .page-trade-buy .mod-buy .wrap .item {
+    line-height: 0.44rem;
+    border-bottom: 0.01rem solid #1C262F;
+}
+.page-trade .page-trade-buy .mod-buy .wrap .item:last-child {
+    border-bottom: none;
+}
+.page-trade .page-trade-buy .mod-buy  .item-single{
+    line-height: 0.22rem;
+    padding: 0.1rem;
+}
+.page-trade .page-trade-buy .mod-buy  .item-single .fr{
+    line-height: 0.44rem;
+}
+
+.page-trade .page-trade-buy .mod-buy .wrap .item .icon-info {
+    vertical-align: -0.03rem;
+}
+
+.page-trade .page-trade-buy .mod-buy .wrap .item .fr {
+    font-size: 0.16rem;
+}
+
+/*.page-trade .page-trade-buy .mod-buy .mod-choose-money ul {
+    border-top: 0.01rem solid #1C262F;
+    border-left: 0.01rem solid #1C262F;
+}
+
+.page-trade .page-trade-buy .mod-buy .mod-choose-money li {
+    float: left;
+    width: 25%;
+    line-height: 0.5rem;
+    border-right: 0.01rem solid #1C262F;
+    border-bottom: 0.01rem solid #1C262F;
+    text-align: center;
+}
+
+.page-trade .page-trade-buy .mod-buy .mod-choose-money .curr {
+    background: #F5C300;
+    color: #121C25;
+    /!*border: 0.01rem solid #F5C300;*!/
+    padding-right: 0.01rem;
+    font-weight: bold;
+    z-index :10;
+    /!*margin: -0.01rem 0 0 0;*!/
+}*/
+
+.page-trade .page-trade-buy .mod-buy .stop-high,
+.page-trade .page-trade-buy .mod-buy .stop-low {
+    padding-bottom: 0.1rem;
+}
+
+.page-trade .page-trade-buy .mod-buy .stop-high span,
+.page-trade .page-trade-buy .mod-buy .stop-low span {
+    float: left;
+    line-height: 0.2rem;
+    font-weight: bold;
+    padding: 0 0 0 0.2rem;
+    margin: 0.1rem 0 0 0.15rem;
+    background: url("../../../images/icon-uncheck.png") left center no-repeat;
+    background-size: 0.16rem;
+}
+.page-trade .page-trade-buy .mod-buy  .item-single .stop-low span{
+	padding: 0 0 0 0.15rem;
+	background: url("../../../images/activity/packet/check.png") left center no-repeat;
+	background-size: 0.11rem;
+}
+
+.page-trade .page-trade-buy .mod-buy .stop-high span:first-child,
+.page-trade .page-trade-buy .mod-buy .stop-low span:first-child {
+    margin: 0.1rem 0 0 0.05rem;
+}
+
+.page-trade .page-trade-buy .mod-buy .stop-high .curr,
+.page-trade .page-trade-buy .mod-buy .stop-low .curr {
+    background: url("../../../images/icon-checked.png") left center no-repeat;
+    background-size: 0.16rem;
+    color: #F5C300;
+}
+.page-trade .page-trade-buy .mod-buy .item-single  .stop-lowPacket span {
+    float: left;
+    line-height: 0.2rem;
+    padding: 0 0 0 0.15rem;
+    margin: 0.1rem 0 0 0.15rem;
+    background: url("../../../images/activity/packet/checkon.png") left center no-repeat;
+    background-size: 0.11rem;
+}
+.page-trade .page-trade-buy .mod-buy .item-single  .stop-lowPacket .curr {
+    background: url("../../../images/activity/packet/checkon.png") left center no-repeat;
+    background-size: 0.11rem;
+    color: white;
+}

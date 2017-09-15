@@ -1,0 +1,18 @@
+<section class="page-user">
+    <div class="page-notice">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>公告详情</h3>
+                <!--<a href="#/notice" class="nav-left"><i class="icon-back"></i></a>-->
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="mod-notice-detail">
+            <div class="title">
+                <h4>{{notice.noticeTitle}}</h4>
+                <p>{{notice.releaseTime | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+            </div>
+            <div class="content" ng-bind-html="notice.noticeContent"></div>
+        </div>
+    </div>
+</section>

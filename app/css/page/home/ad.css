@@ -1,0 +1,37 @@
+.pop-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.pop-bg .mod-pop-dialog {
+    position: fixed;
+    width: 100%;
+    top: 1rem;
+    /*right: 15%;
+    bottom: 25%;
+    left: 15%;*/
+    overflow-y: scroll;
+}
+
+.pop-bg .mod-pop-dialog .pop-content {
+    position: relative;
+    width: 3rem;
+    margin: 0 auto;
+}
+
+.pop-bg .mod-pop-dialog .pop-content img {
+    width: 100%;
+}
+
+.pop-bg span {
+    position: absolute;
+    display: inline-block;
+    width: 20%;
+    height: 20%;
+    top: 0;
+    right: 0;
+}

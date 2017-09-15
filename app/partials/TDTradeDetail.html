@@ -1,0 +1,134 @@
+<section class="page-trade">
+    <div class="page-trade-detail">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>策略详情</h3>
+                <!--<a href="#{{backURL}}" class="nav-left">
+                    <i class="icon-back"></i>
+                </a>-->
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="mod-strategy">
+            <div class="wrap">
+                <p class="mod-form-title">策略交易号</p>
+                <div class="item">
+                    JQ{{trade.id}} <a href="#/agreementTDInvestor?tradeID={{trade.id}}" class="txt-blue">合约协议</a>
+                </div>
+                <p class="mod-form-title">交易合作</p>
+                <div class="item">
+                    <p>
+                        <label>投资人</label>{{trade.investorUsername}}（ID:{{trade.investorUserId}}）
+                    </p>
+                    <p>
+                        <label>点买人</label>{{trade.username}}（ID:{{trade.userId}}）
+                    </p>
+                </div>
+                <p class="mod-form-title">交易明细</p>
+                <div class="item">
+                    <ul class="trade-detail clearfix">
+                        <li>
+                            <label>股票名称</label>{{trade.stockName}}
+                        </li>
+                        <li>
+                            <label>交易本金</label>{{trade.money}}
+                        </li>
+                        <li>
+                            <label>买入价格</label>{{trade.buyPriceDeal.toFixed(2)}}
+                        </li>
+                        <li>
+                            <label>卖出价格</label>{{trade.sellPriceDeal.toFixed(2)}}
+                        </li>
+                        <li>
+                            <label>买入类型</label>即时成交
+                        </li>
+                        <li>
+                            <label>卖出类型</label>即时成交
+                        </li>
+                        <li>
+                            <label>买入时间</label>{{trade.dealTime | date:'yyyy-MM-dd'}}
+                        </li>
+                        <li>
+                            <label>卖出时间</label>{{trade.closeTime | date:'yyyy-MM-dd'}}
+                        </li>
+                        <li>
+                            <label>持仓天数</label>{{trade.holdDays}}个交易日
+                        </li>
+                        <li>
+                            <label>交易数量</label>{{trade.volumeDeal}}
+                        </li>
+                    </ul>
+                    <ul class="trade-detail pt10 mt10 clearfix" style="border-top: 0.01rem solid #1C262F;">
+                        <li>
+                            <label>综合费</label>{{trade.serviceCharge.toFixed(2)}}
+                        </li>
+
+                    </ul>
+                </div>
+                <p class="mod-form-title">点买人盈亏分配</p>
+                <div class="item">
+                    <ul class="trade-detail clearfix" ng-if="trade.profitTotal>0">
+                        <li>
+                            <label>策略盈亏</label>
+                            <span class="txt-red">+{{trade.profitTotal.toFixed(2)}}</span>
+                        </li>
+                        <li>&nbsp;</li>
+                        <li>
+                            <label>盈利分配</label>
+                            <span class="txt-red">+{{trade.profitShare.toFixed(2)}}</span>
+                        </li>
+                        <li>
+                            <label>亏损赔付</label>
+                            <span>0.00</span>
+                        </li>
+                    </ul>
+                    <ul class="trade-detail clearfix" ng-if="trade.profitTotal<0">
+                        <li>
+                            <label>策略盈亏</label>
+                            <span class="txt-green">{{trade.profitTotal.toFixed(2)}}</span>
+                        </li>
+                        <li>&nbsp;</li>
+                        <li>
+                            <label>盈利分配</label>
+                            <span>0.00</span>
+                        </li>
+                        <li>
+                            <label>亏损赔付</label>
+                            <span class="txt-green">{{trade.profitShare.toFixed(2)}}</span>
+                        </li>
+                    </ul>
+                    <ul class="trade-detail clearfix" ng-if="trade.profitTotal==0">
+                        <li>
+                            <label>策略盈亏</label>
+                            <span>0.00</span>
+                        </li>
+                        <li>&nbsp;</li>
+                        <li>
+                            <label>盈利分配</label>
+                            <span>0.00</span>
+                        </li>
+                        <li>
+                            <label>亏损赔付</label>
+                            <span>0.00</span>
+                        </li>
+                    </ul>
+                </div>
+                <p class="mod-form-title">点买人履约保证金结算</p>
+                <div class="item">
+                    <!--T+D的策略详情，点买人履约保证金，下面都是0，还有不要递延费字段-->
+                    <ul class="trade-detail clearfix">
+                        <li style="width: 33%;">
+                            <label>冻结</label><span>0.00</span>
+                        </li>
+                        <li class="txt-center" style="width: 34%;">
+                            <label>扣减</label><span>0.00</span>
+                        </li>
+                        <li class="txt-right" style="width: 33%;">
+                            <label>退回</label><span>0.00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

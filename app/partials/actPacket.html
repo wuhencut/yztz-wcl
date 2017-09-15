@@ -1,0 +1,25 @@
+<section id="" class="page-guide">
+    <div class="page-activity">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>红包活动</h3>
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="mod-actpacket-list">
+            <div class="wrap">
+                <div class="list" ng-repeat="item in TipInfo" ng-click="goURL(item.title, item.status)">
+                    <div class="tit">
+                        <p class="txt-s14 txt-white">{{item.name}} <span class="hot-icon" ng-class="{'new-icon':$last}" ></span></p>
+                        <p class="desc"  ng-bind="item.description ||'&nbsp;'">{{item.description}}</p>
+                        <span class="fr">
+                            <em class="packet-icon" ng-class="{'packet-icon-on':item.status!=2}"  ng-click="receivePacket(item)">{{item.value}}元</em>
+                            <em class="packet-type" ng-class="{'txt-yellow':item.status!=2}" ng-bind="{'0':'GO','1':'完成','2':'已领'}[item.status]"></em>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,48 @@
+<section class="page-user">
+    <div class="page-help">
+        <header ng-if="showHeader" class="page-header">
+            <div class="header-wrap">
+                <h3>客服中心</h3>
+                <!--<a href="#{{backURL}}" class="nav-left"><i class="icon-back"></i></a>-->
+                <back-menu></back-menu>
+                <!--<a href="tel:4008888566" class="nav-right"><i class="icon-tel"></i></a>-->
+                <call></call>
+            </div>
+        </header>
+        <div class="mod-help-center">
+            <p class="mod-form-title">点买问题</p>
+            <div class="wrap">
+                <!--<a class="help-title" href="#/helpDetail/QA0001{{showHeader?'':'?source=IOSAPP'}}">为什么我点买失败？ <i class="iconfont icon-down">&#xe608;</i></a>
+                <a href="#/helpDetail/QA0002{{showHeader?'':'?source=IOSAPP'}}">为什么点卖时会部分成交，怎么结算？ <i class="iconfont icon-down">&#xe608;</i></a>-->
+                <p ng-click="helpObjs.QA0001.status = !helpObjs.QA0001.status" class="help-title">为什么我点买失败？ <i ng-bind="{'true':'&#xe609;','false':'&#xe608;'}[helpObjs.QA0001.status]" class="iconfont icon-down"></i></p>
+                <div ng-if="helpObjs.QA0001.status" ng-bind-html="helpObjs.QA0001.content"></div>
+                <p ng-click="helpObjs.QA0002.status = !helpObjs.QA0002.status" class="help-title">为什么点卖时会部分成交，怎么结算？ <i ng-bind="{'true':'&#xe609;','false':'&#xe608;'}[helpObjs.QA0002.status]" class="iconfont icon-down"></i></p>
+                <div ng-if="helpObjs.QA0002.status" ng-bind-html="helpObjs.QA0002.content"></div>
+            </div>
+            <p class="mod-form-title">清算问题</p>
+            <div class="wrap">
+                <!--<a href="#/helpDetail/QB0001{{showHeader?'':'?source=IOSAPP'}}">点卖清算后资金何时返还账户余额？ <i class="iconfont icon-down">&#xe608;</i></a>
+                <a href="#/helpDetail/QB0002{{showHeader?'':'?source=IOSAPP'}}">为什么点卖时会部分成交，怎么结算？ <i class="iconfont icon-down">&#xe608;</i></a>-->
+                <p ng-click="helpObjs.QB0001.status = !helpObjs.QB0001.status" class="help-title">点卖清算后资金何时返还账户余额？ <i ng-bind="{'true':'&#xe609;','false':'&#xe608;'}[helpObjs.QB0001.status]" class="iconfont icon-down"></i></p>
+                <div ng-if="helpObjs.QB0001.status" ng-bind-html="helpObjs.QB0001.content"></div>
+                <p ng-click="helpObjs.QB0002.status = !helpObjs.QB0002.status" class="help-title">若清算时出现明显差错怎么办？ <i ng-bind="{'true':'&#xe609;','false':'&#xe608;'}[helpObjs.QB0002.status]" class="iconfont icon-down"></i></p>
+                <div ng-if="helpObjs.QB0002.status" ng-bind-html="helpObjs.QB0002.content"></div>
+            </div>
+            <p class="mod-form-title">充值问题</p>
+            <div class="wrap">
+                <!--<a href="#/helpDetail/QC0001{{showHeader?'':'?source=IOSAPP'}}">怎么充值？ <i class="iconfont icon-down">&#xe608;</i></a>
+                <a href="#/helpDetail/QC0002{{showHeader?'':'?source=IOSAPP'}}">充值到账速度快吗？ <i class="iconfont icon-down">&#xe608;</i></a>
+                <a href="#/helpDetail/QC0003{{showHeader?'':'?source=IOSAPP'}}">提款到账速度快吗？ <i class="iconfont icon-down">&#xe608;</i></a>-->
+                <p ng-click="helpObjs.QC0001.status = !helpObjs.QC0001.status" class="help-title">怎么充值？ <i ng-bind="{'true':'&#xe609;','false':'&#xe608;'}[helpObjs.QC0001.status]" class="iconfont icon-down"></i></p>
+                <div ng-if="helpObjs.QC0001.status" ng-bind-html="helpObjs.QC0001.content"></div>
+                <p ng-click="helpObjs.QC0002.status = !helpObjs.QC0002.status" class="help-title">充值到账速度快吗？ <i ng-bind="{'true':'&#xe609;','false':'&#xe608;'}[helpObjs.QC0002.status]" class="iconfont icon-down"></i></p>
+                <div ng-if="helpObjs.QC0002.status" ng-bind-html="helpObjs.QC0002.content"></div>
+                <p ng-click="helpObjs.QC0003.status = !helpObjs.QC0003.status" class="help-title">提款到账速度快吗？ <i ng-bind="{'true':'&#xe609;','false':'&#xe608;'}[helpObjs.QC0003.status]" class="iconfont icon-down"></i></p>
+                <div ng-if="helpObjs.QC0003.status" ng-bind-html="helpObjs.QC0003.content"></div>
+            </div>
+            <div class="wrap-footer mt10">
+                <a ng-click="toHelpCenter();">没有解决问题？点此提问</a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,64 @@
+/*
+头部导航样式
+*/
+.page-header {
+    height: 0.5rem;
+}
+
+.page-header .header-wrap {
+    position: fixed;
+    width: 100%;
+    height: 0.5rem;
+    top: 0;
+    left: 0;
+    background-color: #121C25;
+    z-index: 100;
+}
+
+.page-header .header-wrap.has-border-b {
+    border-bottom: 0.01rem solid #1C262F;
+}
+
+.page-header h3 {
+    height: 0.5rem;
+    line-height: 0.5rem;
+    text-align: center;
+    font-size: 0.16rem;
+    color: #FFFFFF;
+}
+
+.page-header h3 .dropdown {
+    width: .16rem;
+    height: .16rem;
+    margin-left: .03rem;
+    vertical-align: middle;
+    display: inline-block;
+    margin-bottom: .03rem;
+}
+
+.page-header h3 .down {
+    background: url("../../images/down-arrow.png") center no-repeat;
+    background-size: .16rem;
+}
+
+.page-header h3 .up {
+    background: url("../../images/up-arrow.png") center no-repeat;
+    background-size: .16rem;
+}
+
+.page-header .nav-left, .page-header .nav-right {
+    position: absolute;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    top: 0;
+    padding: 0 0.15rem;
+    color: #FFFFFF;
+}
+
+.page-header .nav-left {
+    left: 0;
+}
+
+.page-header .nav-right {
+    right: 0;
+}

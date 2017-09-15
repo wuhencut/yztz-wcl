@@ -1,0 +1,45 @@
+.mod-add-bank-card .title {
+    font-size: 0.12rem;
+    color: #F5C300;
+    text-align: center;
+    line-height: 0.5rem;
+}
+
+.mod-add-bank-card .list,
+.mod-modify-bank-card .list {
+    background: #121C25;
+    padding-left: 0.15rem;
+    /*border-top: 0.01rem solid #1C262F;
+    border-bottom: 0.01rem solid #1C262F;*/
+}
+
+.mod-add-bank-card .list > li,
+.mod-modify-bank-card .list > li {
+    position: relative;
+    line-height: 0.5rem;
+    font-size: 0;
+    border-bottom: 0.01rem solid #1C262F;
+}
+
+.mod-add-bank-card .list > li:last-child,
+.mod-modify-bank-card .list > li:last-child {
+    border-bottom: none;
+}
+
+.mod-add-bank-card .list > li > span,
+.mod-modify-bank-card .list > li > span {
+    display: inline-block;
+    font-size: 0.14rem;
+    color: #999999;
+    vertical-align: middle;
+}
+
+.mod-add-bank-card .list > li > span:first-child,
+.mod-modify-bank-card .list > li > span:first-child {
+    width: 0.9rem;
+    color: #FFFFFF;
+}
+
+.mod-add-bank-card .list .inp {
+    padding: 0.01rem 0;
+}

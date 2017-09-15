@@ -1,0 +1,48 @@
+<section class="page-pay">
+    <div class="page-pay-type">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>账户充值</h3>
+                <!--<a href="#/myHome" class="nav-left"><i class="icon-back"></i></a>-->
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="pt50 pb50">
+            <div ng-if="code == 100" class="txt-center">
+                <i class="pay-success"></i>
+                <p class="txt-gray txt-s16 pt20">恭喜您！ 充值成功</p>
+            </div>
+            <div ng-if="code == 501" class="txt-center">
+                <i class="pay-failed"></i>
+                <p class="txt-gray txt-s16 pt20">支付失败</p>
+            </div>
+            <div ng-if="code == 502" class="txt-center">
+                <i class="pay-failed"></i>
+                <p class="txt-gray txt-s16 pt20">订单号不存在</p>
+            </div>
+            <div ng-if="code == 503" class="txt-center">
+                <i class="pay-failed"></i>
+                <p class="txt-gray txt-s16 pt20">更新订单号出错</p>
+            </div>
+            <div ng-if="code == 504" class="txt-center">
+                <i class="pay-failed"></i>
+                <p class="txt-gray txt-s16 pt20">签名错误</p>
+            </div>
+            <div ng-if="code == 505" class="txt-center">
+                <i class="pay-failed"></i>
+                <p class="txt-gray txt-s16 pt20">充值未成功</p>
+            </div>
+        </div>
+        <div ng-if="code == 100" class="pl15 pr15">
+            <a href="#/trade/2" class="btn btn-orange">立即点买</a>
+        </div>
+        <div ng-if="code != 100" class="pl15 pr15">
+            <a href="#/payType" class="btn btn-orange">重新充值</a>
+        </div>
+        <!--
+        <div class="mt20 pl15 pr15">
+            <a href="cqyzms://" class="btn btn-orange">返回应用</a>
+        </div>
+        -->
+    </div>
+</section>

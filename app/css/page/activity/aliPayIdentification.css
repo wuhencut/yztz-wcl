@@ -1,0 +1,25 @@
+.page-aliPay .mod-aliPay .ali-pay .ali-options {
+    width: 0.9rem;
+    display: inline-block;
+    line-height: 0.5rem;
+}
+
+.page-aliPay .mod-aliPay .ali-pay .inp {
+    line-height: 0.2rem;
+}
+
+.ali-footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 0.1rem 0.15rem;
+}
+
+.ali-footer .footer-wrap {
+    line-height: 0.4rem;
+    text-align: center;
+    width: 100%;
+    background-color: #F5C300;
+    border-radius: 0.05rem;
+}

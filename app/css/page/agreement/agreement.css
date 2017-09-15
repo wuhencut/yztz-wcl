@@ -1,0 +1,39 @@
+.mod-agree .agree-wrap {
+    width: 100%;
+    padding: 0 0.15rem;
+    background-color: #121C25;
+}
+
+.mod-agree .agree-wrap .title {
+    text-align: center;
+    font-size: .14rem;
+    padding: .1rem 0;
+}
+
+.mod-agree .agree-wrap p {
+    color: #FFFFFF;
+    font-size: .12rem;
+    line-height: 2;
+}
+
+.mod-agree .agree-wrap p:before {
+    content: ' 　　';
+}
+
+.mod-agree .agree-wrap .topic {
+    padding: 0.1rem 0 0.05rem;
+}
+
+.mod-agree .agree-wrap table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.mod-agree .agree-wrap td {
+    font-size: .12rem;
+    padding: .05rem;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+}

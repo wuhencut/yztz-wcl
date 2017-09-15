@@ -1,0 +1,163 @@
+<section class="page-trade">
+    <div class="page-trade-sell">
+        <header class="page-header">
+            <div class="header-wrap has-border-b">
+                <!--<h3>T+D点卖A股 <span class="iconfont txt-center">&#xe608;</span></h3>-->
+                <common-title></common-title>
+                <!--<a href="#/index" class="nav-left">
+                    <i class="icon-back"></i>
+                </a>-->
+                <back-menu></back-menu>
+                <a href="#/TDTradeRule" class="nav-right">规则</a>
+            </div>
+        </header>
+        <div class="user-tips">
+            <div class="amount-tips txt-s12">
+                <div class="outer-tip">
+                    <ul ng-if="hold != null" class="tips-warp bgc-black">
+                        <li class="pl20 tip-left">
+                            <span ng-if="!showCondition" ng-click="showDeferCondition()" class="tip-icon iconfont">&#xe65e;</span>
+                            <span ng-if="showCondition" ng-click="showDeferCondition()" class="long-tip-icon iconfont">&#xe65e;</span>
+                            <span class="">当前市值: <span class="txt-yellow">{{currentMarketMoney.toFixed(2)}}</span></span>
+                        </li>
+                        <!--<div ng-if="canUseMoney" class="tip-right">可用点买金额：<span class="txt-yellow">{{canUseMoney.toFixed(2)}}</span></div>-->
+                        <li class="tip-right">可用点买金额: <span class="txt-yellow">{{canUseMoney.toFixed(2)}}</span></li>
+                    </ul>
+                    <a href="#/TDApply" ng-if="hold == null" class="no-strategy-tip txt-center txt-gray">您当前还没有点买策略组，赶紧去申请一个 <i class="tips-go iconfont">&#xe65e;</i></a>
+                </div>
+            </div>
+            <div ng-if="showCondition" class="lossgain-tip txt-black txt-s12">
+                <div>
+                    <div class="tip-content bgc-black pt10 pl15 pb10">
+                        <p class="txt-s12">到达止损：当前市值+可用余额≤ {{quiLossMoney}}元</p>
+                        <p class="txt-s12">可以递延：当前市值+可用余额≥ {{canDeferMoney}}元 <span class="txt-red">(当前{{currMoney.toFixed(2)}}元)</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mod-sell pb50">
+            <div class="trade-menu">
+                <div>
+                    <ul>
+                        <li class="m-buy"><a href="#/TDTrade?backURL=/index">点买</a></li>
+                        <li class="m-sell"><a href="#/TDTradeSell">点卖</a></li>
+                        <li class="m-result"><a href="#/TDTradeResult?backURL=/index">结算</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div ng-if="dataList.length > 0" class="wrap" ng-repeat="item in dataList">
+                <ul class="part1 txt-grey">
+                    <li class="fl" style="width: 37%">
+                        <p class="txt-s16 txt-white">{{item.stockName}}<i ng-if="item.quotePrice == 0 && item.lastClosePrice != 0 && !isInJJPeriod" class="tips ml5">停牌</i></p>
+                        <p class="txt-grey txt-s14">{{item.stockCode}}</p>
+                    </li>
+                    <li ng-if="item.buyPriceDeal > 0" class="txt-center fl" style="width: 26%">
+                        <p class="txt-s16">浮动盈亏</p>
+                        <p ng-if="item.profit > 0" class="txt-s14 txt-red">+{{item.profit.toFixed(2)}}</p>
+                        <p ng-if="item.profit == 0" class="txt-s14 txt-grey">0.00</p>
+                        <p ng-if="item.profit < 0" class="txt-s14 txt-green">{{item.profit.toFixed(2)}}</p>
+                    </li>
+                    <li ng-if="item.buyPriceDeal == 0" class="txt-center fl" style="width: 26%">
+                        <p class="txt-s16">浮动盈亏</p>
+                        <p class="txt-s14 txt-gray">— —</p>
+                    </li>
+                    <li ng-if="!isHoliday && isInTradeTime" class="txt-right fr" style="width: 37%">
+                        <p ng-if="item.status != 4" class="txt-yellow">{{tradeState[item.status]}}</p>
+                        <p ng-if="item.status == 4">
+                            <button ng-click="sale(item)" ng-if="item.showSellBtn == true &&  item.quotePrice > 0" class="btn btn-orange txt-black">点卖</button>
+                            <button ng-if="item.showSellBtn == false && item.quotePrice > 0" class="btn btn-disabled txt-black">点卖</button>
+                            <!--<button ng-click="sale(item)" ng-if="item.quotePrice > 0" class="btn btn-orange txt-black">点卖</button>-->
+                            <button ng-if="item.quotePrice == 0" ng-click="buyOut(item,2)" class="btn btn-orange txt-black">买断</button>
+                            <button ng-if="item.quotePrice == 0" ng-click="buyOut(item,1)" class="btn btn-orange txt-black">放弃</button>
+                        </p>
+                    </li>
+                    <li ng-if="isHoliday || !isInTradeTime" class="txt-right fr" style="width: 37%">
+                        <p ng-if="isInJJPeriod" class="txt-grey">非交易时段</p>
+                        <p ng-if="!isInJJPeriod" class="txt-grey">
+                            <button ng-if="item.quotePrice == 0" ng-click="buyOut(item,2)" class="btn btn-orange txt-black">买断</button>
+                            <button ng-if="item.quotePrice == 0" ng-click="buyOut(item,1)" class="btn btn-orange txt-black">放弃</button>
+                            <span ng-if="item.quotePrice != 0">非交易时段</span>
+                        </p>
+                    </li>
+                </ul>
+                <ul class="part2 txt-grey">
+                    <li style="width: 35%">
+                        <p>成本价</p>
+                        <p ng-if="item.buyPriceDeal > 0" class="txt-white">{{item.buyPriceDeal}}</p>
+                        <p ng-if="item.buyPriceDeal == 0" class="txt-gray">— —</p>
+                    </li>
+                    <li class="txt-center" style="width: 30%">
+                        <p>当前价</p>
+                        <p ng-if="item.buyPriceDeal > 0 && item.quotePrice > 0 && item.quotePrice > item.buyPriceDeal" class="txt-red">{{item.quotePrice}}</p>
+                        <p ng-if="item.buyPriceDeal > 0 && item.quotePrice > 0 && item.quotePrice == item.buyPriceDeal" class="txt-grey">{{item.quotePrice}}</p>
+                        <p ng-if="item.buyPriceDeal > 0 && item.quotePrice > 0 && item.quotePrice < item.buyPriceDeal" class="txt-green">{{item.quotePrice}}</p>
+                        <p ng-if="item.buyPriceDeal > 0 && item.quotePrice == 0" class="txt-grey">{{item.lastClosePrice}}</p>
+                        <p ng-if="item.buyPriceDeal == 0 && item.quotePrice > 0" class="txt-grey">{{item.quotePrice}}</p>
+                        <p ng-if="item.buyPriceDeal == 0 && item.quotePrice == 0" class="txt-grey">— —</p>
+                    </li>
+                    <li class="txt-right" style="width: 35%">
+                        <p>委托数量 <i ng-if="item.tradingRecordList.length>0" ng-click="showPartDeal(item);" class="icon-info" style="vertical-align:-2px;"></i></p>
+                        <p class="txt-white" ng-if="item.volumeHold > 0">{{item.volumeHold}}</p>
+                        <p class="txt-grey" ng-if="item.volumeHold == 0">— —</p>
+                    </li>
+                </ul>
+                <div class="part3 txt-grey">
+                    <p>
+                        <label>策略交易号</label>JQ{{item.id}} <a href="#/agreementTDInvestor?tradeID={{item.id}}" class="fr txt-blue">合约协议</a>
+                    </p>
+                    <p>
+                        <label>成交时间</label>{{item.dealTime}}
+                    </p>
+                </div>
+            </div>
+            <div class="all-profit" ng-if="dataList.length > 0">
+                <p class="all-profit-content pt10 txt-s12 bgc-black">
+                    持仓盈亏 :
+                    <i ng-if="allGain > 0" class="txt-s12 txt-red txt-left"> +{{allGain.toFixed(2)}}</i>
+                    <i ng-if="allGain == 0" class="txt-grey txt-left">{{allGain}}</i>
+                    <i ng-if="allGain < 0" class="txt-green txt-left">{{allGain.toFixed(2)}}</i>
+                </p>
+            </div>
+            <a style="display:block" href="#/TDTrade" ng-if="showNoData" class="TD-no-data">暂无数据,立即发起点买</a>
+        </div>
+        <div ng-if="showDBBG" class="db-bg" style="z-index:1000">
+            <div ng-show="showBuyOutMenu" class="operate-dialog">
+                <div class="strategy-dialog txt-black">
+                    <p class="dialog-title pl10 txt-black txt-s16">停牌股买断  <a class="fr txt-blue txt-s12 mr10" href="#/TDTradeRule">停牌股处理细则</a></p>
+                    <div class="dialog-content pt20 pb20">
+                        <p class="dialog-tips"><span class="input-tips quit-info">停牌股票名称 :</span><span class="pl10 input-content">{{stockName}}</span></p>
+                        <p class="dialog-tips"><span class="input-tips quit-info">停牌前股票市值 :</span><span class="pl10 input-content">{{holdStrategyMoney}}</span></p>
+                        <p class="dialog-tips"><span class="input-tips quit-info">买断费用 :</span><span class="pl10 input-content">{{paySum}}</span></p>
+                    </div>
+                    <div class="dialog-operate">
+                        <span ng-click="cancelOperate()">取消</span>
+                        <span ng-click="confirmBuyOrQuit(2)" style="border-right: none">确认</span>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-if="showQuitType" class="operate-dialog">
+                <div class="strategy-dialog txt-black">
+                    <p class="dialog-title pl10 txt-black txt-s16">停牌股放弃  <a class="fr txt-blue txt-s12 mr10" href="#/TDTradeRule">停牌股处理细则</a></p>
+                    <div class="dialog-content pt20 pb20 pr10">
+                        <p class="dialog-tips"><span class="input-tips quit-info">停牌股票名称 :</span><span class="pl10 input-content">{{stockName}}</span></p>
+                        <p class="dialog-tips"><span class="input-tips quit-info">停牌前股票市值 :</span><span class="pl10 input-content">{{holdStrategyMoney}}</span></p>
+                        <p class="dialog-tips"><span class="input-tips quit-info">放弃履约保证金 :</span>
+                            <span class="pl10 input-content">{{paySum}}</span>
+                        </p>
+                        <p class="txt-center txt-red">注：放弃停牌股票保证金不做退还</p>
+
+                        <!--<p class="stock-choice">
+                            <i class="days30">30天</i>
+                        </p>-->
+                    </div>
+                    <div class="dialog-operate">
+                        <span ng-click="cancelOperate()">取消</span>
+                        <span style="border-right: none" ng-click="confirmBuyOrQuit(1)">确认</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<common-menu></common-menu>

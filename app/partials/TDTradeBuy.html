@@ -1,0 +1,83 @@
+<section class="page-trade">
+    <div class="page-trade-stock">
+        <header class="page-header">
+            <div class="header-wrap has-border-b">
+                <h3>T+D点买A股<!-- <span class="iconfont txt-center">&#xe608;--></span>
+                    <!--<span class="iconfont txt-center">&#xe609;</span>--></h3>
+                <!--<common-title></common-title>-->
+                <a href="#/index" class="nav-left">
+                    <i class="icon-back"></i>
+                </a>
+                <back-menu></back-menu>
+                <a href="#/TDTradeRule" class="nav-right">规则</a>
+            </div>
+        </header>
+        <!--<div class="user-tips">
+            <div class="amount-tips txt-s12">
+                <div class="outer-tip">
+                    <ul ng-if="hold != null" class="tips-warp bgc-black">
+                        <li class="pl20 tip-left">
+                            当前市值: <span class="txt-yellow">{{currentMarketMoney.toFixed(2)}}</span>
+                        </li>
+                        <li class="tip-right">可用点买金额: <span class="txt-yellow">{{canUseMoney}}</span></li>
+                    </ul>
+                    <a href="#/TDApply" ng-if="hold == null" class="no-strategy-tip txt-center txt-gray">
+                        您当前还没有点买策略组，赶紧去申请一个 <i class="tips-go iconfont">&#xe65e;</i>
+                    </a>
+                </div>
+            </div>
+        </div>-->
+        <div class="mod-TDTradeBuy mt15">
+            <div class="mod-trade-td mt15 ">
+                <ul class="">
+                    <li class="has-border-b ml10 mr10 pl10 bgc-black">
+                        股票名称
+                        <span class="fr txt-s16 ">{{stock.stockName}}  {{stock.stockLabel}}</span>
+                    </li>
+                    <li class="has-border-b ml10 mr10 pl10 bgc-black">
+                        买入价格
+                        <span class="fr txt-grey">市价委托</span>
+                    </li>
+                    <li class="buy-num pl20 bgc-black">
+                        <span>买入数量</span>
+                        <i ng-if="stockNumObj.canMax" class="txt-s24 txt-orange fr has-border-l" ng-click="changeStockNum(stockNumObj.curr+100);">+</i>
+                        <i ng-if="!stockNumObj.canMax" class="txt-s24 fr has-border-l">＋</i>
+                        <b class="buy-number fr has-border-l"><span ng-blur="changeStockNum(stockNumObj.curr);" type="number" class="inp" ng-model="stockNumObj.curr">{{stockNumObj.curr}}</span></b>
+                        <!--<b class="buy-number fr has-border-l"><input ng-blur="changeStockNum(stockNumObj.curr);" type="number" class="inp" ng-model="stockNumObj.curr"></b>-->
+                        <i ng-if="stockNumObj.canMin" class="txt-s24 fr txt-orange has-border-l" ng-click="changeStockNum(stockNumObj.curr-100);">-</i>
+                        <i ng-if="!stockNumObj.canMin" class="txt-s24 fr has-border-l">-</i>
+                    </li>
+
+                    <li class="pl20 pr10 mt15 bgc-black has-border-b">
+                        支付>交易综合费
+                    <span class="fr txt-grey">
+                        <b class="txt-orange">{{serviceCharge}}</b>元
+                    </span>
+                    </li>
+                    <li style="line-height: 0" class="pl20 pr10 pt20 bgc-black">
+                        <p style="height:25px; padding-top:0; display: block">占用点买金<span style="height:25px;" class="fr txt-grey"><b class="txt-orange">{{totalStockMoney}}</b>元</span></p>
+                        <p style="height:25px; padding-top:0; display: block" class="txt-s14 txt-grey">可用点买金 <span style="height:25px;" class="fr txt-grey">{{scheme.availableMoney}}元</span></p>
+                    </li>
+
+                    <li class="pl20 pr10 pt5 pb5 mt15 item-single bgc-black" ng-show="tipBalance>0">
+                    <span class="fr stop-low txt-s12" ng-if="tipBalance<serviceCharge" ng-class="{'stop-lowPacket':vm.useTip}">
+                        <span  class="ng-binding ng-scope" ng-click="vm.useTip = !vm.useTip;">-{{tipBalance.toFixed(2)}}元</span>
+                   </span>
+                     <span class="fr stop-low txt-s12 bgc-black" ng-if="tipBalance>=serviceCharge" ng-class="{'stop-lowPacket':vm.useTip}">
+                        <span  class="ng-binding ng-scope" ng-click="vm.useTip = !vm.useTip;">-{{serviceCharge.toFixed(2)}}元</span>
+                   </span>
+                        <label>是否使用红包余额（余额：{{tipBalance.toFixed(2)}}元）<p class="txt-s10 txt-grey">红包余额只能抵扣交易综合费</p></label>
+                    </li>
+                </ul>
+
+            </div>
+            <!--<p class="txt-right pt10 pb10 pr10 txt-grey">资金预计占用<i class="txt-orange pr5 pl5">{{totalStockMoney}}</i>元</p>-->
+            <div class="wrap-btn">
+                <div class="wrap">
+                    <button class="btn btn-{{btn.className}}" ng-disabled="btn.disabled" ng-click="toTrade();">{{btn.btnText}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--<common-menu></common-menu>-->

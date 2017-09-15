@@ -1,0 +1,32 @@
+.page-pay .page-alipay-detail .mod-alipay-detail .mod-form{
+    padding: 0;
+}
+
+.page-pay .page-alipay-detail .mod-alipay-detail .mod-alipay{
+    height: .8rem;
+    padding: .13rem 0 .13rem .1rem;
+}
+
+.page-pay .page-alipay-detail .mod-alipay-detail .mod-alipay .alipay-img{
+    width: 0.8rem;
+    margin-top: 0.1rem;
+    margin-left: 0.05rem;
+}
+
+.page-pay .page-alipay-detail .mod-alipay-detail .mod-form .alipay {
+    font-size: 0.12rem;
+    line-height: 0.26rem;
+}
+
+.page-pay .page-alipay-detail .mod-alipay-detail .mod-form .alipay input {
+    width: 1.13rem;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    color: #FFFFFF;
+    background-color: #121C25;
+}
+
+.page-pay .page-alipay-detail .mod-alipay-detail .mod-form .alipay-pay {
+    width:100%;
+}

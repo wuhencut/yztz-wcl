@@ -1,0 +1,18 @@
+<section id="" class="page-guide">
+    <div class="page-activity">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>活动中心</h3>
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="mod-act-list">
+            <a class="list-option" ng-click=goURL(item.id) ng-repeat="item in activityList" ng-if="activityList.length > 0" class="activity-list mb15">
+                <img src={{item.bannerUrl[0]}} alt="">
+            </a>
+            <span class="list-option list-expect">
+                各项活动敬请期待
+            </span>
+        </div>
+    </div>
+</section>

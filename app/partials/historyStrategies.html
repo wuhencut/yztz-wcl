@@ -1,0 +1,42 @@
+<section class="page-user">
+    <div class="page-my">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>历史策略组</h3>
+                <!--<a href="#/myStrategyGroup" class="nav-left"><i class="icon-back"></i></a>-->
+                <back-menu></back-menu>
+            </div>
+        </header>
+
+        <div class="mod-strategy-group mt20 bgc-black" ng-repeat="obj in historySchemeList">
+            <a class="strategy-title pl20 pr20 txt-s14" href="#/strategyDetail?id={{obj.id}}">
+                <span class="stock-code">ZH{{obj.id}}</span>
+                <span class="time-limit txt-grey">已操盘{{obj.hadHoldDays}}天</span>
+                <i class="mod-arrow-r"></i>
+            </a>
+            <table class="strategy-info">
+                <tr>
+                    <td class="br-gray bb-gray"><p class="txt-gray">总点买金额(元)</p><p>{{obj.money.toFixed(2)}}</p></td>
+                    <td class="br-gray bb-gray"><p class="txt-gray">履约保证金(元)</p><p>{{obj.lossPrincipal.toFixed(2)}}</p></td>
+                    <td class="bb-gray"><p class="txt-gray">递延费(元)</p><p>{{obj.deferCharge.toFixed(2)}}</p></td>
+                </tr>
+                <tr>
+                    <td class="br-gray"><p class="txt-gray">总交易综合费(元)</p><p>{{obj.serviceCharge.toFixed(2)}}</p></td>
+                    <!--<td class="br-gray"><p class="txt-gray">历史市值(元)</p><p>{{obj.marketValue}}</p></td>-->
+                    <td class="br-gray">
+                        <p class="txt-gray">结算盈亏(元)</p>
+                        <p class="txt-red" ng-if="obj.profitShare>0" >+{{obj.profitShare.toFixed(2)}}</p>
+                        <p class="txt-white"ng-if="obj.profitShare == 0 || obj.profitShare == null">0.00</p>
+                        <p class="txt-green"ng-if="obj.profitShare < 0">{{obj.profitShare.toFixed(2)}}</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="pl15 pr15 mt10 mb10" ng-if="pageIndex != totalPage && totalPage != 0">
+            <p class="btn txt-center txt-s14 btn-gray" ng-click="getDetailList(pageIndex+1);">查看更多</p>
+        </div>
+
+        <a style="display:block" ng-if="showNoData" class="no-data">暂无数据</a>
+    </div>
+</section>

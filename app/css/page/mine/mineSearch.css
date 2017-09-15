@@ -1,0 +1,118 @@
+.page-mine .page-mine-search .mod-search {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #121C25;
+    padding: 0.1rem 0.2rem;
+    border-bottom: 0.01rem solid #1C262F;
+}
+
+.page-mine .page-mine-search .mod-search ul {
+    display: table;
+    width: 100%;
+}
+
+.page-mine .page-mine-search .mod-search li {
+    display: table-cell;
+}
+
+.page-mine .page-mine-search .mod-search li:first-child {
+    position: relative;
+}
+
+.page-mine .page-mine-search .mod-search .icon-clear {
+    position: absolute;
+    right: 0.1rem;
+    top: 0.1rem;
+}
+
+.page-mine .page-mine-search .mod-search .search-inp {
+    border: none;
+    width: 100%;
+    background: url("../../../images/search-inp-bg.png") 0.1rem center no-repeat #F4F4F6;
+    background-size: 0.16rem;
+    line-height: 0.36rem;
+    padding: 0 0.05rem 0 0.36rem;
+    border-radius: 0.05rem;
+}
+
+.page-mine .page-mine-search .mod-result {
+    background-color: #121C25;
+    margin-top: 0.56rem;
+    padding: 0 0.1rem;
+}
+
+.page-mine .page-mine-search .mod-result ul {
+    height: 0.5rem;
+}
+
+.page-mine .page-mine-search .mod-result div{
+    width:100%;
+    position:relative;
+    height: 0.5rem;
+}
+
+.page-mine .page-mine-search .mod-result li {
+    line-height: 0.5rem;
+    color: #999999;
+    float: left;
+}
+
+/*.page-mine .page-mine-search .mod-result td {
+    line-height: 0.5rem;
+    color: #666666;
+}*/
+
+.page-mine .page-mine-search .mod-result li:last-child {
+    padding-right: 0.1rem;
+    text-align: right;
+}
+
+.page-mine .page-mine-search .mod-result .code {
+    font-size: 0.12rem;
+    color: #999999;
+    text-align: center;
+}
+
+.page-mine .page-mine-search .mod-result .icon-stock-add {
+    width: 0.26rem;
+    height: 0.26rem;
+    display: inline-block;
+    background:url('../../../images/stock-add.png') center no-repeat;
+    background-size: 100%;
+}
+
+.page-mine .page-mine-search .mod-result .icon-stock-delete {
+    width: 0.26rem;
+    height: 0.26rem;
+    display: inline-block;
+    background:url('../../../images/stock-reduce.png') center no-repeat;
+    background-size: 100%;
+}
+
+.page-mine .page-mine-search .mod-result .clear-result {
+    display: block;
+    line-height: 0.5rem;
+    color: #999999;
+    text-align: center;
+    border-top: 0.01rem solid #1C262F;
+}
+
+.high-risk {
+    background-color:#F5C300;
+    border-radius: 0.06rem;
+    font-size: 0.1rem;
+    height: 0.16rem;
+    width: 0.5rem;
+    color: #0E1821;
+    line-height: 0.16rem;/*
+    vertical-align:-15px;*/
+}
+
+.stock-add{
+    position:absolute;
+    top:0.13rem;
+    right:0.2rem;
+}

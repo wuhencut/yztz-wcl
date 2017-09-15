@@ -1,0 +1,433 @@
+<section class="page-trade">
+    <div class="page-trade-stock">
+        <header class="page-header">
+            <div class="header-wrap has-border-b">
+                <!--<h3>T+D点买A股</h3>-->
+                <common-title></common-title>
+                <!--<a href="#/index" class="nav-left">-->
+                    <!--<i class="icon-back"></i>-->
+                <!--</a>-->
+                <back-menu></back-menu>
+                <a href="#/TDTradeRule" class="nav-right">规则</a>
+            </div>
+        </header>
+        <div ng-if="!isLogin" class="trade-tip pb15 txt-center txt-s12">
+            <div>
+                <a href="#/login?goURL=/TDTrade" class="txt-gray">
+                    你还未登录，立即登录
+                    <i class="iconfont icon-arrow-r">&#xe65e;</i>
+                </a>
+            </div>
+        </div>
+        <div ng-if="isLogin && scheme==null" class="trade-tip pb15 txt-center txt-s12">
+            <div>
+                <a href="#/TDApply" class="txt-gray">
+                    您当前还没有点买策略组，赶紧去申请一个
+                    <i class="iconfont icon-arrow-r">&#xe65e;</i>
+                </a>
+            </div>
+        </div>
+        <div ng-if="(isLogin && scheme==null) || !isLogin"  class="tip-bg"></div>
+        <div ng-if="isLogin && scheme!=null" class="trade-money bgc-black pb15">
+            <div>
+                <ul>
+                    <li>
+                        当前市值：<i class="txt-orange">{{scheme.currentMarketValue.toFixed(2)}}</i>
+                    </li>
+                    <li>
+                        可用点买金额：<i class="txt-orange">{{scheme.availableMoney.toFixed(2)}}</i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="trade-menu">
+            <div>
+                <ul>
+                    <li class="m-buy"><a href="#/TDTrade">点买</a></li>
+                    <li class="m-sell"><a href="#/TDTradeSell?backURL=/index">点卖</a></li>
+                    <li class="m-result"><a href="#/TDTradeResult?backURL=/index">结算</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mod-stock bgc-black pb5">
+            <div class="wrap">
+                <ul>
+                    <li style="width: 1.1rem">
+                        <p class="txt-s18" style="line-height: 0.24rem;">
+                            {{stock.stockName}}
+                            <i ng-if="stock.stockLabel && stock.stockName" class="icon-{{mineType}} ml5" ng-click="addOrDelMine(stock.stockLabel,stock.stockName);"></i>
+                        </p>
+                        <p class="txt-grey">{{stock.stockLabel}}</p>
+                    </li>
+                    <li ng-if="!stock.isStop" class="pl10 {{stock.style}}" >
+                        <p class="txt-s24" style="line-height: 0.24rem;"><b>{{stock.price.toFixed(2)}}</b> <b ng-if="isRiskStock" class="danger-stock txt-s10">风险股</b></p>
+                        <p ng-if="stock.diff > 0">+{{stock.diff}}&nbsp;&nbsp;+{{stock.rate}}%</p>
+                        <p ng-if="stock.diff <= 0">{{stock.diff}}&nbsp;&nbsp;{{stock.rate}}%</p>
+                    </li>
+                    <li ng-if="stock.isStop" class="pl10 txt-grey" >
+                        <p class="txt-s24" style="line-height: 0.24rem;"><b>{{stock.lastClosePrice}}</b> <b class="danger-stock txt-s10">停牌股</b></p>
+                        <p>——&nbsp;&nbsp;——</p>
+                    </li>
+                    <li class="stock-search txt-right fr mt5">
+                        <a class="stock-search" href="#/mineSearch?goURL=/TDTrade"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mod-line">
+            <div class="tab-wrap act-{{actType}}">
+                <div class="tab-title">
+                    <ul>
+                        <li class="sline"  ng-click="changeTab('sline')">分时</li>
+                        <li class="kline"  ng-click="changeTab('kline')">日K</li>
+                        <li class="weekKline" ng-click="changeTab('weekKline')">周K</li>
+                        <li class="monthKline" ng-click="changeTab('monthKline')">月K</li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="charts-wrap clearfix">
+                        <div class="sline-wrap">
+                            <ul>
+                                <li style="padding-right: 0.1rem">
+                                    <div id="sline-wrap-{{uuid}}" style="height: 2.4rem"></div>
+                                </li>
+                                <li style="width: 1.1rem; padding-right: 0.1rem">
+                                    <table ng-if="stock.isStop">
+                                        <tr>
+                                            <td style="width: 0.25rem">卖5</td>
+                                            <td class="txt-center"><span class="txt-grey">——</span></td>
+                                            <td class="txt-right"><span class="txt-grey">——</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>卖4</td>
+                                            <td class="txt-center"><span class="txt-grey">——</span></td>
+                                            <td class="txt-right"><span class="txt-grey">——</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>卖3</td>
+                                            <td class="txt-center"><span class="txt-grey">——</span></td>
+                                            <td class="txt-right"><span class="txt-grey">——</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>卖2</td>
+                                            <td class="txt-center"><span class="txt-grey">——</span></td>
+                                            <td class="txt-right"><span class="txt-grey">——</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>卖1</td>
+                                            <td class="txt-center"><span class="txt-grey">——</span></td>
+                                            <td class="txt-right"><span class="txt-grey">——</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" height="10" style="border-bottom: 0.01rem solid #213343;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" height="10"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>买1</td>
+                                            <td class="txt-center"><span class="txt-grey">——</span></td>
+                                            <td class="txt-right"><span class="txt-grey">——</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>买2</td>
+                                            <td class="txt-center"><span class="txt-grey">——</span></td>
+                                            <td class="txt-right"><span class="txt-grey">——</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>买3</td>
+                                            <td class="txt-center"><span class="txt-grey">——</span></td>
+                                            <td class="txt-right"><span class="txt-grey">——</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>买4</td>
+                                            <td class="txt-center"><span class="txt-grey">——</span></td>
+                                            <td class="txt-right"><span class="txt-grey">——</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>买5</td>
+                                            <td class="txt-center"><span class="txt-grey">——</span></td>
+                                            <td class="txt-right"><span class="txt-grey">——</span></td>
+                                        </tr>
+                                    </table>
+                                    <table ng-if="!stock.isStop">
+                                        <tr ng-if="stock.sellPrice[4] == 0">
+                                            <td style="width: 0.25rem">卖5</td>
+                                            <td class="txt-center"><span>——</span></td>
+                                            <td class="txt-right"><span>——</span></td>
+                                        </tr>
+                                        <tr ng-if="stock.sellPrice[4] != 0">
+                                            <td style="width: 0.25rem">卖5</td>
+                                            <td ng-if="stock.sellPrice[4] != 0" class="txt-center">
+                                                <span class="{{stock.sellPrice[4]>stock.lastClosePrice?'txt-red':stock.sellPrice[4]<stock.lastClosePrice?'txt-green':''}}">{{stock.sellPrice[4].toFixed(2)}}</span>
+                                            </td>
+                                            <td class="txt-right"><span>{{stock.sellNum[4]}}</span></td>
+                                        </tr>
+                                        <tr ng-if="stock.sellPrice[3] == 0">
+                                            <td>卖4</td>
+                                            <td class="txt-center"><span>——</span></td>
+                                            <td class="txt-right"><span>——</span></td>
+                                        </tr>
+                                        <tr ng-if="stock.sellPrice[3] != 0">
+                                            <td>卖4</td>
+                                            <td ng-if="stock.sellPrice[3] != 0" class="txt-center">
+                                                <span class="{{stock.sellPrice[3]>stock.lastClosePrice?'txt-red':stock.sellPrice[3]<stock.lastClosePrice?'txt-green':''}}">{{stock.sellPrice[3].toFixed(2)}}</span>
+                                            </td>
+                                            <td class="txt-right"><span>{{stock.sellNum[3]}}</span></td>
+                                        </tr>
+                                        <tr ng-if="stock.sellPrice[2] == 0">
+                                            <td>卖3</td>
+                                            <td class="txt-center"><span>——</span></td>
+                                            <td class="txt-right"><span>——</span></td>
+                                        </tr>
+                                        <tr ng-if="stock.sellPrice[2] != 0">
+                                            <td>卖3</td>
+                                            <td ng-if="stock.sellPrice[2] != 0" class="txt-center">
+                                                <span class="{{stock.sellPrice[2]>stock.lastClosePrice?'txt-red':stock.sellPrice[2]<stock.lastClosePrice?'txt-green':''}}">{{stock.sellPrice[2].toFixed(2)}}</span>
+                                            </td>
+                                            <td class="txt-right"><span>{{stock.sellNum[2]}}</span></td>
+                                        </tr>
+                                        <tr ng-if="stock.sellPrice[1] == 0">
+                                            <td>卖2</td>
+                                            <td class="txt-center"><span>——</span></td>
+                                            <td class="txt-right"><span>——</span></td>
+                                        </tr>
+                                        <tr ng-if="stock.sellPrice[1] != 0">
+                                            <td>卖2</td>
+                                            <td ng-if="stock.sellPrice[1] != 0" class="txt-center">
+                                                <span class="{{stock.sellPrice[1]>stock.lastClosePrice?'txt-red':stock.sellPrice[1]<stock.lastClosePrice?'txt-green':''}}">{{stock.sellPrice[1].toFixed(2)}}</span>
+                                            </td>
+                                            <td class="txt-right"><span>{{stock.sellNum[1]}}</span></td>
+                                        </tr>
+                                        <tr ng-if="stock.sellPrice[0] == 0">
+                                            <td>卖1</td>
+                                            <td class="txt-center"><span>——</span></td>
+                                            <td class="txt-right"><span>——</span></td>
+                                        </tr>
+                                        <tr ng-if="stock.sellPrice[0] != 0">
+                                            <td>卖1</td>
+                                            <td ng-if="stock.sellPrice[0] != 0" class="txt-center">
+                                                <span class="{{stock.sellPrice[0]>stock.lastClosePrice?'txt-red':stock.sellPrice[0]<stock.lastClosePrice?'txt-green':''}}">{{stock.sellPrice[0].toFixed(2)}}</span>
+                                            </td>
+                                            <td class="txt-right"><span>{{stock.sellNum[0]}}</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" height="10" style="border-bottom: 0.01rem solid #213343;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" height="10"></td>
+                                        </tr>
+                                        <tr ng-if="stock.buyPrice[0] == 0">
+                                            <td>买1</td>
+                                            <td class="txt-center"><span>——</span></td>
+                                            <td class="txt-right"><span>——</span></td>
+                                        </tr>
+                                        <tr ng-if="stock.buyPrice[0] != 0">
+                                            <td>买1</td>
+                                            <td ng-if="stock.buyPrice[0] != 0" class="txt-center">
+                                                <span class="{{stock.buyPrice[0]>stock.lastClosePrice?'txt-red':stock.buyPrice[0]<stock.lastClosePrice?'txt-green':''}}">{{stock.buyPrice[0].toFixed(2)}}</span>
+                                            </td>
+                                            <td class="txt-right"><span>{{stock.buyNum[0]}}</span></td>
+                                        </tr>
+                                        <tr ng-if="stock.buyPrice[1] == 0">
+                                            <td>买2</td>
+                                            <td class="txt-center"><span>——</span></td>
+                                            <td class="txt-right"><span>——</span></td>
+                                        </tr>
+                                        <tr ng-if="stock.buyPrice[1] != 0">
+                                            <td>买2</td>
+                                            <td ng-if="stock.buyPrice[1] != 0" class="txt-center">
+                                                <span class="{{stock.buyPrice[1]>stock.lastClosePrice?'txt-red':stock.buyPrice[1]<stock.lastClosePrice?'txt-green':''}}">{{stock.buyPrice[1].toFixed(2)}}</span>
+                                            </td>
+                                            <td class="txt-right"><span>{{stock.buyNum[1]}}</span></td>
+                                        </tr>
+                                        <tr ng-if="stock.buyPrice[2] == 0">
+                                            <td>买3</td>
+                                            <td class="txt-center"><span>——</span></td>
+                                            <td class="txt-right"><span>——</span></td>
+                                        </tr>
+                                        <tr ng-if="stock.buyPrice[2] != 0">
+                                            <td>买3</td>
+                                            <td ng-if="stock.buyPrice[2] != 0" class="txt-center">
+                                                <span class="{{stock.buyPrice[2]>stock.lastClosePrice?'txt-red':stock.buyPrice[2]<stock.lastClosePrice?'txt-green':''}}">{{stock.buyPrice[2].toFixed(2)}}</span>
+                                            </td>
+                                            <td class="txt-right"><span>{{stock.buyNum[2]}}</span></td>
+                                        </tr>
+                                        <tr ng-if="stock.buyPrice[3] == 0">
+                                            <td>买4</td>
+                                            <td class="txt-center"><span>——</span></td>
+                                            <td class="txt-right"><span>——</span></td>
+                                        </tr>
+                                        <tr ng-if="stock.buyPrice[3] != 0">
+                                            <td>买4</td>
+                                            <td ng-if="stock.buyPrice[3] != 0" class="txt-center">
+                                                <span class="{{stock.buyPrice[3]>stock.lastClosePrice?'txt-red':stock.buyPrice[3]<stock.lastClosePrice?'txt-green':''}}">{{stock.buyPrice[3].toFixed(2)}}</span>
+                                            </td>
+                                            <td class="txt-right"><span>{{stock.buyNum[3]}}</span></td>
+                                        </tr>
+                                        <tr ng-if="stock.buyPrice[4] == 0">
+                                            <td>买5</td>
+                                            <td class="txt-center"><span>——</span></td>
+                                            <td class="txt-right"><span>——</span></td>
+                                        </tr>
+                                        <tr ng-if="stock.buyPrice[4] != 0">
+                                            <td>买5</td>
+                                            <td ng-if="stock.buyPrice[4] != 0" class="txt-center">
+                                                <span class="{{stock.buyPrice[4]>stock.lastClosePrice?'txt-red':stock.buyPrice[4]<stock.lastClosePrice?'txt-green':''}}">{{stock.buyPrice[4].toFixed(2)}}</span>
+                                            </td>
+                                            <td class="txt-right"><span>{{stock.buyNum[4]}}</span></td>
+                                        </tr>
+                                    </table>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="kline-wrap">
+                            <div id="kline-wrap-{{uuid}}" style="height: 2.4rem"></div>
+                            <!--<div ng-if="status == 1" id="weekKline-wrap-{{uuid}}" style="height: 2.4rem"></div>
+                            <div ng-if="status == 2" id="monthKline-wrap-{{uuid}}" style="height: 2.4rem"></div>-->
+                        </div>
+                        <div class="market-wrap">
+                            <table ng-if="stock.isStop" class="mod-table">
+                                <tbody>
+                                <tr>
+                                    <td class="txt-s12 txt-grey ">今开
+                                        <span class="fr txt-s16">——</span>
+                                    </td>
+                                    <td class="txt-s12 txt-grey">昨收
+                                        <span class="fr txt-s16">——</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="txt-s12 txt-grey ">振幅
+                                        <span class="fr txt-s16">——</span>
+                                    </td>
+                                    <td class="txt-s12 txt-grey">涨跌
+                                        <span class="fr txt-s16">——</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="txt-s12 txt-grey ">涨停
+                                        <span class="fr txt-s16">——</span>
+                                    </td>
+                                    <td class="txt-s12 txt-grey">跌停
+                                        <span class="fr txt-s16">——</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="txt-s12 txt-grey ">最高
+                                        <span class="fr txt-s16">——</span>
+                                    </td>
+                                    <td class="txt-s12 txt-grey">最低
+                                        <span class="fr txt-s16">——</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="txt-s12 txt-grey ">成交量
+                                        <span class="fr txt-s16">——</span>
+                                    </td>
+                                    <td class="txt-s12 txt-grey">成交额
+                                        <span class="fr txt-s16">——</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+                <table ng-if="!stock.isStop" class="mod-table">
+                    <tbody>
+                    <tr>
+                        <td class="txt-s12 txt-grey pl20 pt5 pb5">今开
+                            <span class=" txt-s12 {{stock.openPrice>stock.lastClosePrice?'txt-red':stock.openPrice<stock.lastClosePrice?'txt-green':'txt-white'}}">{{stock.openPrice.toFixed(2)}}</span>
+                        </td>
+                        <td class="txt-s12 txt-grey pl20 pt5 pb5">昨收
+                            <span class=" txt-s12 txt-white">{{stock.lastClosePrice.toFixed(2)}}</span>
+                        </td>
+                        <td class="txt-s12 txt-grey pl20 pt5 pb5">最高
+                            <span class=" txt-s12 {{stock.highPrice>stock.lastClosePrice?'txt-red':stock.highPrice<stock.lastClosePrice?'txt-green':'txt-white'}}">{{stock.highPrice.toFixed(2)}}</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="txt-s12 txt-grey pl20 pb5">最低
+                            <span class=" txt-s12 {{stock.lowPrice>stock.lastClosePrice?'txt-red':stock.lowPrice<stock.lastClosePrice?'txt-green':'txt-white'}}">{{stock.lowPrice.toFixed(2)}}</span>
+                        </td>
+                        <td class="txt-s12 txt-grey pl20 pb5">涨停
+                            <span class=" txt-s12 txt-red">{{stock.limitUpPrice.toFixed(2)}}</span>
+                        </td>
+                        <td class="txt-s12 txt-grey pl20 pb5">跌停
+                            <span class=" txt-s12 txt-green">{{stock.limitDownPrice.toFixed(2)}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="txt-s12 txt-grey pl20 pb5">振幅
+                            <span class=" txt-s12 txt-white">{{stock.amplitude.toFixed(2)}}%</span>
+                        </td>
+                        <td class="txt-s12 txt-grey pl20 pb5">成交量
+                            <span class=" txt-s12 txt-white">{{stock.dealNum}}</span>
+                        </td>
+                        <td class="txt-s12 txt-grey pl20 pb5">成交额
+                            <span class=" txt-s12 txt-white">{{stock.dealPrice}}</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--<div class="mod-trade-td mt15 bgc-black">
+            <ul class="">
+                <li class="has-border-b ml10 mr10 pl10">
+                    买入价格
+                    <span class="fr txt-grey">市价委托</span>
+                </li>
+                <li class="pl20 pr10">
+                    交易综合费
+                    <span class="fr txt-grey">
+                        <b class="txt-orange">{{serviceCharge}}</b>元
+                    </span>
+                </li>
+                <li class="pl20 pr10 pt5 pb5 item-single" ng-show="tipBalance>0">
+                    <span class="fr stop-low txt-s12" ng-if="tipBalance<serviceCharge" ng-class="{'stop-lowPacket':vm.useTip}">
+                        <span  class="ng-binding ng-scope" ng-click="vm.useTip = !vm.useTip;">-{{tipBalance.toFixed(2)}}元</span>
+                   </span>
+                     <span class="fr stop-low txt-s12" ng-if="tipBalance>=serviceCharge" ng-class="{'stop-lowPacket':vm.useTip}">
+                        <span  class="ng-binding ng-scope" ng-click="vm.useTip = !vm.useTip;">-{{serviceCharge.toFixed(2)}}元</span>
+                   </span>
+                    <label>是否使用红包余额（余额：{{tipBalance.toFixed(2)}}元）<p class="txt-s10 txt-grey">红包余额只能抵扣交易综合费</p></label>
+                </li>
+                <li class="buy-num pl20">
+                    <span>买入数量</span>
+                    <i ng-if="stockNumObj.canMax" class="txt-s24 txt-orange fr has-border-l" ng-click="changeStockNum(stockNumObj.curr+100);">+</i>
+                    <i ng-if="!stockNumObj.canMax" class="txt-s24 fr has-border-l">＋</i>
+                    <b class="buy-number fr has-border-l"><input ng-blur="changeStockNum(stockNumObj.curr);" type="number" class="inp" ng-model="stockNumObj.curr"></b>
+                    <i ng-if="stockNumObj.canMin" class="txt-s24 fr txt-orange has-border-l" ng-click="changeStockNum(stockNumObj.curr-100);">-</i>
+                    <i ng-if="!stockNumObj.canMin" class="txt-s24 fr has-border-l">-</i>
+                </li>
+            </ul>
+
+        </div>-->
+        <!--<p class="txt-right pt10 pb10 pr10 txt-grey">资金预计占用<i class="txt-orange pr5 pl5">{{totalStockMoney}}</i>元</p>-->
+        <div class="wrap-btn">
+            <div class="wrap">
+                <button class="btn btn-{{btn.className}}" ng-disabled="btn.disabled" ng-click="toTrade();">{{btn.btnText}}</button>
+            </div>
+        </div>
+    </div>
+</section>
+<div ng-show="showSchemeLastDayTip" class="db-bg" style="z-index: 10000;">
+    <div class="operate-dialog">
+        <div class="strategy-dialog txt-black">
+            <div class="dialog-content">
+                <p class="txt-center" style="padding: 0.5rem">
+                    您的策略组将在 <span class="txt-red">{{scheme.availableDays}}</span> 个交易日后到期，如需继续合作，请及时申请续期
+                </p>
+            </div>
+            <div class="dialog-operate">
+                <span ng-click="showSchemeLastDayTip=false">取消</span>
+                <span ng-click="jumpToSG();" style="border-right: none">续期</span>
+            </div>
+        </div>
+    </div>
+</div>
+<common-menu></common-menu>

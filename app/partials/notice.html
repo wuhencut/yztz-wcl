@@ -1,0 +1,23 @@
+<section class="page-user">
+    <div class="page-notice">
+        <header class="page-header">
+            <div class="header-wrap has-border-b">
+                <h3>公告列表</h3>
+                <!--<a href="#/myHome" class="nav-left"><i class="icon-back"></i></a>-->
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div ng-if="items.length > 0" class="mod-notice-list">
+            <a href="#/noticeDetail/{{item.id}}" ng-repeat="item in items">
+                <h4>{{item.noticeTitle}}</h4>
+                <p>{{item.releaseTime | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+            </a>
+        </div>
+        <div ng-if="pageIndex != totalPage" class="pt10">
+            <div class="mod-more" ng-click="getNoticeList(pageIndex+1);">
+                加载更多
+            </div>
+        </div>
+        <div ng-if="items.length == 0" class="mod-no-data">暂无数据</div>
+    </div>
+</section>

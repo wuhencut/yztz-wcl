@@ -1,0 +1,49 @@
+/*公告列表*/
+.page-user .page-notice .mod-notice-list{
+    padding-left: 0.15rem;
+    background: #121C25;
+    /*border-bottom: 0.01rem solid #1C262F;*/
+}
+
+.page-user .page-notice .mod-notice-list a{
+    display: block;
+    padding: 0.1rem 0;
+    border-bottom: 0.01rem solid #1C262F;
+}
+
+.page-user .page-notice .mod-notice-list a:last-child{
+    border-bottom: none;
+}
+
+.page-user .page-notice .mod-notice-list h4{
+    font-size: 0.16rem;
+    padding: 0.05rem 0;
+}
+
+.page-user .page-notice .mod-notice-list p{
+    font-size: 0.12rem;
+    color: #999999;
+}
+/*公告详情*/
+.page-user .page-notice .mod-notice-detail{
+    padding: 0 0.15rem;
+}
+
+.page-user .page-notice .mod-notice-detail .title{
+    padding: 0.1rem 0;
+    border-bottom: 0.01rem solid #1C262F;
+}
+
+.page-user .page-notice .mod-notice-detail .title h4{
+    font-size: 0.16rem;
+    padding: 0.05rem 0;
+}
+
+.page-user .page-notice .mod-notice-detail .title p{
+    font-size: 0.12rem;
+    color: #999999;
+}
+
+.page-user .page-notice .mod-notice-detail .content{
+    padding: 0.1rem 0;
+}

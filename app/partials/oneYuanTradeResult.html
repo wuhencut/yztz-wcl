@@ -1,0 +1,61 @@
+<section class="page-trade">
+    <div class="page-trade-result">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>
+                    <span>一元实盘体验</span>
+                </h3>
+                <!--<a href="#/index" class="nav-left">-->
+                <!--<i class="icon-back"></i>-->
+                <!--</a>-->
+                <back-menu></back-menu>
+            </div>
+        </header>
+        <div class="mod-result">
+            <div class="trade-menu">
+                <div>
+                    <ul>
+                        <li class="m-buy"><a href="#/oneYuanTrade?backURL=/index">点买</a></li>
+                        <li class="m-sell"><a href="#/oneYuanTradeSell?backURL=/index">点卖</a></li>
+                        <li class="m-result"><a href="#/oneYuanTradeResult">结算</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div ng-if="settleList.length > 0" class="wrap">
+                <a ng-click="toDetail(settle.id)" ng-repeat="settle in settleList">
+                    <ul>
+                        <li>
+                            <p class="txt-s14">{{settle.stockName}}</p>
+                            <p><b>{{settle.volumeDeal}}</b>股</p>
+                        </li>
+                        <li class="txt-center" style="width: 34%">
+                            <p class="txt-s14">交易盈亏</p>
+                            <p ng-if="settle.profitTotal>0"><b class="txt-red">+{{settle.profitTotal.toFixed(2)}}</b></p>
+                            <p ng-if="settle.profitTotal<0"><b class="txt-green">{{settle.profitTotal.toFixed(2)}}</b></p>
+                            <p ng-if="settle.profitTotal==0"><b>{{settle.profitTotal.toFixed(2)}}</b></p>
+                        </li>
+                        <li ng-if="settle.profitShare>0" class="txt-right">
+                            <p class="txt-s14">盈亏分配</p>
+                            <p><b class="txt-red">+{{settle.profitShare.toFixed(2)}}</b></p>
+                        </li>
+                        <li ng-if="settle.profitShare<0" class="txt-right">
+                            <p class="txt-s14">亏损赔付</p>
+                            <p><b class="txt-green">{{settle.profitShare.toFixed(2)}}</b></p>
+                        </li>
+                        <li ng-if="settle.profitShare==0" class="txt-right">
+                            <p class="txt-s14">盈亏分配</p>
+                            <p><b>0.00</b></p>
+                        </li>
+                    </ul>
+                </a>
+                <div ng-if="currPage != totalPage">
+                    <div class="mod-more" ng-click="getSettleList(currPage+1);">
+                        加载更多
+                    </div>
+                </div>
+            </div>
+            <a href="#/oneYuanTrade" ng-if="settleList.length == 0" class="TD-no-data">暂无数据,立即发起点买</a>
+        </div>
+    </div>
+</section>
+<common-menu></common-menu>

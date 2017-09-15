@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>微策略</title>
+    <link rel="stylesheet" href="../css/common/merge.css">
+    <link rel="stylesheet" href="../css/page/user/merge.css">
+</head>
+<body>
+<section id="" class="page-user">
+    <div class="page-info">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>我的信息</h3>
+                <a href="myHome.html" class="nav-left"><i class="icon-back"></i></a>
+            </div>
+        </header>
+        <div class="mod-info">
+            <div class="pic">
+                股神巴菲特
+            </div>
+            <div class="mod-menu-wrap mt10">
+                <a class="mod-menu" href="identification.html">
+                    <span class="fr mr30 txt-grey">未认证</span>
+                    实名认证
+                    <i class="mod-arrow-r"></i>
+                </a>
+                <div class="mod-menu">
+                    <span class="fr mr30 txt-grey">{{loginMobile}}</span>
+                    手机号码
+                </div>
+                <a class="mod-menu" href="aliPayIdentification.html">
+                    <span class="fr mr30 txt-grey">未认证</span>
+                    支付宝账户认证
+                    <i class="mod-arrow-r"></i>
+                </a>
+            </div>
+            <div class="mod-menu-wrap mt10">
+                <a class="mod-menu" href="userPassModify.html">
+                    <span class="fr mr30 txt-grey">修改</span>
+                    登陆密码
+                    <i class="mod-arrow-r"></i>
+                </a>
+                <a class="mod-menu" href="tradePassSet.html">
+                    <span class="fr mr30 txt-grey">未设置</span>
+                    提现密码
+                    <i class="mod-arrow-r"></i>
+                </a>
+                <a class="mod-menu" href="tradePassModify.html">
+                    <span class="fr mr30 txt-grey">修改</span>
+                    提现密码
+                    <i class="mod-arrow-r"></i>
+                </a>
+            </div>
+            <div class="mod-menu-wrap mt10">
+                <a class="mod-menu" href="bankInfo.html">
+                    <span class="fr mr30">
+                        <i class="icon-bank-ccb"></i>
+                    </span>
+                    我的银行卡
+                    <i class="mod-arrow-r"></i>
+                </a>
+            </div>
+        </div>
+        <div class="pt30 pl15 pr15 pb30">
+            <button class="btn btn-red" ng-click="logout()">退出登录</button>
+        </div>
+    </div>
+</section>
+</body>
+</html>

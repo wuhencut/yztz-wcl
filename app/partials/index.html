@@ -1,0 +1,157 @@
+<section class="page-home">
+    <div class="page-index">
+        <header class="page-header">
+            <div class="header-wrap">
+                <h3>微策略</h3>
+                <a href="#/help" class="nav-left"><i class="icon-msg"></i></a>
+                <a href="#/guide" class="nav-right"><i class="icon-guide"></i></a>
+            </div>
+        </header>
+        <div id="mod-slide" class="mod-slide">
+            <ul class="slide-wrap"></ul>
+        </div>
+        <div class="mod-index-exp mt15">
+            <ul>
+                <li ng-repeat="quote in defaultList">
+                    <dl ng-if="quote.diff>0" class="high">
+                        <dt>{{quote.stockName}}</dt>
+                        <dd class="info"><i class="iconfont txt-s10">&#xe601;</i>{{quote.price}}</dd>
+                        <dd>+{{quote.diff}}&nbsp;&nbsp;+{{quote.rote}}%</dd>
+                    </dl>
+                    <dl ng-if="quote.diff<0" class="low">
+                        <dt>{{quote.stockName}}</dt>
+                        <dd class="info"><i class="iconfont">&#xe60d;</i>{{quote.price}}</dd>
+                        <dd>{{quote.diff}}&nbsp;&nbsp;{{quote.rote}}%</dd>
+                    </dl>
+                    <dl ng-if="quote.diff==0" class="high">
+                        <dt>{{quote.stockName}}</dt>
+                        <dd class="info"><i class="iconfont txt-s10">&#xe601;</i>{{quote.price}}</dd>
+                        <dd>{{quote.diff}}&nbsp;&nbsp;{{quote.rote}}%</dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div class="mod-index-t mt15">
+            <a href="#/oneYuanIntroduce" class="has-border-b">
+                <p class="pb5">
+                    <i>新</i>
+                    <span>一元实盘</span>
+                </p>
+                <p class="txt-s12 txt-grey">新手操盘即送2000元</p>
+            </a>
+            <a href="#/simulateStock" class="has-border-b">
+                <p class="pb5">
+                    <i>新</i>
+                    <span>模拟炒股</span>
+                </p>
+                <p class="txt-s12 txt-grey">万元奖金免费拿</p>
+            </a>
+            <a href="#/trade">
+                <p class="pb5">
+                    <i>热</i>
+                    <span>点买A股</span>
+                    <b class="ml5">T+1</b>
+                </p>
+                <p class="txt-s12 txt-grey">今天买  明天卖  交易灵活</p>
+            </a>
+            <a href="#/TDTrade">
+                <p class="pb5">
+                    <i>荐</i>
+                    <span>点买A股</span>
+                    <b class="ml5">T+D</b>
+                </p>
+                <p class="txt-s12 txt-grey">耐心持股  长线必选</p>
+            </a>
+        </div>
+        <div class="mod-index-topic mt15">
+            <div class="mod-tab act-{{actType}}">
+                <div class="tab-title">
+                    <ul>
+                        <li class="title-cpdr" ng-click="actType='cpdr'">
+                            <p>策略动态</p>
+                        </li>
+                        <li class="title-clph" ng-click="actType='clph'">
+                            <p>策略榜单</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="con-cpdr">
+                        <div class="cpdr-list">
+                            <a ng-repeat="item in cldtList" href="#/trade?stock={{item.stockCode}}">
+                                <div class="pt5 pl20 fl" style="width:20%"><p class="buy-icon txt-s12 buy-{{item.status}}">买</p></div>
+                                <div class="stock-name txt-s12" style="width:80%">
+                                    <p class="txt-white">{{item.username}} <span class="fr txt-s10 txt-gray">{{item.diffTime}}前</span></p>
+                                    <p class="txt-gray">{{item.buyPriceDeal}} 点买了 <span class="txt-gray">{{item.volumeDeal}} </span>股 <span class="txt-yellow"> {{item.stockName}}</span></p>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="con-clph">
+                        <ul class="clph-list">
+                            <li ng-repeat="item in clbdList">
+                                <div class="list-icon fl txt-center txt-s10" style="width:20%;line-height: 40px;">{{$index + 1}}</div>
+                                <div class="list-detail" style="line-height: 40px;">
+                                    <p> <span style="width:17%">{{item.userName}}</span> <span style="width:32%" class="txt-gray txt-s12">点卖了{{item.strategyCount}}条策略 </span><span style="width:29%" class="txt-yellow txt-s12"><span class="txt-gray">盈利</span> {{item.profit}}元</span></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mod-app-download">
+            <a href="/app/download.html" class="clearfix">
+                <div class="fl">
+                    <img src="/app/images/logo.png">
+                </div>
+                <div class="fl desc">
+                    微策略A股交易APP<br>A股大行情，新手送现金！
+                </div>
+                <div class="fr">
+                    <button class="btn btn-orange">立即下载</button>
+                </div>
+            </a>
+        </div>
+        <footer class="page-footer">
+            <div class="footer-wrap">
+                <ul>
+                    <li>
+                        <a href="#/index" class="nav-home">
+                            <span></span>首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/trade?backURL=/index" class="nav-trade">
+                            <span></span>交易
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/mine" class="nav-mine">
+                            <span></span>自选
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/discover" class="nav-discover">
+                            <span></span>发现
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/myHome" class="nav-user">
+                            <span></span>我的
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <div ng-if="showAd" class="pop-bg" style='z-index:1000;'>
+        <div class="mod-pop-dialog">
+            <div class="pop-content">
+                <img ng-src="{{ad.imgUrl}}" alt="" ng-click="toDetail(ad)"/>
+                <span ng-click="$parent.showAd = false"></span>
+            </div>
+        </div>
+    </div>
+</section>

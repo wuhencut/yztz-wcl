@@ -1,0 +1,219 @@
+/*图标样式*/
+.icon-back,
+.icon-msg,
+.icon-guide,
+.icon-search,
+.icon-stock-search,
+.icon-top,
+.icon-tel,
+.icon-add,
+.icon-delete,
+.icon-setting {
+    display: inline-block;
+    width: 0.2rem;
+    height: 0.2rem;
+    vertical-align: middle;
+}
+.icon-top {
+    height: 0.25rem;
+}
+
+/*头部返回*/
+.icon-back {
+    background: url("../../images/icon-arrow-l.png") center no-repeat;
+    background-size: 0.2rem;
+}
+
+/*客服*/
+.icon-msg {
+    background: url("../../images/icon-msg.png") center no-repeat;
+    background-size: 0.2rem;
+}
+
+/*新手指引*/
+.icon-guide {
+    background: url("../../images/icon-guide.png") center no-repeat;
+    background-size: 0.2rem;
+}
+
+/*设置*/
+.icon-setting {
+    background: url("../../images/icon-setting.png") center no-repeat;
+    background-size: 0.2rem;
+}
+
+/*搜索*/
+.icon-search {
+    background: url("../../images/icon-search.png") center no-repeat;
+    background-size: 0.2rem;
+}
+
+/*置顶*/
+.icon-top {
+    background: url("../../images/to-top.png") center no-repeat;
+    background-size: 0.2rem;
+}
+
+/*手机图标*/
+.icon-tel {
+    background: url("../../images/icon-tel.png") center no-repeat;
+    background-size: 0.20rem;
+}
+
+/*自选添加*/
+.icon-add {
+    background: url("../../images/icon-add.png") center no-repeat;
+    background-size: 100%;
+}
+
+/*自选删除*/
+.icon-delete {
+    background: url("../../images/icon-delete.png") center no-repeat;
+    background-size: 100%;
+}
+
+/*推荐*/
+.icon-recommend {
+    display: inline-block;
+    width: 0.36rem;
+    height: 0.16rem;
+    background: url("../../images/icon-recommend.png") center no-repeat;
+    background-size: 0.36rem 0.16rem;
+    vertical-align: middle;
+}
+
+.icon-clear,
+.icon-info,
+.icon-qian {
+    display: inline-block;
+    width: 0.16rem;
+    height: 0.16rem;
+    vertical-align: middle;
+}
+
+/*信息提示*/
+.icon-info {
+    background: url("../../images/icon-info.png") center no-repeat;
+    background-size: 0.16rem;
+}
+
+/*清空图标*/
+.icon-clear {
+    background: url("../../images/icon-clear.png") center no-repeat;
+    background-size: 0.16rem;
+}
+
+/*欠费*/
+.icon-qian {
+    background: url("../../images/icon-qian.png") center no-repeat;
+    background-size: 0.16rem;
+}
+
+/*快捷支付*/
+.icon-express {
+    display: inline-block;
+    width: 0.66rem;
+    height: 0.22rem;
+    background: url("../../images/express.png") center no-repeat;
+    background-size: 0.66rem 0.22rem;
+    vertical-align: middle;
+}
+
+/*银行卡图标*/
+
+.icon-bank-cbc,
+.icon-bank-icbc,
+.icon-bank-abc,
+.icon-bank-boc,
+.icon-bank-bcm,
+.icon-bank-cmbc,
+.icon-bank-spdb,
+.icon-bank-cib,
+.icon-bank-hxb,
+.icon-bank-ceb,
+.icon-bank-ccb,
+.icon-bank-gdb,
+.icon-bank-psbc,
+.icon-bank-pab,
+.icon-bank-cmb {
+    display: inline-block;
+    width: 0.24rem;
+    height: 0.24rem;
+    vertical-align: middle;
+}
+
+.icon-bank-cbc {
+    background: url("../../images/icon-bank-cbc.png") center no-repeat;
+    background-size: 100%;
+}
+
+.icon-bank-icbc {
+    background: url("../../images/icon-bank-icbc.png") center no-repeat;
+    background-size: 100%;
+}
+
+.icon-bank-abc {
+    background: url("../../images/icon-bank-abc.png") center no-repeat;
+    background-size: 100%;
+}
+
+.icon-bank-cmb {
+    background: url("../../images/icon-bank-cmb.png") center no-repeat;
+    background-size: 100%;
+}
+
+.icon-bank-boc {
+    background: url("../../images/icon-bank-boc.png") center no-repeat;
+    background-size: 100%;
+}
+
+.icon-bank-bcm {
+    background: url("../../images/icon-bank-bcm.png") center no-repeat;
+    background-size: 100%;
+}
+
+.icon-bank-cmbc {
+    background: url("../../images/icon-bank-cmbc.png") center no-repeat;
+    background-size: 100%;
+}
+
+.icon-bank-spdb {
+    background: url("../../images/icon-bank-spdb.png") center no-repeat;
+    background-size: 100%;
+}
+
+.icon-bank-cib {
+    background: url("../../images/icon-bank-cib.png") center no-repeat;
+    background-size: 100%;
+}
+
+.icon-bank-hxb {
+    background: url("../../images/icon-bank-hxb.png") center no-repeat;
+    background-size: 100%;
+}
+
+.icon-bank-ceb {
+    background: url("../../images/icon-bank-ceb.png") center no-repeat;
+    background-size: 100%;
+}
+
+.icon-bank-ccb {
+    background: url("../../images/icon-bank-ccb.png") center no-repeat;
+    background-size: 100%;
+}
+
+.icon-bank-gdb {
+    background: url("../../images/icon-bank-gdb.png") center no-repeat;
+    background-size: 100%;
+}
+
+.icon-bank-pab {
+    background: url("../../images/icon-bank-pab.png") center no-repeat;
+    background-size: 100%;
+}
+
+.icon-bank-psbc {
+    background: url("../../images/icon-bank-psbc.png") center no-repeat;
+    background-size: 100%;
+}
+

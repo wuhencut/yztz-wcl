@@ -1,0 +1,19 @@
+<section class="page-user">
+    <div class="page-help">
+        <header ng-if="showHeader" class="page-header">
+            <div class="header-wrap">
+                <h3>问题详情</h3>
+                <!--<a href="#/help" class="nav-left"><i class="icon-back"></i></a>-->
+                <back-menu></back-menu>
+                <!--<a href="" class="nav-right"><i class="icon-tel"></i></a>-->
+                <call></call>
+            </div>
+        </header>
+        <div class="mod-help-detail">
+            <h3>{{helpObj.title}}</h3>
+            <div class="content" ng-bind-html="helpObj.content">
+
+            </div>
+        </div>
+    </div>
+</section>

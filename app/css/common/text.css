@@ -1,0 +1,159 @@
+/*
+字体布局样式
+用于定义字号大小，对其方式，字体颜色，背景颜色
+*/
+.txt-white {
+    color: #FFFFFF !important;
+}
+
+.txt-grey {
+    color: #999999 !important;
+}
+
+.txt-gray {
+    color: #666666 !important;
+}
+
+.txt-black {
+    color: #333333 !important;
+}
+
+.txt-red {
+    color: #E8003F !important;
+}
+
+.txt-orange {
+    color: #F5C300 !important;
+}
+
+.txt-light-orange {
+    color: #E29403 !important;
+}
+
+.txt-blue {
+    color: #49A7F6 !important;
+}
+
+.txt-green {
+    color: #41FFAD !important;
+}
+
+.txt-bg-red {
+    background-color: #E8003F !important;
+}
+
+.txt-bg-green {
+    background-color: #41FFAD !important;
+}
+
+.txt-yellow {
+    color: #FFD900 !important;
+}
+
+.txt-deep-yellow{
+    color: #FFF500 !important;
+}
+
+.txt-left {
+    text-align: left;
+}
+
+.txt-right {
+    text-align: right;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.txt-middle {
+    vertical-align: middle;
+}
+
+.txt-bold {
+    font-weight: bold;
+}
+
+.txt-xs,
+.txt-s10 {
+    font-size: 0.1rem;
+}
+
+.txt-s,
+.txt-s12 {
+    font-size: 0.12rem;
+}
+
+.txt-s14 {
+    font-size: 0.14rem;
+}
+
+.txt-m,
+.txt-s16 {
+    font-size: 0.16rem;
+}
+
+.txt-xm,
+.txt-s18 {
+    font-size: 0.18rem;
+}
+
+.txt-l,
+.txt-s20 {
+    font-size: 0.2rem;
+}
+
+.txt-s22 {
+    font-size: 0.22rem;
+}
+
+.txt-s24 {
+    font-size: 0.24rem;
+}
+
+.txt-xl,
+.txt-s26 {
+    font-size: 0.26rem;
+}
+
+.txt-s28 {
+    font-size: 0.28rem;
+}
+
+.txt-xxl,
+.txt-s30 {
+    font-size: 0.3rem;
+}
+
+.txt-xxxl,
+.txt-s36 {
+    font-size: 0.36rem;
+}
+
+.txt-s40 {
+    font-size: 0.4rem;
+}
+
+.txt-s48 {
+    font-size: 0.48rem;
+}
+
+.txt-s50 {
+    font-size: 0.5rem;
+}
+
+.txt-s52 {
+    font-size: 0.52rem;
+}
+
+.txt-s54 {
+    font-size: 0.54rem;
+}
+
+.txt-s60 {
+    font-size: 0.6rem;
+}
+
+.txt-s70 {
+    font-size: 0.7rem;
+}
